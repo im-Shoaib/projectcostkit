@@ -1,0 +1,42 @@
+{
+  "title": "Gravel Calculator: How Many Tons of Gravel Do I Need?",
+  "slug": "gravel-calculator",
+  "description": "Convert your path, patio base or driveway into cubic yards and tons of gravel, crushed stone or pea gravel, with the material cost before delivery.",
+  "category": "outdoor",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Gravel Calculator: Tons and Cubic Yards",
+  "cover": {
+    "src": "/assets/img/posts/cover-gravel-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-gravel-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a pile of stones on a outdoor & yard blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/gravel-calculator.jpg",
+  "tool": {
+    "id": "gravel",
+    "name": "Gravel calculator",
+    "short": "Tons and cubic yards of stone",
+    "icon": "gravel"
+  },
+  "keywords": [
+    "gravel calculator",
+    "how much gravel do I need",
+    "tons of gravel",
+    "crushed stone calculator",
+    "pea gravel calculator",
+    "cubic yards to tons"
+  ],
+  "related": [
+    "paver-calculator",
+    "mulch-calculator",
+    "concrete-calculator"
+  ],
+  "takeaways": [
+    "Work out cubic yards first (sq ft × depth in inches ÷ 12 ÷ 27), then multiply by the weight per yard to get tons.",
+    "Clean crushed stone weighs about 1.35 to 1.4 tons per cubic yard. Crusher run with fines is closer to 1.5.",
+    "A 30 x 3 ft path at 3 inches deep takes about 0.83 cubic yards, or 1.2 tons of crushed stone."
+  ],
+  "body": "Landscape suppliers sell gravel by the ton, but you measure your project in feet. This calculator bridges the two: enter the area and depth, pick the kind of stone, and it gives you cubic yards, tons and the material cost. It also handles round and triangular areas, which helps with curved paths and corners.\n\n## From square feet to tons\n\n1. **Volume in cubic feet** = area × depth in inches ÷ 12\n2. **Cubic yards** = cubic feet ÷ 27\n3. **Tons** = cubic yards × the weight of one cubic yard of that stone\n\nStep three is where most of the confusion comes from, because different stones weigh different amounts.\n\n## How much does gravel weigh?\n\nA supplier's guide from Select Sand & Gravel puts clean crushed stone (with the fine dust screened out) at about 2,700 to 2,800 lb per cubic yard, or **1.35 to 1.4 tons**. Crusher run or road base, which includes stone dust, weighs up to about 3,000 lb, or **1.5 tons per cubic yard**, because the fines fill the gaps between the larger stones.\n\nRounded stones like pea gravel and river rock pack with more gaps, so they tend to weigh a little less per yard. The calculator uses 1.35 tons for those. Wet stone weighs more than dry, which is one reason suppliers often round up.\n\n## A worked example: a garden path\n\nA path 30 ft long and 3 ft wide, with 3 inches of crushed stone:\n\n- Area: 30 × 3 = 90 sq ft\n- Volume: 90 × 3 ÷ 12 = 22.5 cu ft\n- Cubic yards: 22.5 ÷ 27 = **0.83 cubic yards**\n- Tons at 1.4 per yard: 0.83 × 1.4 = **1.17 tons**\n- At $45 a ton, the stone costs about $53 before delivery\n\nIf your supplier sells in quarter-ton steps, you would order 1.25 tons.\n\nA bigger job, a gravel driveway 50 ft long and 12 ft wide at 4 inches of crusher run, comes to 600 sq ft, 200 cu ft, 7.4 cubic yards and **11.1 tons**. That is a delivery job, not a trip with a pickup.\n\n## How deep should gravel be?\n\n- **Decorative beds and borders:** 2 to 3 inches, over landscape fabric.\n- **Walking paths:** 2 to 3 inches of top stone, over a compacted base if the soil is soft.\n- **Patio or paver base:** a compacted layer of crusher run. The Oklahoma State University facilities guide for paver patios uses 4 inches of compacted crusher run under pedestrian areas. Our [paver calculator](/blog/paver-calculator/) works that out for you.\n- **Driveways:** a deeper base of larger stone, topped with smaller stone. Ask your supplier what works with your soil and climate.\n\n## What gravel costs in 2026\n\nAngi's 2026 price data per cubic yard:\n\n| Stone | Price per cubic yard |\n| --- | --- |\n| Pea gravel | $15 to $75 |\n| Crushed granite | $25 to $50 |\n| Crushed limestone | $30 to $115 |\n| River rock | $33 to $49 |\n\nDelivery adds to that. Angi notes that suppliers often deliver free within a set radius and charge around $10 per mile beyond it.\n\n## Ordering tips\n\n- **Ask how they sell it.** Some yards price by the ton, others by the cubic yard. Use the calculator for both numbers.\n- **Round up a little.** Gravel settles and spreads at the edges, and a light layer looks patchy.\n- **Use edging.** A steel, plastic or stone edge keeps gravel from migrating into the lawn.\n- **Put down fabric first** in decorative areas to slow weeds and keep stone from sinking into the soil.\n\n## Frequently asked questions\n\n### How many tons are in a cubic yard of gravel?\n\nAbout 1.35 to 1.5 tons, depending on the stone. Clean crushed stone is around 1.4.\n\n### How much area does a ton of gravel cover?\n\nAt 2 inches deep, one ton of crushed stone covers about 116 sq ft. At 3 inches, about 77 sq ft.\n\n### How much gravel for a 10 x 10 area?\n\nAt 3 inches, 100 sq ft takes 25 cu ft, which is 0.93 cubic yards or about 1.3 tons of crushed stone.\n\n### Is pea gravel good for a patio?\n\nIt works for a casual patio with a solid edge to hold it in, but it shifts underfoot. For furniture and heavy use, pavers over a compacted base are more stable.\n\n## Next step\n\nFor a patio, the [paver calculator](/blog/paver-calculator/) gives you pavers, base gravel and sand together. For garden beds, use the [mulch calculator](/blog/mulch-calculator/).\n\n*Weights are typical for dry stone. Your supplier's weight per yard is the one to use.*\n\n## Sources\n\n- [Select Sand & Gravel: How much does a yard of crushed stone weigh? (February 2026)](https://selectsg.com/how-much-does-a-yard-of-crushed-stone-weigh/)\n- [Angi: What are average gravel prices? (updated September 2026)](https://www.angi.com/articles/gravel-prices.htm)\n- [Oklahoma State University Facilities Management: Installation of pavers on aggregate](https://fm.okstate.edu/landscape-services/site-files/docs/installation_pavers_on_aggregate.pdf)\n"
+}

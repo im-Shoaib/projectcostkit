@@ -1,0 +1,42 @@
+{
+  "title": "Painting Estimate Calculator: How Much to Charge for a Paint Job",
+  "slug": "painting-estimate-calculator",
+  "description": "Price an interior paint job from labor hours, paint, supplies, overhead and your target margin, so every quote covers costs and leaves a profit.",
+  "category": "for-pros",
+  "date": "2026-10-20",
+  "status": "published",
+  "featured": 6,
+  "seoTitle": "Painting Estimate Calculator for Contractors",
+  "cover": {
+    "src": "/assets/img/posts/cover-painting-estimate-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-painting-estimate-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a clipboard with a checklist on a for pros blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/painting-estimate-calculator.jpg",
+  "tool": {
+    "id": "paint-estimate",
+    "name": "Painting estimate",
+    "short": "Quote price from hours, paint and margin",
+    "icon": "clipboard"
+  },
+  "keywords": [
+    "painting estimate calculator",
+    "how much to charge for painting",
+    "painting bid calculator",
+    "painting contractor pricing",
+    "how to price a paint job"
+  ],
+  "related": [
+    "markup-vs-margin-calculator",
+    "contractor-hourly-rate-calculator",
+    "free-estimate-template"
+  ],
+  "takeaways": [
+    "Build the price from cost: labor hours, paint, supplies and overhead. Then set the price so profit is the margin you want.",
+    "Your own production rate, the area your crew paints per hour, is the number that makes or breaks the estimate.",
+    "A 25% margin means the price is cost ÷ 0.75. Dividing, not multiplying by 1.25, is what gets you 25%."
+  ],
+  "body": "Most painters start pricing by copying what someone else charges per square foot. That works until a job has twice the prep, or a crew member is slower than average, and the job quietly loses money. This calculator builds the price from your own costs instead: how long it will take your crew, what the paint and supplies cost, a share of your overhead, and the profit margin you want.\n\n## How the calculator builds a price\n\n1. **Labor hours** = surface area × coats ÷ your production rate per hour\n2. **Labor cost** = hours × what each hour of labor costs you\n3. **Paint** = surface × coats ÷ coverage, rounded up to whole gallons, × your price\n4. **Job cost** = labor + paint + supplies + overhead for this job\n5. **Price** = job cost ÷ (1 − margin)\n\nThe surface is the area you actually paint, walls plus ceilings, measured for one coat. Use our [paint calculator](/blog/paint-calculator/) to get wall areas room by room.\n\n## A worked example: a 1,200 sq ft repaint\n\nWalls and ceilings in a few rooms total 1,200 sq ft. Two coats, a crew that averages 150 sq ft per hour per coat, labor that costs $35 an hour, paint at $40 a gallon covering 350 sq ft, $60 of supplies and $150 of overhead for the job, with a 25% target margin:\n\n- Labor hours: 1,200 × 2 ÷ 150 = **16 hours**\n- Labor cost: 16 × $35 = $560\n- Paint: 2,400 ÷ 350 = 6.9, so 7 gallons × $40 = $280\n- Job cost: $560 + $280 + $60 + $150 = **$1,050**\n- Price: $1,050 ÷ 0.75 = **$1,400**\n- Profit: $350, which is 25% of $1,400\n\nThat is about $1.17 per square foot of painted surface. For a sense check, Angi's 2026 data has pros charging $2 to $6 per square foot of floor area. A room's walls and ceiling together usually have well over twice the area of its floor, so the two measures are not directly comparable, but they should land in the same ballpark.\n\n## Getting your production rate right\n\nThe production rate is the single biggest lever in the estimate. It changes with:\n\n- **Prep:** patching, sanding and caulking before any paint goes on.\n- **Cutting in:** rooms with lots of trim, windows and corners are slow.\n- **Ceilings:** slower than walls, and tall ceilings slower still.\n- **Furniture:** working around a full room versus an empty one.\n- **The crew:** experience and how well they work together.\n\nThe best source is your own records. Time a few jobs from start to cleanup, divide the area painted by the hours, and keep separate numbers for easy, average and hard jobs. Until you have that data, be conservative.\n\n## What labor really costs you\n\nLabor cost is more than the wage. The US Bureau of Labor Statistics puts the median pay for construction and maintenance painters at $23.75 an hour in May 2025. On top of the wage, an employer pays payroll taxes, workers' comp, any benefits and paid time off. Add them up and divide by the hours actually worked to get your real hourly labor cost. If you work alone, use the hourly figure from our [contractor hourly rate calculator](/blog/contractor-hourly-rate-calculator/).\n\n## Overhead per job\n\nOverhead is everything the business pays for that is not tied to one job: insurance, vehicle, phone, software, advertising, accounting. Total it for a year and divide by the number of jobs you do, or by billable hours and multiply by the job's hours. Leaving overhead out is the most common reason busy painters still have no money.\n\n## Margin vs markup\n\nMargin is profit as a share of the price. Markup is profit as a share of the cost. They are not the same number:\n\n- A **25% margin** needs a **33% markup**.\n- A **25% markup** gives only a **20% margin**.\n\nIf you want 25% of every price to be profit, divide cost by 0.75. Multiplying cost by 1.25 gets you 20%. The [markup vs margin calculator](/blog/markup-vs-margin-calculator/) converts between the two.\n\n## Presenting the price\n\nA quote that lists the scope wins more often than a single number, because the homeowner can see what they are paying for. List the rooms and surfaces, the number of coats, the paint brand and line, the prep, and who moves furniture. Our [free estimate builder](/blog/free-estimate-template/) turns that into a printable estimate.\n\n## Frequently asked questions\n\n### How much should I charge per square foot for interior painting?\n\nMany painters quote $2 to $6 per square foot of floor area, according to Angi's 2026 data. Use the calculator to check that your rate covers your actual costs and margin.\n\n### What profit margin should a painting contractor aim for?\n\nThere is no single right number. It depends on your overhead, market and how much risk a job carries. Whatever you pick, make sure it is margin after overhead, not just after labor and paint.\n\n### How do I estimate hours for a paint job?\n\nDivide the area by your measured production rate and multiply by the number of coats. Add time for prep and cleanup if your rate does not include them.\n\n### Should I charge for paint separately?\n\nSome painters list paint as a line item at cost plus a markup, and others include it in one price. Either works if the total covers your costs and profit.\n\n## Next step\n\nSet your labor cost with the [contractor hourly rate calculator](/blog/contractor-hourly-rate-calculator/), then turn the price into a clean, printable quote with the [free estimate builder](/blog/free-estimate-template/).\n\n*This calculator is a planning tool. Your own job records are the best guide to production rates and costs.*\n\n## Sources\n\n- [US Bureau of Labor Statistics: Painters, construction and maintenance (median pay, May 2025)](https://www.bls.gov/ooh/construction-and-extraction/painters-construction-and-maintenance.htm)\n- [Angi: How much do painters charge? (updated September 2026)](https://www.angi.com/articles/how-much-do-painters-charge.htm)\n- [Buildertrend: Margin vs markup in construction](https://buildertrend.com/library/margin-vs-markup-in-construction)\n"
+}

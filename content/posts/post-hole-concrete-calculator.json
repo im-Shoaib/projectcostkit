@@ -1,0 +1,41 @@
+{
+  "title": "How Many Bags of Concrete per Fence Post? Post Hole Calculator",
+  "slug": "post-hole-concrete-calculator",
+  "description": "Find how many bags of concrete each fence or deck post needs, based on hole size, depth, gravel and post size, for 40 to 80 lb or 20 to 25 kg bags.",
+  "category": "building",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Bags of Concrete per Fence Post Calculator",
+  "cover": {
+    "src": "/assets/img/posts/cover-post-hole-concrete-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-post-hole-concrete-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a post set in the ground on a concrete & walls blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/post-hole-concrete-calculator.jpg",
+  "tool": {
+    "id": "post-concrete",
+    "name": "Post hole concrete",
+    "short": "Bags of concrete per fence post",
+    "icon": "post"
+  },
+  "keywords": [
+    "bags of concrete per fence post",
+    "post hole concrete calculator",
+    "how much concrete for a fence post",
+    "concrete for 4x4 post",
+    "fast setting concrete fence post"
+  ],
+  "related": [
+    "fence-calculator",
+    "concrete-calculator",
+    "deck-board-calculator"
+  ],
+  "takeaways": [
+    "Concrete per post = the volume of the hole minus the part the post fills, above the gravel layer.",
+    "A 4x4 post in a 10 in hole, 30 in deep with 4 in of gravel, needs about 1 cu ft: roughly 2.7 bags of 50 lb or 1.7 bags of 80 lb.",
+    "Set posts at least a third as deep as their height above ground, and slope the top of the concrete away from the post."
+  ],
+  "body": "\"Two bags per post\" is the rule you hear at the lumber yard, and sometimes it is right. But the real number depends on how wide and deep you dig, how big the post is, and how much gravel goes in the bottom. Dig a wider hole for a gate post and two bags will not fill it. Put in your real hole and post sizes and the calculator does the rest.\n\n## How the calculator works\n\n1. **Concrete depth** = hole depth minus the gravel at the bottom.\n2. **Hole volume** = 3.14 × (diameter ÷ 2)² × concrete depth.\n3. **Post volume** = the post's cross-section × concrete depth. A 4x4 is really 3.5 x 3.5 in, and a 6x6 is 5.5 x 5.5 in.\n4. **Concrete** = hole volume minus post volume.\n5. **Bags** = concrete ÷ bag yield, using Quikrete's figures: 0.30 cu ft for a 40 lb bag, 0.375 for 50 lb, 0.45 for 60 lb and 0.60 for 80 lb.\n\n## A worked example: ten 4x4 fence posts\n\nTen posts in 10 in holes, 30 in deep, with 4 in of gravel, using 50 lb bags:\n\n- Concrete depth: 30 − 4 = 26 in\n- Hole: 3.14 × 5² × 26 = 2,042 cubic inches\n- Post: 3.5 × 3.5 × 26 = 319 cubic inches\n- Concrete per post: 2,042 − 319 = 1,724 cubic inches, or **1.0 cu ft**\n- Bags per post: 1.0 ÷ 0.375 = **2.7 bags of 50 lb**\n- All ten posts: 26.6, so **27 bags**\n\nIn 80 lb bags, the same ten posts take 1.7 bags each and 17 bags in total. At $7 a bag, that is $119 for the 80 lb option.\n\n## How deep and wide should post holes be?\n\n**Depth.** Decks.com gives the common rule: at least one third to one half of the post's height above ground. For a 6 ft fence, that is 2 to 3 ft deep. In cold climates, dig below the frost line so freezing soil does not push the posts up. Your local building department publishes the frost depth.\n\n**Width.** A common rule of thumb is a hole about three times the width of the post: roughly 10 to 12 in for a 4x4 and 16 to 18 in for a 6x6. Gate posts and corner posts take the most force, so many builders dig those a little wider and deeper.\n\n**Gravel.** A few inches of gravel at the bottom lets water drain away from the end of the post instead of sitting against it.\n\n## Dry-pour or mixed concrete?\n\nFast-setting concrete mixes are made for posts: you pour the dry mix into the hole around the braced post and add water. Regular concrete mix is mixed first, then shoveled in. Either way, follow the instructions on the bag for water and setting time. The calculator works for both, because the volume of the hole is the same.\n\n## Finishing the top\n\nSlope the top of the concrete away from the post so rain runs off. A crown of concrete a little above the ground keeps water from pooling against wood posts, which is where rot starts.\n\n## Wood posts or metal posts?\n\nRound steel posts for chain link fences are much narrower than wood posts, so they leave more of the hole for concrete. Pick \"Round metal, 2-3/8 in\" in the calculator for a typical chain link line post. In metric mode, choose the square post size that matches yours.\n\n## Frequently asked questions\n\n### How many bags of concrete do I need for a 4x4 post?\n\nFor a 10 in hole, 30 in deep with 4 in of gravel: about 2.7 bags of 50 lb or 1.7 bags of 80 lb. A 2 ft deep hole with the same diameter takes about 2 bags of 50 lb.\n\n### How many bags for a 6x6 post?\n\nIn a 16 in hole, 36 in deep with 4 in of gravel: about 3.2 cu ft of concrete, or 5.3 bags of 80 lb, so plan on 6 per post.\n\n### Do fence posts need concrete?\n\nNot always. Some builders use compacted gravel or soil for wood posts in well-drained ground. Concrete gives the strongest set, especially for gates and in windy spots.\n\n### How long before I can attach rails?\n\nFollow the bag. Fast-setting mixes can be ready for rails within hours, and regular concrete mix usually needs longer.\n\n## Next step\n\nCount the rest of the fence materials with the [fence calculator](/blog/fence-calculator/), or work out a slab or footing with the [concrete calculator](/blog/concrete-calculator/).\n\n*Follow your local code for post depth, especially for deck posts, which carry structural loads.*\n\n## Sources\n\n- [Quikrete Concrete Mix No. 1101 data sheet (bag yields)](https://www.quikrete.com/pdfs/data_sheet-concrete%20mix%201101.pdf)\n- [Decks.com: How far apart should fence posts be? (post depth rule)](https://www.decks.com/how-to/articles/how-far-apart-should-fence-posts-be)\n"
+}

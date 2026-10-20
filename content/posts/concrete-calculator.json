@@ -1,0 +1,43 @@
+{
+  "title": "Concrete Calculator: Cubic Yards and Bags for Slabs and Footings",
+  "slug": "concrete-calculator",
+  "description": "Get cubic yards and 40, 60 or 80 lb bags of concrete for a slab, footing or round column, and compare bagged mix with ready-mix delivery.",
+  "category": "building",
+  "date": "2026-10-20",
+  "status": "published",
+  "featured": 5,
+  "seoTitle": "Concrete Calculator: Yards and Bags of Concrete",
+  "cover": {
+    "src": "/assets/img/posts/cover-concrete-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-concrete-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a bag of concrete on a concrete & walls blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/concrete-calculator.jpg",
+  "tool": {
+    "id": "concrete",
+    "name": "Concrete calculator",
+    "short": "Yards or bags for slabs and columns",
+    "icon": "concrete"
+  },
+  "keywords": [
+    "concrete calculator",
+    "how much concrete do I need",
+    "bags of concrete",
+    "cubic yards of concrete",
+    "concrete slab calculator",
+    "80 lb bags per yard"
+  ],
+  "related": [
+    "post-hole-concrete-calculator",
+    "paver-calculator",
+    "gravel-calculator"
+  ],
+  "takeaways": [
+    "Cubic yards = length × width × thickness in feet ÷ 27. A 10 x 10 ft slab 4 inches thick is 1.23 cubic yards before extra.",
+    "Quikrete lists an 80 lb bag of concrete mix at 0.60 cu ft, so one cubic yard takes 45 bags of 80 lb, 60 of 60 lb or 90 of 40 lb.",
+    "Past about a cubic yard, ready-mix delivery is usually less work and often less money than mixing bags."
+  ],
+  "body": "Concrete is ordered by volume, and the volume of a slab is just length × width × thickness. The tricky parts are the units, because people measure slabs in feet and inches but buy concrete in cubic yards or in bags measured in pounds. This calculator handles both rectangular pours (slabs, footings, walls) and round ones (columns, post holes, sonotubes), then shows bags and ready-mix side by side.\n\n## The formula\n\nFor a slab or footing:\n\n**cubic feet = length (ft) × width (ft) × thickness (in) ÷ 12**\n\nFor a round column or hole:\n\n**cubic feet = 3.14 × (diameter ÷ 2)² × height**, with the diameter in feet\n\nThen:\n\n- **Cubic yards** = cubic feet ÷ 27\n- **Bags** = cubic feet ÷ the yield of one bag\n\nThe calculator adds 5% or 10% on top for spillage, uneven ground and forms that bow a little. Most pros order extra, because coming up short in the middle of a pour leaves a cold joint.\n\n## How much concrete is in a bag?\n\nQuikrete's data sheet for its standard Concrete Mix gives these yields:\n\n| Bag size | Yield | Bags per cubic yard |\n| --- | --- | --- |\n| 40 lb | 0.30 cu ft | 90 |\n| 50 lb | 0.375 cu ft | 72 |\n| 60 lb | 0.45 cu ft | 60 |\n| 80 lb | 0.60 cu ft | 45 |\n| 90 lb | 0.675 cu ft | 40 |\n\nIn metric mode, the calculator applies the same yield per kilogram to 20 kg and 25 kg bags. A 25 kg bag works out to about 0.41 cu ft, or 11.7 liters of concrete.\n\n## A worked example: a 10 x 10 ft patio slab\n\nA slab 10 ft by 10 ft, 4 inches thick, with 10% extra:\n\n- Volume: 10 × 10 × 4 ÷ 12 = 33.3 cu ft\n- With 10% extra: 36.7 cu ft, or **1.36 cubic yards**\n- In 80 lb bags: 36.7 ÷ 0.60 = 61.1, so **62 bags**\n- At $7 a bag: **$434**\n- As ready-mix at $110 a yard: about **$149**, plus any delivery and short-load fees\n\nSixty-two bags is about 5,000 lb of concrete to lift, mix and place, which is a long, hard day. This is where ready-mix starts to make sense.\n\nA smaller job, a round column 12 inches across and 4 ft tall: 3.14 cu ft, or 3.46 with 10% extra. That is **6 bags of 80 lb**, an easy afternoon.\n\n## How thick should a slab be?\n\nAngi's 2026 slab cost guide lists typical thicknesses:\n\n| Use | Thickness |\n| --- | --- |\n| Walkway | 4 in |\n| Patio or sidewalk | 4 to 6 in |\n| Driveway | 4 to 8 in |\n| House foundation | 8 to 10 in |\n\nThicker slabs carry more weight. Driveways, hot tub pads and anything that holds a vehicle need more thickness, a good base and usually reinforcement. Check local code for structural work.\n\n## Bags or ready-mix?\n\n**Bags** make sense for small jobs: post holes, a step, a small pad, repairs. You can work at your own pace, but mixing more than a cubic yard by hand or with a small mixer is heavy going.\n\n**Ready-mix** arrives from a truck already mixed. Angi's 2026 data lists concrete at around $110 per cubic yard. Many suppliers add a short-load fee for small orders, and you need enough people and wheelbarrows to place it before it sets. The calculator flags ready-mix once a job needs more than about 60 bags, but call a local supplier for real prices and minimums.\n\n## What a finished slab costs\n\nIf you are hiring out the whole job, Angi puts a standard slab at $4 to $8 per sq ft, with labor at $2 to $3 per sq ft. Fiber mesh adds $2 to $3 per sq ft and rebar $0.50 to $1. The average slab project in its data is about $5,400.\n\n## Frequently asked questions\n\n### How many 80 lb bags of concrete make a yard?\n\n45 bags, based on Quikrete's yield of 0.60 cu ft per 80 lb bag.\n\n### How many bags for a 10 x 10 slab?\n\nAt 4 inches thick, 56 bags of 80 lb for the exact volume, or 62 with 10% extra.\n\n### How much concrete do I need for a 12 x 12 slab?\n\nAt 4 inches: 48 cu ft, or 1.78 cubic yards. With 10% extra, plan on about 2 cubic yards.\n\n### Should I order extra concrete?\n\nYes. Ground is never perfectly flat and forms bulge slightly. Five to 10% extra is normal.\n\n## Next step\n\nSetting fence or deck posts? The [post hole concrete calculator](/blog/post-hole-concrete-calculator/) takes the post out of the hole for an exact bag count. Building a paver patio instead? Use the [paver calculator](/blog/paver-calculator/).\n\n*Structural slabs and footings must follow your local building code. These numbers are for estimating materials.*\n\n## Sources\n\n- [Quikrete Concrete Mix No. 1101 data sheet (bag yields)](https://www.quikrete.com/pdfs/data_sheet-concrete%20mix%201101.pdf)\n- [Angi: How much does a new concrete slab cost? (updated April 2026)](https://www.angi.com/articles/concrete-slab-cost.htm)\n"
+}

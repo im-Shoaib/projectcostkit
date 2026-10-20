@@ -1,0 +1,41 @@
+{
+  "title": "Contractor Hourly Rate Calculator: What Should You Charge?",
+  "slug": "contractor-hourly-rate-calculator",
+  "description": "Work out the hourly rate you need from the pay you want, your business costs, taxes and real billable hours, so your price covers more than wages.",
+  "category": "for-pros",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Contractor Hourly Rate Calculator",
+  "cover": {
+    "src": "/assets/img/posts/cover-contractor-hourly-rate-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-contractor-hourly-rate-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a clock on a for pros blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/contractor-hourly-rate-calculator.jpg",
+  "tool": {
+    "id": "hourly-rate",
+    "name": "Hourly rate calculator",
+    "short": "The rate your business needs",
+    "icon": "clock"
+  },
+  "keywords": [
+    "contractor hourly rate calculator",
+    "how much should I charge per hour",
+    "handyman hourly rate",
+    "self employed hourly rate",
+    "billable hours"
+  ],
+  "related": [
+    "handyman-pricing-calculator",
+    "markup-vs-margin-calculator",
+    "painting-estimate-calculator"
+  ],
+  "takeaways": [
+    "Start from what you want to take home, add taxes and business costs, then divide by the hours customers actually pay for.",
+    "Billable hours are fewer than you think. Quoting, driving, buying materials and paperwork are unpaid unless you price them in.",
+    "US self-employment tax alone is 15.3% of net earnings, before income tax."
+  ],
+  "body": "New contractors often set their hourly rate by doubling what they earned as an employee, or by matching the cheapest person on the local Facebook group. Both can leave you busy and broke. This calculator works backward from the income you want to the rate you need, after taxes, business costs and the hours nobody pays you for.\n\n## How the calculator works\n\n1. **Income before tax** = the take-home pay you want ÷ (1 − the share you set aside for taxes)\n2. **Break-even revenue** = income before tax + business costs for the year\n3. **Revenue with profit** = break-even ÷ (1 − profit margin)\n4. **Billable hours** = paid hours per week × working weeks per year\n5. **Hourly rate** = revenue ÷ billable hours\n\n## A worked example\n\nYou want $60,000 a year in your pocket. You set aside 30% for taxes. Insurance, a truck, tools, phone, software and advertising cost $18,000 a year. You bill 30 hours a week for 48 weeks, and you want 10% profit on top so the business can grow and survive a slow month.\n\n- Income before tax: $60,000 ÷ 0.70 = $85,714\n- Break-even revenue: $85,714 + $18,000 = $103,714\n- With 10% profit: $103,714 ÷ 0.90 = **$115,238**\n- Billable hours: 30 × 48 = **1,440**\n- Rate: $115,238 ÷ 1,440 = **$80 an hour**\n- Break-even rate: $103,714 ÷ 1,440 = $72 an hour\n\nFor comparison, HomeGuide reports self-employed handymen charging $50 to $80 an hour and corporate handyman services $75 to $125. If your number lands well above what your market pays, the answer is usually to lower costs, raise billable hours, or move into higher-value work, not to work for less than break-even.\n\n## Billable hours are the trap\n\nA 40-hour week does not mean 40 billable hours. Some of every week goes to:\n\n- Quoting and site visits for jobs you do not win\n- Driving between jobs\n- Picking up materials\n- Invoicing, bookkeeping and phone calls\n- Callbacks and warranty fixes\n- Weather days, holidays and sick days\n\nMany small contractors bill well under 40 hours a week. Track your own for a month: write down every hour you work and mark which ones a customer paid for. The calculator defaults to 30 billable hours a week and 48 weeks a year. Change them to your real numbers.\n\n## Taxes in the US\n\nThe IRS sets self-employment tax at **15.3%**: 12.4% for Social Security and 2.9% for Medicare, on net earnings from self-employment. You owe it once those net earnings reach $400 in a year. That is on top of federal income tax and any state income tax, which is why the calculator defaults to setting aside 30%. Talk to an accountant about your actual rate and quarterly estimated payments.\n\n## What counts as a business cost\n\n- Liability insurance, and workers' comp if you have employees\n- Vehicle payments, fuel, insurance and maintenance\n- Tools and equipment, including replacements\n- Phone, software, website and advertising\n- Licenses, permits, bonds and trade memberships\n- Accounting and banking fees\n- Your own health insurance and retirement savings, if you pay for them\n\nAdd them up for a full year. It is usually more than people expect.\n\n## Hourly, day rate or job price?\n\nAn hourly rate is the foundation, but you do not have to quote by the hour. Many contractors quote a fixed price per job, built from estimated hours at their rate plus materials and markup. That rewards working efficiently. The [handyman pricing calculator](/blog/handyman-pricing-calculator/) and the [painting estimate calculator](/blog/painting-estimate-calculator/) both build job prices from an hourly figure.\n\n## Frequently asked questions\n\n### What is a good hourly rate for a handyman?\n\nHomeGuide reports $50 to $80 an hour for self-employed handymen, $75 to $125 for corporate services, and $35 to $65 in rural areas or for uninsured workers. Your rate should cover your own costs first.\n\n### How many billable hours does a contractor have in a year?\n\nThere is no standard figure. Billing 25 to 32 hours a week for 48 weeks gives 1,200 to about 1,500 hours. The only reliable number is the one you track.\n\n### Should I include profit in my hourly rate?\n\nYes. Without profit, the business has no cushion for slow months, equipment that breaks or a bad job.\n\n### Do I charge for travel time?\n\nMany contractors add a trip fee or a minimum charge instead of billing drive time by the hour. Either way, the cost has to come from somewhere.\n\n## Next step\n\nUse your rate in the [handyman pricing calculator](/blog/handyman-pricing-calculator/) to price small jobs, and check your material markups with the [markup vs margin calculator](/blog/markup-vs-margin-calculator/).\n\n*This is a planning tool, not tax advice. Tax rules differ by country and state, so confirm your numbers with an accountant.*\n\n## Sources\n\n- [IRS: Self-employment tax (Social Security and Medicare)](https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)\n- [HomeGuide: Handyman prices and hourly rates](https://homeguide.com/costs/handyman-prices)\n"
+}

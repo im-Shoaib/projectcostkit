@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ProjectCostKit admin</title>
+<script>
+/* If this folder is opened through a live-reload dev server, block its WebSocket so saving files does not reload this page mid-edit. */
+(function () { try { var Noop = function () { return { close: function () {}, send: function () {}, addEventListener: function () {}, removeEventListener: function () {} }; }; window.WebSocket = Noop; } catch (e) {} })();
+</script>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar-left"><img src="../assets/img/favicon.svg" width="30" height="30" alt=""><strong>ProjectCostKit admin</strong><span id="folder-status" class="muted">No folder chosen</span></div>
+  <div class="bar-right">
+    <button type="button" class="btn" id="pick">Choose site folder</button>
+    <button type="button" class="btn primary" id="rebuild" disabled>Rebuild site</button>
+  </div>
+</header>
+
+<main id="app">
+  <section id="intro" class="panel narrow">
+    <h1>Manage your site</h1>
+    <p>Choose the folder that holds your site (the one with <code>build.js</code> in it). Your browser will ask for permission to edit files in it. Nothing is uploaded anywhere: changes are saved to this computer, and you publish them by pushing to GitHub.</p>
+    <p class="muted">Works in Chrome or Edge on a computer.</p>
+    <p id="unsupported" class="warn" hidden>This browser cannot edit local folders. Open this page in Chrome or Edge on a computer.</p>
+    <button type="button" class="btn primary big" id="pick2">Choose site folder</button>
+  </section>
+
+  <nav class="tabs" id="tabs" hidden>
+    <button type="button" data-tab="articles" aria-pressed="true">Articles</button>
+    <button type="button" data-tab="pages" aria-pressed="false">Pages</button>
+    <button type="button" data-tab="settings" aria-pressed="false">Settings</button>
+  </nav>
+
+  <section id="articles" class="panel" hidden>
+    <div class="panel-head"><h2>Articles</h2><div class="row"><input type="search" id="filter" placeholder="Filter by title" aria-label="Filter articles"><button type="button" class="btn primary" id="new-post">New article</button></div></div>
+    <table class="list"><thead><tr><th>Title</th><th>Topic</th><th>Date</th><th>Status</th></tr></thead><tbody id="post-list"></tbody></table>
+  </section>
+
+  <section id="editor" class="panel" hidden>
+    <div class="panel-head"><h2 id="ed-title">Edit article</h2>
+      <div class="row"><button type="button" class="btn" id="ed-back">Back to list</button><button type="button" class="btn danger" id="ed-delete">Delete</button><button type="button" class="btn primary" id="ed-save">Save</button></div></div>
+    <div class="ed-grid">
+      <form id="ed-form" class="form" onsubmit="return false">
+        <label>Title <input name="title" required></label>
+        <div class="two"><label>Slug (URL) <input name="slug" required pattern="[a-z0-9-]+"></label><label>SEO title (optional, under 60 characters) <input name="seoTitle"></label></div>
+        <label>Description <span class="count" data-count="description"></span><textarea name="description" rows="2"></textarea></label>
+        <div class="three">
+          <label>Topic <select name="category"></select></label>
+          <label>Date <input name="date" type="date"></label>
+          <label>Updated (optional) <input name="updated" type="date"></label>
+        </div>
+        <div class="three">
+          <label>Status <select name="status"><option value="published">Published</option><option value="draft">Draft</option></select></label>
+          <label>Featured order <input name="featured" type="number" min="0" step="1" placeholder="Empty = not featured"></label>
+          <label>Keywords (comma separated) <input name="keywords"></label>
+        </div>
+        <fieldset><legend>Calculator on this page (optional)</legend>
+          <div class="three"><label>Calculator <select name="toolId"><option value="">None</option></select></label><label>Name <input name="toolName"></label><label>Short line <input name="toolShort"></label></div>
+          <label>Icon <select name="toolIcon"></select></label>
+        </fieldset>
+        <fieldset><legend>Cover</legend>
+          <div class="two"><label>Figure (big text when there is no photo) <input name="figure"></label><label>Figure label <input name="figureLabel"></label></div>
+          <div class="cover-box"><div id="cover-preview" class="cover-preview"></div>
+            <div class="stack"><label class="btn">Upload cover photo <input type="file" id="cover-file" accept="image/*" hidden></label>
+              <button type="button" class="btn" id="og-gen">Generate social image</button>
+              <button type="button" class="btn" id="cover-remove">Remove cover</button>
+              <label>Alt text <input name="coverAlt"></label></div></div>
+        </fieldset>
+        <label>The short version (one point per line, 3 is best) <textarea name="takeaways" rows="3"></textarea></label>
+        <label>Related article slugs (comma separated) <input name="related"></label>
+        <label>Article (Markdown) <textarea name="body" rows="24" class="mono"></textarea></label>
+        <p class="muted">Tips: link to other articles as <code>/blog/slug/</code>. A link to an article that is not live yet shows as plain text until that article's date. Images ending in <code>-1200x675.webp</code> get their size added automatically.</p>
+      </form>
+      <aside class="preview"><div class="preview-head">Preview</div><article class="prose" id="preview"></article></aside>
+    </div>
+  </section>
+
+  <section id="pages" class="panel" hidden>
+    <div class="panel-head"><h2>Pages</h2><button type="button" class="btn primary" id="new-page">New page</button></div>
+    <table class="list"><thead><tr><th>Title</th><th>URL</th><th>In menu</th></tr></thead><tbody id="page-list"></tbody></table>
+    <form id="page-form" class="form" hidden onsubmit="return false">
+      <div class="two"><label>Title <input name="title" required></label><label>Slug <input name="slug" required pattern="[a-z0-9-]+"></label></div>
+      <div class="three"><label>Menu label <input name="navLabel"></label><label>Show in header menu <select name="nav"><option value="false">No</option><option value="true">Yes</option></select></label><label>Footer order <input name="order" type="number"></label></div>
+      <label>Description <textarea name="description" rows="2"></textarea></label>
+      <label>Last updated <input name="updated" type="date"></label>
+      <label>Body (Markdown). Tokens: {{siteName}} {{siteUrl}} {{email}} {{author}} {{year}} <textarea name="body" rows="18" class="mono"></textarea></label>
+      <div class="row"><button type="button" class="btn" id="page-cancel">Close</button><button type="button" class="btn danger" id="page-delete">Delete</button><button type="button" class="btn primary" id="page-save">Save page</button></div>
+    </form>
+  </section>
+
+  <section id="settings" class="panel" hidden>
+    <div class="panel-head"><h2>Settings</h2><button type="button" class="btn primary" id="settings-save">Save settings</button></div>
+    <form id="settings-form" class="form" onsubmit="return false">
+      <div class="two"><label>Site name <input name="name"></label><label>Live address (with https://) <input name="url"></label></div>
+      <label>Tagline <input name="tagline"></label>
+      <label>Description <textarea name="description" rows="2"></textarea></label>
+      <div class="two"><label>Author name <input name="authorName"></label><label>Contact email <input name="authorEmail" type="email"></label></div>
+      <label>Tracking and verification code for &lt;head&gt; (Google Analytics, AdSense, Search Console) <textarea name="headCode" rows="5" class="mono" placeholder="Paste the code exactly as Google gives it"></textarea></label>
+      <label>Code before &lt;/body&gt; (optional) <textarea name="bodyCode" rows="3" class="mono"></textarea></label>
+      <details><summary>Advanced: edit everything in site.json</summary><textarea id="site-json" rows="24" class="mono"></textarea><p class="muted">Topics, home page text, popular calculators and the promo band live here. Keep the JSON valid.</p></details>
+    </form>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="vendor/marked.min.js"></script>
+<script src="icons.js"></script>
+<script src="builder.js"></script>
+<script src="../assets/js/calc.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

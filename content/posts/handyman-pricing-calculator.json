@@ -1,0 +1,41 @@
+{
+  "title": "How to Price Handyman Jobs: Rates, Minimums and a Job Calculator",
+  "slug": "handyman-pricing-calculator",
+  "description": "Price handyman jobs with labor, material markup, trip fees and a minimum charge. Includes 2026 handyman rates and flat prices for common jobs.",
+  "category": "for-pros",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "How to Price Handyman Jobs (With Calculator)",
+  "cover": {
+    "src": "/assets/img/posts/cover-handyman-pricing-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-handyman-pricing-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a wrench on a for pros blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/handyman-pricing-calculator.jpg",
+  "tool": {
+    "id": "handyman",
+    "name": "Handyman job price",
+    "short": "Labor, materials, fees and minimums",
+    "icon": "wrench"
+  },
+  "keywords": [
+    "how to price handyman jobs",
+    "handyman pricing",
+    "handyman rates 2026",
+    "handyman minimum charge",
+    "handyman price list"
+  ],
+  "related": [
+    "contractor-hourly-rate-calculator",
+    "markup-vs-margin-calculator",
+    "free-estimate-template"
+  ],
+  "takeaways": [
+    "HomeGuide reports self-employed handymen charging $50 to $80 an hour, with minimum charges of $75 to $200.",
+    "A job price is labor + materials with markup + any trip fee, but never less than your minimum.",
+    "Minimums matter because a 20-minute job still costs you the drive, the setup and a slot in your day."
+  ],
+  "body": "Handyman work is a long list of small jobs, and small jobs are where pricing goes wrong. Charge 30 minutes for a 30-minute repair and you lose money once you count the drive, the parking and the stop at the hardware store. The calculator here prices a job from hours, materials and fees, and applies your minimum charge automatically when the job is small.\n\n## How the calculator prices a job\n\n- **Labor** = hours on site × your hourly rate\n- **Materials** = your cost × (1 + material markup)\n- **Fees** = a trip or supply-run fee, if you charge one\n- **Price** = labor + materials + fees, or your minimum charge if that is higher\n\n## Two worked examples\n\n**A three-hour job.** Hanging shelves and fixing a door: 3 hours at $75, $120 of materials marked up 20%, no trip fee, $150 minimum.\n\n- Labor: 3 × $75 = $225\n- Materials: $120 × 1.20 = $144\n- Total: **$369**, with $24 of profit on the materials\n\n**A quick fix.** Replacing a cabinet hinge: 30 minutes at $75 and a $10 part.\n\n- Labor: 0.5 × $75 = $37.50\n- Materials: $10 × 1.20 = $12\n- Subtotal: $49.50\n- Your minimum is $150, so the price is **$150**\n\nThe second job is why minimums exist. Without one, you would drive across town for less than $50.\n\n## 2026 handyman rates\n\nHomeGuide's handyman pricing:\n\n| Type | Hourly rate |\n| --- | --- |\n| Self-employed handyman | $50 to $80 |\n| Corporate or franchise handyman service | $75 to $125 |\n| Rural or uninsured handyperson | $35 to $65 |\n\nOther common charges:\n\n- **Minimum charge:** $75 to $200, as a higher first hour or a minimum number of hours\n- **Trip charge:** $30 to $80, sometimes applied when the handyman has to go buy materials\n- **Mileage:** $0.30 to $0.60 per mile, or a flat $10 to $50 outside the service area\n- **Day rate:** $320 to $600\n- **Material markup:** 20% to 50% or more\n\n## Flat prices for common jobs\n\nMany customers prefer a flat price. HomeGuide lists these typical ranges:\n\n| Job | Typical price |\n| --- | --- |\n| Install a ceiling fan | $75 to $150 |\n| Replace a lock | $75 to $200 |\n| Install an appliance | $100 to $250 |\n| Install a sink | $230 to $650 |\n| Install a door | $225 to $825 |\n| Deck or porch repair | $500 to $2,600 |\n\nUse your own time records to set flat prices. If a ceiling fan takes you 90 minutes door to door, price it from that, not from the list.\n\n## Hourly or flat rate?\n\n**Hourly** is fair for jobs with unknowns, like troubleshooting or repairs where you cannot see the damage yet. Customers may worry the clock is running.\n\n**Flat rate** is easier for customers to say yes to, and it rewards you for being quick. It needs good estimates, or you absorb the overrun.\n\nMany handymen use flat rates for common jobs and hourly for repairs, with a minimum charge on everything.\n\n## Set your hourly rate first\n\nAll of this rests on your hourly rate. If you have not worked it out from your income goal, taxes, business costs and real billable hours, start with the [contractor hourly rate calculator](/blog/contractor-hourly-rate-calculator/). A rate that looks good on paper can fall below break-even once you count unpaid hours.\n\n## Frequently asked questions\n\n### How much should a handyman charge per hour in 2026?\n\nHomeGuide reports $50 to $80 for self-employed handymen and $75 to $125 for corporate services. Your own costs set the floor.\n\n### Should I charge a minimum fee?\n\nMost handymen do. HomeGuide puts typical minimums at $75 to $200. It covers the travel and setup that every visit costs you.\n\n### How much should I mark up materials?\n\nHomeGuide reports 20% to 50% or more. It covers the time to source, buy and haul materials, plus returns and waste.\n\n### Should I bundle small jobs?\n\nYes. Encouraging customers to save up a \"honey-do list\" turns several minimum charges into one productive half-day, which is better for both of you.\n\n## Next step\n\nTurn the price into a written quote with the [free estimate builder](/blog/free-estimate-template/), and check what your material markup means as a margin with the [markup vs margin calculator](/blog/markup-vs-margin-calculator/).\n\n*Rates are US figures and vary widely by region, license requirements and the type of work.*\n\n## Sources\n\n- [HomeGuide: Handyman prices and hourly rates](https://homeguide.com/costs/handyman-prices)\n"
+}

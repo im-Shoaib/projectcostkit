@@ -1,0 +1,37 @@
+{
+  "title": "Flooring Waste Factor: How Much Extra Flooring to Buy",
+  "slug": "flooring-waste-factor",
+  "description": "How much extra flooring and tile to order for cuts and mistakes: 5%, 10% or 15%, depending on the room shape, the layout and the material.",
+  "category": "flooring",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "How Much Extra Flooring to Buy (Waste Factor)",
+  "figure": "10%",
+  "figureLabel": "extra for most rooms",
+  "cover": {
+    "src": "/assets/img/posts/cover-flooring-waste-factor-1200x675.webp",
+    "src600": "/assets/img/posts/cover-flooring-waste-factor-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of scissors on a flooring & tile blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/flooring-waste-factor.jpg",
+  "keywords": [
+    "flooring waste factor",
+    "how much extra flooring",
+    "flooring overage",
+    "tile waste percentage",
+    "extra laminate"
+  ],
+  "related": [
+    "flooring-calculator",
+    "tile-calculator",
+    "laminate-vs-vinyl-plank-cost"
+  ],
+  "takeaways": [
+    "Order 10% extra for most rooms, 5% for a simple square room laid straight, and 15% for diagonal layouts or rooms with many angles.",
+    "Tile needs at least 10%, and more for herringbone, large-format or fragile tile.",
+    "Keep one unopened box after the job. It is the easiest way to fix a damaged plank later."
+  ],
+  "body": "No floor goes in without offcuts. Every row ends with a cut piece, every doorway needs notching, and every so often a plank arrives chipped or a cut goes wrong. The waste factor is the extra you order to cover all of that. Get it right and you finish with a box to spare. Get it wrong and you are back at the store hoping the same lot is still on the shelf.\n\n## The short version\n\n| Situation | Extra to order |\n| --- | --- |\n| Square or rectangular room, straight layout, careful DIY | 5% |\n| Most rooms, with a closet, doorways and a few obstacles | 10% |\n| Diagonal layout, triangular room, many angles or obstacles | 15% |\n| Tile in a straight layout | 10% |\n| Tile on a diagonal, herringbone, or large-format tile | 15% to 20% |\n\nBuildDirect's flooring guide uses the same logic: at least 5% for a DIY installation, 10% for complicated shapes with several obstructions, and 15% for triangular rooms with their diagonal lines.\n\n## Where the waste comes from\n\n**End cuts.** Each row starts and ends with a cut plank. With a good layout, the offcut from the end of one row starts the next, so little is lost. In a small room with short rows, the offcuts are often too short to reuse.\n\n**Staggering.** The ends of planks should not line up in neighboring rows. Most makers ask for a minimum stagger, often several inches, which sometimes means cutting a fresh plank instead of using an offcut that is too short.\n\n**Obstacles.** Door frames, floor vents, stair noses, kitchen islands and toilets all take notched or curved cuts, and each one costs a piece.\n\n**Angles.** In a room with walls that are not square, or a layout run at 45 degrees, almost every edge piece is cut on an angle, and the triangle left over is rarely useful.\n\n**Damaged pieces.** A few planks in a big order arrive with chipped edges or broken locking tongues. You need spares to replace them.\n\n## Why tile needs more\n\nTile does not bend, so a slightly crooked wall means cutting every edge tile. Tile also breaks while being cut, especially large porcelain tiles and natural stone. And patterns like herringbone cut an angle off nearly every tile along the edges. That is why our [tile calculator](/blog/tile-calculator/) starts at 10% and goes up to 20% for complex rooms.\n\n## When to go lower\n\nYou can get away with 5% when:\n\n- The room is a plain rectangle with no closets or islands.\n- You are laying planks straight, parallel to the longest wall.\n- The planks are long and the rows are long, so offcuts get reused.\n- You have done it before.\n\nProfessional installers often waste less than DIYers because they plan the layout before they start cutting.\n\n## When to go higher\n\nGo to 15% or more when:\n\n- You are laying a diagonal or herringbone pattern.\n- The room has many corners, angled walls or a bay window.\n- The flooring has a strong pattern or grain you want to arrange.\n- You are a first-timer and want a buffer for mistakes.\n\n## A worked example\n\nA 14 x 16 ft living room with a fireplace hearth and two doorways, in laminate laid straight:\n\n- Floor area: 14 × 16 = 224 sq ft\n- The hearth and doorways put it in the \"most rooms\" bracket, so add 10%: 224 × 1.10 = 246.4 sq ft\n- Boxes at 22 sq ft each: 246.4 ÷ 22 = 11.2, so **12 boxes** (264 sq ft)\n\nThe rounding up to whole boxes adds another 17.6 sq ft of cushion on top of the waste factor. Lay the same floor diagonally and you would use 15%: 257.6 sq ft and still 12 boxes, with less to spare.\n\n## What to do with leftovers\n\n- **Keep at least one unopened box**, labeled with the room and the date. A single damaged plank can be swapped out years later, and an exact match is hard to find once the product is discontinued.\n- **Return extra unopened boxes** if the store allows it. Many do within a set period, so keep the receipt.\n- **Use offcuts** for closet floors, step treads or small projects.\n\n## Frequently asked questions\n\n### Is 10% waste too much for flooring?\n\nFor most rooms it is about right. In a simple square room laid straight, 5% to 7% is often enough.\n\n### Does the waste factor include rounding up to whole boxes?\n\nNo. Add the waste first, then round up to whole boxes. The rounding gives you a little extra on top.\n\n### How much extra tile should I buy for herringbone?\n\nAt least 15%, and 20% if the tiles are large or the room is irregular.\n\n### Do professional installers use less waste?\n\nOften, yes, because they plan the layout and reuse offcuts more carefully. Ask your installer what they want ordered.\n\n## Next step\n\nPut your room and waste factor into the [flooring calculator](/blog/flooring-calculator/) to get the box count, or the [tile calculator](/blog/tile-calculator/) for tile.\n\n## Sources\n\n- [BuildDirect: How to measure a floor for a flooring installation (waste factors)](https://www.builddirect.com/blogs/expert-advice-on-flooring/how-to-measure-a-floor-for-a-flooring-installation)\n- [Angi: Tile installation cost and pattern labor (updated September 2026)](https://www.angi.com/articles/tile-installation-cost.htm)\n"
+}

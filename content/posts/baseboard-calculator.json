@@ -1,0 +1,41 @@
+{
+  "title": "Baseboard Calculator: How Much Baseboard Do I Need?",
+  "slug": "baseboard-calculator",
+  "description": "Get the linear feet of baseboard or skirting for one or more rooms, minus doorways, plus how many 8, 12 or 16 ft pieces to buy.",
+  "category": "flooring",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Baseboard Calculator: Linear Feet and Pieces",
+  "cover": {
+    "src": "/assets/img/posts/cover-baseboard-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-baseboard-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a baseboard profile on a flooring & tile blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/baseboard-calculator.jpg",
+  "tool": {
+    "id": "baseboard",
+    "name": "Baseboard calculator",
+    "short": "Linear feet and pieces of trim",
+    "icon": "baseboard"
+  },
+  "keywords": [
+    "baseboard calculator",
+    "how much baseboard do I need",
+    "linear feet of baseboard",
+    "skirting board calculator",
+    "trim calculator"
+  ],
+  "related": [
+    "flooring-calculator",
+    "paint-calculator",
+    "flooring-waste-factor"
+  ],
+  "takeaways": [
+    "Baseboard is the room's perimeter minus the doorways. A 12 x 12 ft room with one door needs about 45 ft.",
+    "Add 10% for miter cuts, or 15% in rooms with lots of corners.",
+    "Longer pieces mean fewer seams. Buy pieces at least as long as your longest wall when you can."
+  ],
+  "body": "Baseboard runs around the edge of the floor and stops at every doorway. That makes the amount simple to work out: the distance around each room, minus the openings, plus a little for the angled cuts at the corners. Add as many rooms as you like, pick the length you plan to buy, and you get the number of pieces.\n\n## How the calculator works\n\n1. **Perimeter.** For each room, 2 × (length + width).\n2. **Doorways.** It takes off about 3 ft (0.9 m) for each doorway, where the baseboard stops at the door casing. Wider openings? Count a 6 ft opening as two.\n3. **Extra.** 10% for miters, mistakes and short leftover pieces. 15% if the room has many outside corners, like a fireplace or a bump-out.\n4. **Pieces.** Total length divided by the length of each piece, rounded up.\n\n## A worked example: two bedrooms\n\nA 12 x 12 ft room and a 10 x 11 ft room, with one door each, in 16 ft pieces:\n\n- Perimeters: 2 × (12 + 12) = 48 ft and 2 × (10 + 11) = 42 ft, for 90 ft total\n- Minus two doorways: 90 − 6 = 84 ft\n- With 10% extra: 84 × 1.10 = 92.4 ft\n- 16 ft pieces: 92.4 ÷ 16 = 5.8, so **6 pieces**\n- At $15 a piece, that is **$90**\n\nWith 8 ft pieces you would need 12, and more joints along the walls.\n\n## Why piece length matters\n\nEvery place two pieces meet along a straight wall is a seam that can open up as the house moves through the seasons. A wall covered by a single piece looks cleaner and is faster to install. So:\n\n- Buy pieces at least as long as your longest wall when you can carry them home.\n- Use short pieces on short walls, closets and between door casings.\n- Where you must join two pieces, use a scarf joint: two matching 45° cuts that overlap, rather than a flat butt joint. It hides the seam better.\n\nIn the US, baseboard is commonly sold in 8, 12 and 16 ft lengths. In the UK, skirting boards are usually sold in metric lengths such as 2.4 m and 4.2 m. Pick whatever your store stocks in the calculator.\n\n## Inside and outside corners\n\n- **Inside corners** (where two walls meet inside the room) are usually coped: one piece runs straight into the corner and the other is cut to the profile of the first. It stays tight better than a miter.\n- **Outside corners** (around a chimney or a wall that sticks out) are mitered at 45°. Each outside corner eats a few extra inches, which is why rooms with many of them need 15% extra.\n\n## Paint or stain before installing\n\nPainting baseboard on sawhorses is much faster than cutting in along the floor afterward. Prime and paint the boards first, install them, then fill the nail holes and caulk the top edge, and touch up. If your baseboard is pre-primed, you can usually go straight to two coats of trim paint.\n\n## Quarter round and shoe molding\n\nIf you are installing new flooring that needs an expansion gap at the walls, you may also need quarter round or shoe molding along the bottom of the baseboard. It runs the same length as the baseboard, so use the same number from the calculator.\n\n## Frequently asked questions\n\n### How many linear feet of baseboard for a 12 x 12 room?\n\nThe perimeter is 48 ft. Minus one 3 ft doorway, that is 45 ft. With 10% extra, plan on about 50 ft.\n\n### Do I subtract closets?\n\nNo, add them. If the closet has baseboard inside, measure its walls and add them as another room. Then subtract the closet doorway.\n\n### Should baseboard go under or over the flooring?\n\nIt usually goes on after the flooring, sitting on top of it, with the flooring's expansion gap hidden underneath. Check your flooring instructions for the gap size.\n\n### What size nails should I use?\n\nMost installers use a finish nailer with nails long enough to go through the baseboard and drywall into the studs. Check the nailer and trim maker's recommendations for your trim thickness.\n\n## Next step\n\nIf you are putting in a new floor first, the [flooring calculator](/blog/flooring-calculator/) gives you the boxes for the same rooms. Painting the walls at the same time? The [paint calculator](/blog/paint-calculator/) covers the walls and the ceiling.\n\n*Measurements are estimates. Measure each wall at the floor before cutting.*\n"
+}

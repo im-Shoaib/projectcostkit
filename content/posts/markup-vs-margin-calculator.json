@@ -1,0 +1,41 @@
+{
+  "title": "Markup vs Margin Calculator for Contractors",
+  "slug": "markup-vs-margin-calculator",
+  "description": "Convert markup to margin and back, and set a job price from your cost and target profit. Includes a conversion table and worked contractor examples.",
+  "category": "for-pros",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Markup vs Margin Calculator for Contractors",
+  "cover": {
+    "src": "/assets/img/posts/cover-markup-vs-margin-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-markup-vs-margin-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a percent sign on a for pros blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/markup-vs-margin-calculator.jpg",
+  "tool": {
+    "id": "markup",
+    "name": "Markup vs margin",
+    "short": "Convert markup and margin, set a price",
+    "icon": "percent"
+  },
+  "keywords": [
+    "markup vs margin",
+    "markup calculator",
+    "margin calculator",
+    "contractor markup",
+    "profit margin calculator"
+  ],
+  "related": [
+    "painting-estimate-calculator",
+    "contractor-hourly-rate-calculator",
+    "handyman-pricing-calculator"
+  ],
+  "takeaways": [
+    "Markup is profit divided by cost. Margin is profit divided by price. The same dollar profit is always a bigger markup than margin.",
+    "A 25% markup gives a 20% margin. To make a 25% margin you need a 33.3% markup.",
+    "To hit a target margin, divide cost by (1 − margin). Price = cost ÷ 0.80 gives a 20% margin."
+  ],
+  "body": "\"I put 20% on everything\" sounds like a 20% profit, but it is not. Markup and margin describe the same dollars from two directions, and mixing them up is one of the most common ways small contractors underprice work. This calculator sets a price from either one and shows both numbers side by side.\n\n## The two definitions\n\n- **Markup** = profit ÷ cost. It answers \"how much did I add to my cost?\"\n- **Margin** = profit ÷ price. It answers \"how much of what the customer paid is profit?\"\n\nBuildertrend's example makes it concrete. A job costs $10,000. You add $2,000, so the price is $12,000.\n\n- Markup: $2,000 ÷ $10,000 = **20%**\n- Margin: $2,000 ÷ $12,000 = **16.7%**\n\nSame job, same profit, two different percentages.\n\n## Converting between them\n\n- **Margin from markup:** margin = markup ÷ (1 + markup)\n- **Markup from margin:** markup = margin ÷ (1 − margin)\n- **Price from a markup:** price = cost × (1 + markup)\n- **Price from a target margin:** price = cost ÷ (1 − margin)\n\n| Markup | Margin |\n| --- | --- |\n| 10% | 9.1% |\n| 20% | 16.7% |\n| 25% | 20% |\n| 33.3% | 25% |\n| 50% | 33.3% |\n| 100% | 50% |\n\n## A worked example: hitting a target margin\n\nYour costs on a bathroom job come to $8,000, including labor, materials and a share of overhead. You want a 25% margin.\n\n- Price = $8,000 ÷ (1 − 0.25) = $8,000 ÷ 0.75 = **$10,667**\n- Profit = $10,667 − $8,000 = $2,667\n- Check: $2,667 ÷ $10,667 = 25% margin, and $2,667 ÷ $8,000 = 33.3% markup\n\nIf you had added 25% instead, the price would be $10,000 and the profit $2,000, a 20% margin. That $667 gap repeats on every job.\n\n## Why margin is the number to manage\n\nYour overhead, taxes and profit all come out of revenue, which is the price customers pay. Margin tells you what share of each dollar of revenue is left. When you know you need, say, 25% of revenue to cover overhead and profit, you set prices by margin.\n\nMarkup is still handy at the counter: it is easy to multiply a material cost by 1.3. Just know what margin that markup gives you.\n\n## Material markups\n\nMany contractors put a separate markup on materials to cover the time spent ordering, picking up and handling them, plus the risk of returns and waste. HomeGuide reports handymen marking up materials by 20% to 50% or more. Be open with customers about it if they ask. The [handyman pricing calculator](/blog/handyman-pricing-calculator/) adds a material markup to a labor price.\n\n## Frequently asked questions\n\n### What is a 30% markup as a margin?\n\n0.30 ÷ 1.30 = 23.1% margin.\n\n### What markup do I need for a 20% margin?\n\n0.20 ÷ 0.80 = 25% markup.\n\n### Is markup or margin better?\n\nNeither is better; they measure different things. Use margin to plan profit and overhead, and know the markup that gets you there.\n\n### Can margin be over 100%?\n\nNo. Margin can only approach 100%, because profit cannot be bigger than the price. Markup can be over 100%: doubling your cost is a 100% markup and a 50% margin.\n\n## Next step\n\nPut your margin to work in the [painting estimate calculator](/blog/painting-estimate-calculator/), or set your base rate with the [contractor hourly rate calculator](/blog/contractor-hourly-rate-calculator/).\n\n## Sources\n\n- [Buildertrend: Margin vs markup in construction (definitions and examples)](https://buildertrend.com/library/margin-vs-markup-in-construction)\n- [HomeGuide: Handyman prices (material markups)](https://homeguide.com/costs/handyman-prices)\n"
+}

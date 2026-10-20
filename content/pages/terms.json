@@ -1,0 +1,10 @@
+{
+  "title": "Terms of Use",
+  "slug": "terms",
+  "navLabel": "Terms",
+  "nav": false,
+  "order": 5,
+  "updated": "2026-10-20",
+  "description": "The terms for using the ProjectCostKit website, its calculators and its content.",
+  "body": "By using {{siteUrl}}, you agree to these terms. If you do not agree, please do not use the site.\n\n## Using the calculators and guides\n\nYou are welcome to use the calculators and guides for your own projects and your own business, including printing estimates you create with the estimate builder and sending them to your clients.\n\n## Our content\n\nThe text, calculators, code and design of this site belong to {{siteName}}. You may quote short passages with a link back to the page. Please do not copy whole guides or calculators onto another website.\n\n## No warranty\n\nThe site is provided \"as is.\" We work to keep formulas and figures accurate, but we do not guarantee that any calculation or price range is correct for your situation. See the [disclaimer](/disclaimer/) for details.\n\n## Links to other sites\n\nLinks to other websites are provided for reference. We do not control those sites and are not responsible for them.\n\n## Changes\n\nWe may update these terms. The \"Last updated\" date shows the latest version. Continuing to use the site after a change means you accept the new terms.\n\n## Contact\n\nQuestions about these terms: {{email}}.\n"
+}

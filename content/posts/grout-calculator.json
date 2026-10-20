@@ -1,0 +1,41 @@
+{
+  "title": "Grout Calculator: How Much Grout Do You Need?",
+  "slug": "grout-calculator",
+  "description": "Work out pounds or kilograms of grout and how many bags to buy from your tile size, tile thickness and joint width, using the manufacturer formula.",
+  "category": "flooring",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Grout Calculator: How Many Bags of Grout",
+  "cover": {
+    "src": "/assets/img/posts/cover-grout-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-grout-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a grout float on a flooring & tile blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/grout-calculator.jpg",
+  "tool": {
+    "id": "grout",
+    "name": "Grout calculator",
+    "short": "Bags of grout from tile and joint size",
+    "icon": "grout"
+  },
+  "keywords": [
+    "grout calculator",
+    "how much grout do I need",
+    "bags of grout",
+    "grout coverage",
+    "sanded grout"
+  ],
+  "related": [
+    "tile-calculator",
+    "flooring-waste-factor",
+    "flooring-calculator"
+  ],
+  "takeaways": [
+    "Grout depends on four numbers: tile length, tile width, tile thickness and joint width. Small tiles and wide joints use the most.",
+    "Large tiles with thin joints use very little: 60 sq ft of 12 x 12 in tile with 1/8 in joints needs about 4.3 lb.",
+    "Mosaics and subway tile use several times more grout per square foot than large floor tile."
+  ],
+  "body": "Grout is the cheapest part of a tile job, but buying the wrong amount is still a nuisance. Too little and you stop halfway to mix a second batch, which can dry a slightly different color. Too much and you have heavy half-bags in the garage. This calculator uses the same formula that grout makers print on their data sheets.\n\n## The formula\n\nMapei, one of the biggest grout manufacturers, prints this formula on its technical data sheets:\n\n**kg of grout per m² = (A + B) ÷ (A × B) × C × D × 1.6**\n\n- A = tile length in mm\n- B = tile width in mm\n- C = tile thickness in mm (the depth of the joint)\n- D = joint width in mm\n- 1.6 = the density of the grout in kilograms per liter\n\nRead it this way: the first part, (A + B) ÷ (A × B), is how much joint length there is per square meter. Smaller tiles have more joints. Multiply by the depth and width of the joint to get the volume of the gaps, then by the density to get the weight.\n\nThe calculator converts inches for you, multiplies by your area, and adds 10% for mixing losses and cleanup.\n\n## Two worked examples\n\n**A floor in 12 x 12 in tile.** 60 sq ft, 3/8 in thick tile, 1/8 in joints.\n\n- In millimeters: A = B = 304.8, C = 9.5, D = 3.2\n- Grout per m²: (304.8 + 304.8) ÷ (304.8 × 304.8) × 9.5 × 3.2 × 1.6 = about 0.32 kg\n- 60 sq ft is 5.6 m², so 1.8 kg, or 1.95 kg with 10% extra\n- That is about **4.3 lb**: one 10 lb bag with plenty left\n\n**A backsplash in 3 x 6 in subway tile.** 40 sq ft, 5/16 in thick, 1/8 in joints.\n\n- Grout per m² comes to about 0.79 kg, roughly two and a half times the floor above\n- 40 sq ft is 3.7 m², so 2.9 kg, or 3.2 kg with 10% extra\n- That is about **7.2 lb**: still one 10 lb bag, but with much less to spare\n\nThe second job is smaller, yet it uses more grout. That is the effect of all those short joints.\n\n## How joint width changes the amount\n\nGrout use rises in direct proportion to joint width. Double the joint from 1/8 in to 1/4 in and you need twice the grout. Wider joints also usually call for sanded grout, while very narrow joints use unsanded grout. Check the bag for the joint widths it is rated for.\n\nTile thickness works the same way. A thick quarry tile has deeper joints than a thin wall tile of the same size.\n\n## Bags and sizes\n\nIn the US, cement grout is commonly sold in 10 lb and 25 lb bags. In the UK and Europe, 5 kg and 20 kg are common. The calculator rounds up to whole bags of the size you pick.\n\nIf you are close to the edge of a bag, buy the next bag up. You can return an unopened bag at many stores, but you cannot finish a wall with half a batch.\n\n## Epoxy and premixed grout\n\nEpoxy grout is denser and comes in kits rather than bags. The formula still gives a good estimate of volume, but plan for a little less coverage than cement grout and check the kit's own coverage chart. Premixed urethane grouts in tubs are sold by volume, so compare their coverage charts against the same tile size and joint.\n\n## Tips for grouting\n\n- Mix only what you can use in about half an hour, so it does not stiffen in the bucket.\n- Keep one batch per wall or room so the color stays even.\n- Do not add extra water to stiff grout. It weakens it and can cause blotchy color.\n- Seal cement grout after it cures, following the grout maker's timing.\n\n## Frequently asked questions\n\n### How much does a 25 lb bag of grout cover?\n\nIt depends on the tile. With 12 x 12 in tile and 1/8 in joints, a 25 lb bag covers roughly 350 sq ft. With 3 x 6 in subway tile, it covers about 140 sq ft. Run your own tile through the calculator.\n\n### Sanded or unsanded grout?\n\nSanded grout is generally used for wider joints and unsanded for narrow ones. Each product lists the joint widths it is made for.\n\n### Does the calculator work for wall tile?\n\nYes. Enter the wall area and the wall tile's size, thickness and joint.\n\n### Why does my tile need so much more grout than my neighbor's?\n\nSmaller tiles, wider joints or thicker tiles. Any of the three increases the volume of the gaps.\n\n## Next step\n\nIf you have not counted the tiles yet, start with the [tile calculator](/blog/tile-calculator/). It uses the same tile size and joint width, so you can enter them once and switch pages.\n\n*This is an estimate based on the manufacturer formula and an average density. Your grout's data sheet is the final word on coverage.*\n\n## Sources\n\n- [Mapei Keracolor GG technical data sheet: grout consumption formula and table](https://cdnmedia.mapei.com/docs/librariesprovider26/products-documents/1_132_keracolorgg_gb_bb31e083efdb4760bb65f6f4258dfa93.pdf?sfvrsn=96c9a2a3_0)\n- [Angi: How much does tile installation cost? (updated September 2026)](https://www.angi.com/articles/tile-installation-cost.htm)\n"
+}

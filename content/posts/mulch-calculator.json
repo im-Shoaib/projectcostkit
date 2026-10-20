@@ -1,0 +1,42 @@
+{
+  "title": "Mulch Calculator: How Much Mulch Do You Need?",
+  "slug": "mulch-calculator",
+  "description": "Enter your garden beds and depth to get cubic yards or bags of mulch, and see whether bags or bulk delivery costs less for your yard.",
+  "category": "outdoor",
+  "date": "2026-10-20",
+  "status": "published",
+  "featured": 4,
+  "seoTitle": "Mulch Calculator: Cubic Yards and Bags",
+  "cover": {
+    "src": "/assets/img/posts/cover-mulch-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-mulch-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a seedling in a mound of mulch on a outdoor & yard blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/mulch-calculator.jpg",
+  "tool": {
+    "id": "mulch",
+    "name": "Mulch calculator",
+    "short": "Cubic yards or bags for your beds",
+    "icon": "mulch"
+  },
+  "keywords": [
+    "mulch calculator",
+    "how much mulch do I need",
+    "cubic yards of mulch",
+    "bags of mulch",
+    "mulch depth"
+  ],
+  "related": [
+    "gravel-calculator",
+    "paver-calculator",
+    "square-footage-calculator"
+  ],
+  "takeaways": [
+    "Cubic yards = square feet × depth in inches ÷ 12 ÷ 27. One cubic yard covers about 100 sq ft at 3 inches.",
+    "Fine mulch should be no deeper than 2 inches. Coarse wood chips can go 3 to 4 inches.",
+    "A cubic yard is about 13.5 bags of 2 cu ft. Bulk is cheaper per yard, but delivery fees can cancel that out on small jobs."
+  ],
+  "body": "Mulch is sold two ways: in 2 or 3 cubic foot bags at the garden center, or loose by the cubic yard from a landscape supplier. Either way, you are buying volume, so the question is how much space your beds take up at the depth you want. The calculator handles rectangular beds, round tree rings and triangular corners, and it compares the cost of bags with bulk.\n\n## The formula\n\nFor each bed:\n\n**cubic feet = area in square feet × depth in inches ÷ 12**\n\nThen divide by 27 to get cubic yards, because a cubic yard is 3 × 3 × 3 = 27 cubic feet.\n\nThe UC Marin Master Gardeners give the same formula and these handy reference points for one cubic yard:\n\n| Depth | One cubic yard covers |\n| --- | --- |\n| 1 inch | about 325 sq ft |\n| 2 inches | about 160 sq ft |\n| 3 inches | about 100 sq ft |\n| 4 inches | about 80 sq ft |\n\n## How deep should mulch be?\n\nIt depends on the mulch. The UC Marin Master Gardeners recommend:\n\n- **Fine mulch** (pieces under half an inch, like shredded bark fines): no more than 2 inches, so air and water still reach the roots.\n- **Coarse mulch** (wood chips, nuggets): about 4 to 6 inches if you mainly want to smother weeds in open areas. Around shrubs and perennials, 3 inches is a common compromise.\n- **Grass clippings or shredded leaves:** 2 inches at most, because they mat down.\n- **Poorly drained soil:** use less.\n\nIf you are topping up old mulch, measure what is still there and only add the difference. Piling fresh mulch on every year is how beds end up 8 inches deep.\n\n## A worked example: front beds and a tree ring\n\nTwo shapes: a 20 x 4 ft bed along the front of the house and an 8 ft circle around a tree. Shredded bark at 3 inches.\n\n- Bed: 20 × 4 = 80 sq ft\n- Tree ring: π × 4² = 50.3 sq ft (the calculator asks for the diameter, 8 ft)\n- Total area: 130.3 sq ft\n- Volume: 130.3 × 3 ÷ 12 = 32.6 cu ft, or **1.21 cubic yards**\n- In 2 cu ft bags: 32.6 ÷ 2 = 16.3, so **17 bags**\n\nAt $4.50 a bag, that is $76.50. Bulk at $45 a yard would be about $54, but a delivery fee wipes out that saving on a job this small. At these prices bulk saves about $15.75 a yard, so delivery starts to pay for itself somewhere between 4.5 and 9 cubic yards, depending on the fee.\n\n## Bags or bulk?\n\nLawnStarter's 2026 price data:\n\n- **Bulk mulch:** $30 to $135 per cubic yard, often 15% to 30% less per yard when you buy more.\n- **Bagged mulch:** $3.25 to $6.50 per 2 cu ft bag. It takes about 13.5 bags to make a cubic yard, which works out to roughly 35% more than bulk.\n- **Delivery:** usually a flat $70 to $140.\n- **Professionally installed:** about $77 to $94 per cubic yard, including delivery and basic labor.\n\nBags are easier to carry and store, and you can buy exactly what you need. Bulk is cheaper and comes in one load, but you need a place for the pile and a wheelbarrow.\n\n## Where not to put mulch\n\n- **Against tree trunks.** Keep mulch 6 to 12 inches away from the base of trees and shrubs so the root flare stays visible. A \"mulch volcano\" piled against the trunk can harm the tree.\n- **Right against the house.** The UC Marin Master Gardeners advise keeping organic mulch at least 5 feet from the house and using non-flammable material like gravel or pavers in that zone. Our [gravel calculator](/blog/gravel-calculator/) handles that strip.\n- **Over thick weeds.** Pull or smother them first. Mulch slows new weeds but does not kill established ones.\n\n## Measuring odd-shaped beds\n\n- **Curved beds:** split them into a rectangle plus a circle or half-circle. For a half-circle, enter a full circle and halve that part of the result.\n- **Long, narrow strips:** measure length and average width.\n- **Kidney shapes:** measure the longest length and the average width. It will be close enough for mulch.\n\n## Frequently asked questions\n\n### How many bags of mulch are in a yard?\n\nAbout 13.5 bags of 2 cubic feet, or 9 bags of 3 cubic feet.\n\n### How much area does a bag of mulch cover?\n\nA 2 cu ft bag covers 12 sq ft at 2 inches, 8 sq ft at 3 inches or 6 sq ft at 4 inches.\n\n### How much mulch for a 10 x 10 bed?\n\nAt 3 inches: 100 sq ft × 3 ÷ 12 = 25 cu ft, which is 0.93 cubic yards or 13 bags of 2 cu ft.\n\n### Should I remove old mulch first?\n\nNot usually. Rake it to loosen it and top it up to the depth you want. Remove it if it is matted, moldy or already deeper than about 4 inches.\n\n## Next step\n\nPlanning a path or a strip of stone near the house? The [gravel calculator](/blog/gravel-calculator/) works the same way but in tons. For a patio, see the [paver calculator](/blog/paver-calculator/).\n\n*Prices are US figures from 2026 and vary by region and supplier.*\n\n## Sources\n\n- [UC Marin Master Gardeners: Applying mulch (depth, spacing and coverage)](https://ucanr.edu/site/uc-marin-master-gardeners/applying-mulch)\n- [LawnStarter: How much does mulch cost? (updated October 2026)](https://www.lawnstarter.com/blog/cost/mulch-price/)\n"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Paint Calculator: How Much Paint Do You Need for a Room?",
+  "slug": "paint-calculator",
+  "description": "Enter your room size and get gallons or liters of paint for the walls and ceiling, with doors, windows and coats already taken off.",
+  "category": "painting",
+  "date": "2026-10-20",
+  "status": "published",
+  "featured": 1,
+  "seoTitle": "Paint Calculator: How Much Paint for a Room",
+  "cover": {
+    "src": "/assets/img/posts/cover-paint-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-paint-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a paint can on a painting blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/paint-calculator.jpg",
+  "tool": {
+    "id": "paint",
+    "name": "Paint calculator",
+    "short": "Gallons or liters for any room",
+    "icon": "paintcan"
+  },
+  "keywords": [
+    "how much paint",
+    "gallons of paint",
+    "paint coverage",
+    "room paint",
+    "liters of paint"
+  ],
+  "related": [
+    "how-many-coats-of-paint",
+    "primer-calculator",
+    "cost-to-paint-a-room"
+  ],
+  "takeaways": [
+    "A gallon of interior paint covers about 350 to 400 sq ft per coat. Plan on 350 and you will rarely run short.",
+    "A 12 x 12 ft bedroom with 8 ft walls, one door and two windows takes about 2 gallons for two coats.",
+    "Buy quarts for a small leftover, but if you need three quarts, buy another gallon. It costs about the same."
+  ],
+  "body": "Running out of paint halfway up the last wall is annoying. Buying four gallons for a job that needed two is worse, because paint stores rarely take tinted paint back. This calculator gets you close on the first trip: put in the room size, tell it about doors, windows and the ceiling, and it tells you what to put in the cart.\n\n## How the calculator works\n\nIt does the same sums a painter does on the back of an envelope:\n\n1. **Wall area.** The distance around the room (the perimeter) times the wall height.\n2. **Openings.** It takes off about 21 sq ft for each door (3 by 7 ft) and 15 sq ft for each window (3 by 5 ft). If your windows are huge, count a big one as two.\n3. **Ceiling.** If you tick it, it adds length times width.\n4. **Coats.** The area is multiplied by the number of coats.\n5. **Coverage.** The total is divided by how far one gallon goes. The default is 350 sq ft per gallon, or 12 m² per liter in metric.\n\nThen it rounds the answer the way you actually shop: whole gallons plus a quart or two, or tins of 5, 2.5 and 1 liter if you work in metric.\n\n## A worked example: a 12 x 12 ft bedroom\n\nSay the room is 12 ft by 12 ft with 8 ft walls, one door and two windows, and you want two coats on the walls.\n\n- Perimeter: 12 + 12 + 12 + 12 = 48 ft\n- Wall area: 48 ft × 8 ft = 384 sq ft\n- Openings: one door (21 sq ft) and two windows (30 sq ft) = 51 sq ft\n- Paintable wall: 384 − 51 = 333 sq ft\n- Two coats: 333 × 2 = 666 sq ft\n- Paint: 666 ÷ 350 = **1.9 gallons, so buy 2 gallons**\n\nAt $45 a gallon, that is $90 of paint.\n\nAdd the ceiling in the same paint and the surface grows by 144 sq ft. Two coats on walls and ceiling come to 954 sq ft, or 2.73 gallons. That rounds to 2 gallons and 3 quarts, and three quarts cost close to what a full gallon does, so buy **3 gallons**. Most people use a flat ceiling white for the ceiling instead, which makes this a two-product job: 2 gallons for the walls and 1 gallon of ceiling paint.\n\n## Why 350 square feet per gallon\n\nSherwin-Williams tells customers that a gallon covers about 350 to 400 sq ft and a quart about 100 sq ft. That is a per-coat number on a smooth, sealed wall. Real walls are rarely that kind. Roller marks, patched spots and the paint left in the tray all eat into it.\n\nPlanning on 350 gives you a small cushion without leaving you with a pile of half-empty cans. If your paint can lists a different figure, type it into the coverage box. Some premium paints claim more, and some cheap ones get less.\n\nIn the UK and Europe, coverage is printed in square meters per liter. Dulux lists 13 m² per liter for its standard matt emulsion. The calculator defaults to 12 m² per liter for the same reason it uses 350 in feet: a little room for real walls.\n\n## When you will need more than the calculator says\n\nAdd about 10% if any of these apply:\n\n- **Fresh drywall or bare plaster.** New surfaces soak up the first coat. Prime them first; our [primer calculator](/blog/primer-calculator/) covers that.\n- **Textured walls.** Knockdown, orange peel and popcorn texture have more surface than flat walls of the same size.\n- **A big color change.** Going from deep red to off-white often needs a third coat, or a tinted primer under two coats.\n- **Cheaper paint.** Budget paint usually has less pigment, so it hides less per coat.\n\nOn the other hand, if you are repainting the same color over walls in good shape, one coat is sometimes enough. Our guide on [how many coats of paint you need](/blog/how-many-coats-of-paint/) walks through when you can stop at one.\n\n## Gallons, quarts or five-gallon buckets?\n\nA gallon is the default size for walls. Quarts make sense for small leftovers, trim and accent walls, but they cost more per ounce. The calculator suggests quarts only when the leftover is one or two quarts. At three, it rounds up to a gallon, because three quarts are usually priced within a few dollars of a full gallon.\n\nFor a whole floor of a house, a five-gallon bucket is cheaper per gallon and the color is identical from top to bottom. If you buy several single gallons of a custom color, pour them together into a bucket before you start. Painters call this \"boxing\" the paint. It hides any tiny difference between cans.\n\nKeep a little leftover for touch-ups. Write the room and date on the lid.\n\n## How to measure a room quickly\n\nYou only need two measurements per wall, length and height, and a tape measure does both.\n\n- Measure along the floor, wall to wall. Do not worry about the baseboard.\n- Measure height from floor to ceiling. Most US homes have 8 ft ceilings; many newer ones have 9 ft.\n- For an L-shaped room, add up the length of every wall and use that as the perimeter. Enter half of it as length and half as width and the math still works.\n- Ignore small things like outlets and light switches. They round out.\n\nIf you prefer metric, switch the calculator to meters. It converts the numbers you have already typed.\n\n## Frequently asked questions\n\n### How much paint do I need for a 10 x 10 room?\n\nWith 8 ft walls, one door and two windows, the walls come to 269 sq ft. Two coats need 538 sq ft of coverage, or about 1.54 gallons. That is 1 gallon and 3 quarts, so buy 2 gallons.\n\n### Does the calculator include primer?\n\nNo. Primer spreads thinner than paint, roughly 200 to 300 sq ft per gallon, so it gets its own [primer calculator](/blog/primer-calculator/).\n\n### Should I take doors and windows off the total?\n\nFor an exact estimate, yes. Many painters skip it and treat the openings as their spare paint. If you want that cushion, set doors and windows to zero.\n\n### How much paint does a ceiling need?\n\nA ceiling is the room's length times its width. A 12 x 14 ft ceiling is 168 sq ft, so two coats of ceiling paint use about one gallon.\n\n## What to do next\n\nIf you are deciding whether to hire a painter, run the same room through our [room painting cost estimator](/blog/cost-to-paint-a-room/). It shows a typical pro price range next to your do-it-yourself cost. Painting the outside instead? Use the [exterior paint calculator](/blog/exterior-paint-calculator/).\n\n*Coverage varies with the product, the surface and how you apply it. Use these numbers to plan, and check the label on the can you buy.*\n\n## Sources\n\n- [Sherwin-Williams paint calculator: coverage per gallon and quart](https://www.sherwin-williams.com/en-us/color/color-tools/paint-calculator)\n- [Sherwin-Williams painting FAQ: estimating paint by dividing area by coverage](https://www.sherwin-williams.com/en-us/project-center/faqs/paint-faq)\n- [Dulux Walls & Ceilings matt emulsion, coverage of 13 m² per liter (Screwfix listing)](https://www.screwfix.com/p/dulux-walls-ceilings-5ltr-pure-brilliant-white-matt-emulsion-paint/22939)\n- [Angi: cost to paint a room, 2026 data](https://www.angi.com/articles/how-much-does-it-cost-paint-room.htm)\n"
+}

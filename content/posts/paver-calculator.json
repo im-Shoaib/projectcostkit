@@ -1,0 +1,41 @@
+{
+  "title": "Paver Calculator: Pavers, Base Gravel and Sand for a Patio",
+  "slug": "paver-calculator",
+  "description": "Count the pavers for a patio or walkway, plus tons of base gravel and cubic yards of bedding sand, with cut waste and a materials total.",
+  "category": "outdoor",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Paver Calculator: Pavers, Gravel and Sand",
+  "cover": {
+    "src": "/assets/img/posts/cover-paver-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-paver-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a paver pattern on a outdoor & yard blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/paver-calculator.jpg",
+  "tool": {
+    "id": "pavers",
+    "name": "Paver calculator",
+    "short": "Pavers, base gravel and sand",
+    "icon": "pavers"
+  },
+  "keywords": [
+    "paver calculator",
+    "how many pavers do I need",
+    "paver base calculator",
+    "patio pavers",
+    "paver sand calculator"
+  ],
+  "related": [
+    "gravel-calculator",
+    "concrete-calculator",
+    "mulch-calculator"
+  ],
+  "takeaways": [
+    "A 4 x 8 in paver covers 0.22 sq ft, so you need 4.5 pavers per square foot before waste.",
+    "A patio base is typically 4 inches of compacted crusher run, extending 6 inches past the edges, with 1 inch of bedding sand on top.",
+    "Installed paver patios run $8 to $25 per sq ft in 2026, according to Angi."
+  ],
+  "body": "A paver patio has three layers: a compacted gravel base, a thin bed of sand, and the pavers themselves. The calculator works out all three from your patio size and paver size, so one trip to the landscape yard covers the job.\n\n## How the calculator works\n\n- **Pavers** = patio area ÷ the area of one paver, plus extra for cuts\n- **Base gravel** = a layer of crusher run, figured 6 inches wider than the patio on every side, at the depth you choose, converted to tons at about 1.5 tons per cubic yard\n- **Bedding sand** = the patio area at the sand depth, in cubic yards\n\n## A worked example: a 16 x 12 ft patio\n\nStandard 4 x 8 in pavers in a straight pattern with 10% extra, 4 inches of base and 1 inch of sand:\n\n- Patio area: 16 × 12 = 192 sq ft\n- One paver: 4 × 8 = 32 sq in, or 0.222 sq ft\n- Pavers: 192 ÷ 0.222 = 864, plus 10% = **951 pavers**\n- Base area: (16 + 1) × (12 + 1) = 221 sq ft, because the base runs 6 inches past each edge\n- Base volume: 221 × 4 ÷ 12 = 73.7 cu ft, or 2.73 cubic yards\n- Base weight: 2.73 × 1.5 = **4.1 tons** of crusher run\n- Bedding sand: 192 × 1 ÷ 12 = 16 cu ft, or **0.59 cubic yards**\n\nAt $0.75 per paver and $40 per ton of base, the pavers and base come to about **$877**. Add sand, edge restraint and polymeric joint sand.\n\n## The base is the part that matters\n\nPavers that sink, rock or heave almost always point to a weak base. Oklahoma State University's facilities guide for paver patios lays out a typical pedestrian setup:\n\n- Compact the soil first, then lay non-woven fabric.\n- Add a **4 inch compacted crusher run base**, extending at least **6 inches past the paver area** on every side.\n- Slope it at least **2%** so water runs off, about 1/4 inch per foot.\n- Screed **1 inch of bedding sand** over the base, using pipes as guides.\n- Lay the pavers, install an edge restraint, then compact the pavers with a plate compactor and a protective pad, working from the edges to the middle.\n\nDriveways carry far more weight and need a deeper base. Ask your paver maker or a local installer for the right depth for vehicles and your soil.\n\n## Paver sizes and how many per square foot\n\n| Paver size | Area of one | Per sq ft (no waste) |\n| --- | --- | --- |\n| 4 x 8 in | 0.22 sq ft | 4.5 |\n| 6 x 6 in | 0.25 sq ft | 4 |\n| 6 x 9 in | 0.375 sq ft | 2.7 |\n| 12 x 12 in | 1 sq ft | 1 |\n| 16 x 16 in | 1.78 sq ft | 0.56 |\n\nPavers sold in mixed-size \"kits\" or patterns are usually quoted per square foot or per pallet. Use the coverage on the pallet label instead of counting individual pieces.\n\n## How much extra to buy\n\n- **5%** for a square or rectangular patio laid in a straight pattern.\n- **10%** for most patios, especially with a border.\n- **15%** for curves, circles, herringbone or 45 degree patterns, where most edge pavers get cut.\n\n## What a paver patio costs in 2026\n\nAngi's 2026 data:\n\n- **Installed:** $8 to $25 per sq ft, and up to $50 for flagstone and other high-end materials\n- **Average:** about $3,800 for a 280 sq ft patio\n- **Materials:** concrete pavers $8 to $15 per sq ft, brick or clay $10 to $20, natural stone $15 to $50\n- **Labor:** $50 to $80 per hour, or $4 to $11 per sq ft. A 300 sq ft patio takes 35 to 40 hours of professional work.\n\n## Frequently asked questions\n\n### How many pavers do I need for a 10 x 10 patio?\n\nWith 4 x 8 in pavers, 100 sq ft takes 450 pavers, or 495 with 10% extra.\n\n### How much base gravel for a 12 x 12 patio?\n\nAt 4 inches deep and 6 inches past each edge, the base covers 13 × 13 = 169 sq ft. That is 2.1 cubic yards, or about 3.1 tons of crusher run.\n\n### Can I use sand instead of gravel for the base?\n\nNo. Sand alone shifts and washes out. It goes in a thin layer on top of a compacted gravel base.\n\n### Do I need polymeric sand?\n\nIt is the common choice for the joints. It hardens when wet and helps keep weeds and ants out.\n\n## Next step\n\nFor a gravel path or a crushed-stone border next to the patio, use the [gravel calculator](/blog/gravel-calculator/). Pouring a concrete pad instead? The [concrete calculator](/blog/concrete-calculator/) has you covered.\n\n*Base depths here are for foot traffic. Follow your paver maker's guide and local practice for driveways and poor soils.*\n\n## Sources\n\n- [Oklahoma State University Facilities Management: Installation of pavers on aggregate](https://fm.okstate.edu/landscape-services/site-files/docs/installation_pavers_on_aggregate.pdf)\n- [Angi: How much does a paver patio cost? (updated August 2026)](https://www.angi.com/articles/brick-paver-patio-cost.htm)\n- [Select Sand & Gravel: How much does a yard of crushed stone weigh? (crusher run weight)](https://selectsg.com/how-much-does-a-yard-of-crushed-stone-weigh/)\n"
+}

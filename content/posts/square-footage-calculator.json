@@ -1,0 +1,41 @@
+{
+  "title": "Square Footage Calculator: Rooms, L-Shapes, Circles and Triangles",
+  "slug": "square-footage-calculator",
+  "description": "Add up the square footage of any room or yard area, including L-shaped rooms, circles and triangles, in square feet, square meters and square yards.",
+  "category": "building",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Square Footage Calculator for Rooms and Areas",
+  "cover": {
+    "src": "/assets/img/posts/cover-square-footage-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-square-footage-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a ruler on a concrete & walls blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/square-footage-calculator.jpg",
+  "tool": {
+    "id": "sqft",
+    "name": "Square footage calculator",
+    "short": "Area in sq ft, m² and sq yd",
+    "icon": "ruler"
+  },
+  "keywords": [
+    "square footage calculator",
+    "how to calculate square feet",
+    "square feet to square meters",
+    "L shaped room square footage",
+    "area calculator"
+  ],
+  "related": [
+    "flooring-calculator",
+    "paint-calculator",
+    "mulch-calculator"
+  ],
+  "takeaways": [
+    "Square feet = length × width in feet. Split any odd shape into rectangles, triangles and circles and add them up.",
+    "A triangle is base × height ÷ 2. A circle is 3.14 × radius × radius.",
+    "1 square meter = 10.76 sq ft, and 1 square yard = 9 sq ft."
+  ],
+  "body": "Almost every home project starts with the same number: the area. Flooring, paint, mulch, sod, concrete and roofing are all priced from it. This calculator adds up as many shapes as you need, so an L-shaped living room, a bay window or a round flower bed are just extra rows.\n\n## The formulas\n\n| Shape | Area |\n| --- | --- |\n| Rectangle or square | length × width |\n| Triangle | base × height ÷ 2 |\n| Circle | 3.14 × radius² (radius = diameter ÷ 2) |\n| Half circle | 3.14 × radius² ÷ 2 |\n\nMeasure in feet and the answer comes out in square feet. If you measured in feet and inches, turn the inches into a decimal first: 6 in is 0.5 ft, 3 in is 0.25 ft, and 9 in is 0.75 ft.\n\n## A worked example: an L-shaped living room\n\nThe room is a 15 x 12 ft main space with an 8 x 6 ft dining nook off one side.\n\n- Main space: 15 × 12 = 180 sq ft\n- Nook: 8 × 6 = 48 sq ft\n- Total: **228 sq ft**\n- In square meters: 228 ÷ 10.76 = **21.2 m²**\n- In square yards: 228 ÷ 9 = **25.3 sq yd**\n\nIf flooring costs $3.50 per sq ft, enter that in the optional price box and the calculator shows a total of $798.\n\n## How to measure an awkward room\n\n- **L-shapes and T-shapes:** draw the room and split it into rectangles that do not overlap. Measure each one.\n- **Bay windows:** treat the main room as a rectangle and the bay as a rectangle or a trapezoid. A trapezoid is two triangles and a rectangle.\n- **Angled walls:** split off the angled part as a triangle.\n- **Round areas:** measure straight across the middle for the diameter. The calculator asks for the diameter and works out the radius.\n\n## Converting units\n\n| From | To | Multiply by |\n| --- | --- | --- |\n| Square feet | Square meters | 0.0929 |\n| Square meters | Square feet | 10.764 |\n| Square feet | Square yards | 0.1111 (or ÷ 9) |\n| Square yards | Square feet | 9 |\n\nCarpet and sod are sometimes sold by the square yard, so the calculator shows all three units together.\n\n## Square footage of a house vs a room\n\nThe square footage on a home listing is usually the finished living area, measured from the outside of the walls. It is not the same as adding up the floor of each room, which leaves out the walls themselves, closets you skip and stairways. For material estimates, measure the actual surfaces you are covering.\n\n## What to do with the number\n\n- Flooring: add 5% to 15% for waste, then divide by the box coverage. The [flooring calculator](/blog/flooring-calculator/) does both.\n- Paint: you need wall area, not floor area. The [paint calculator](/blog/paint-calculator/) works it out from the room size.\n- Mulch and gravel: multiply by the depth. See the [mulch calculator](/blog/mulch-calculator/).\n\n## Frequently asked questions\n\n### How do I calculate square feet of a room?\n\nMeasure the length and width in feet and multiply. A 12 x 14 ft room is 168 sq ft.\n\n### How many square feet is a 10 x 10 room?\n\n100 sq ft, or about 9.3 m².\n\n### How do I find the square footage of a circle?\n\nMeasure the diameter, halve it to get the radius, then multiply 3.14 × radius × radius. A 10 ft circle is about 78.5 sq ft.\n\n### How do I measure a room with a sloped ceiling?\n\nFor floor area, the slope does not matter: measure the floor. For wall area, split the sloped wall into a rectangle and a triangle.\n\n## Next step\n\nTake the total to the [flooring calculator](/blog/flooring-calculator/) or the [paint calculator](/blog/paint-calculator/) to turn it into a shopping list.\n"
+}

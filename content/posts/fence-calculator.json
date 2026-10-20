@@ -1,0 +1,42 @@
+{
+  "title": "Fence Calculator: Posts, Rails, Pickets and Cost",
+  "slug": "fence-calculator",
+  "description": "Count the posts, rails, pickets and bags of concrete for a wood fence, with gates, and get a materials estimate before you buy or call a contractor.",
+  "category": "outdoor",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Fence Calculator: Posts, Pickets and Materials",
+  "cover": {
+    "src": "/assets/img/posts/cover-fence-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-fence-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of fence pickets and rails on a outdoor & yard blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/fence-calculator.jpg",
+  "tool": {
+    "id": "fence",
+    "name": "Fence calculator",
+    "short": "Posts, rails, pickets and concrete",
+    "icon": "fence"
+  },
+  "keywords": [
+    "fence calculator",
+    "how many fence posts",
+    "fence picket calculator",
+    "fence materials",
+    "privacy fence cost",
+    "wood fence cost"
+  ],
+  "related": [
+    "post-hole-concrete-calculator",
+    "deck-board-calculator",
+    "cost-to-build-a-deck"
+  ],
+  "takeaways": [
+    "Posts for a wood privacy fence usually go 6 to 8 ft apart. Sections = fence length ÷ spacing, and posts = sections + 1, plus one extra per gate.",
+    "A 6 ft fence normally gets three rails per section, a 4 ft fence two.",
+    "Professionally installed wood fencing runs about $10 to $45 per linear foot in 2026, according to Angi."
+  ],
+  "body": "A wood fence is a long run of the same few parts repeated: posts set in concrete, two or three rails between them, and pickets nailed to the rails. Once you know the length, the post spacing and the board width, the rest is counting. The calculator does that counting for you, adds gate posts and concrete, and gives you a materials total with prices you can change.\n\n## How the calculator counts\n\n- **Fence run** = total length minus gate openings (4 ft per gate)\n- **Sections** = run ÷ post spacing, rounded up\n- **Posts** = sections + 1, plus one more for each gate, since a gate needs a post on both sides\n- **Rails** = sections × 2 for fences up to 5 ft, or × 3 for taller fences\n- **Pickets** = run in inches ÷ (picket width + gap)\n- **Concrete** = posts × bags per post\n\n## A worked example: a 120 ft privacy fence\n\nA 6 ft tall privacy fence, 120 ft long, with one gate, posts 8 ft apart, 1x6 pickets (5.5 in wide) butted tight:\n\n- Run: 120 − 4 = 116 ft\n- Sections: 116 ÷ 8 = 14.5, so **15 sections**\n- Posts: 15 + 1 + 1 = **17 posts**\n- Rails: 15 × 3 = **45 rails**\n- Pickets: 116 × 12 ÷ 5.5 = 253.1, so **254 pickets**\n- Concrete at 2 bags per post: **34 bags**\n\nAt $20 per post, $9 per rail, $3.50 per picket and $7 per bag, the materials come to about **$1,872**. Gate hardware, screws or nails and any stain are extra.\n\n## How far apart should fence posts be?\n\nDecks.com gives these common on-center spacings:\n\n| Fence type | Post spacing |\n| --- | --- |\n| Wood privacy | 6 to 8 ft |\n| Vinyl | 8 to 10 ft, per the manufacturer |\n| Chain link | 10 to 12 ft |\n\nEight feet is common for wood because rails are commonly sold in 8 ft lengths. A solid 6 ft panel also catches a lot of wind, so do not stretch the spacing further. Use 6 ft spacing in windy spots, on slopes or with heavy board-on-board styles.\n\n## How deep should the posts go?\n\nThe usual rule is to set the post at least one third to one half as deep as its height above ground. A 6 ft fence post would go about 2 to 3 ft into the ground, so you buy 8 or 10 ft posts. In cold climates, go below the frost line so the ground does not heave the posts in winter. Your local building department can tell you the frost depth.\n\nTo work out the concrete for each hole exactly, use our [fence post concrete calculator](/blog/post-hole-concrete-calculator/). It accounts for the hole size, the post size and a gravel layer at the bottom.\n\n## What a fence costs in 2026\n\nAngi's 2026 data puts the average fence installation at **$3,276**, with most homeowners paying $1,860 to $4,844. Installed price per linear foot by material:\n\n| Material | Installed, per linear foot |\n| --- | --- |\n| Chain link | $8 to $40 |\n| Wood | $10 to $45 |\n| Composite | $11 to $45 |\n| Vinyl | $15 to $40 |\n| Aluminum | $17 to $90 |\n\nLabor is about half of the total. Gates add $150 to $2,000 each. Angi also notes that fences taller than 6 ft usually cost 20% to 30% more than standard heights.\n\n## Before you build\n\n- **Find the property line.** A survey or your plat map shows it. Building a few inches onto a neighbor's land is a common and expensive mistake.\n- **Check local rules.** Many towns limit fence height, especially in front yards, and some require a permit. HOAs often have their own style rules.\n- **Call 811** in the US before you dig, so buried utility lines get marked for free.\n- **Talk to the neighbor.** Agree on which side faces them, and whether they will share the cost.\n\n## Privacy, picket or board-on-board?\n\n- **Privacy:** pickets butted together. Set the gap to 0.\n- **Spaced picket:** a gap of 2 to 3 inches between pickets uses fewer boards and lets wind through.\n- **Board-on-board:** two overlapping layers with no see-through gaps. Depending on how much the boards overlap, it takes roughly 1.5 to 2 times the pickets of a privacy fence, so multiply the calculator's picket count by that.\n\n## Frequently asked questions\n\n### How many fence posts do I need for 100 feet?\n\nWith 8 ft spacing and no gates, 100 ÷ 8 = 12.5, so 13 sections and 14 posts. With 6 ft spacing, 17 sections and 18 posts.\n\n### How many pickets for an 8 ft section?\n\nWith 5.5 in pickets butted tight, 96 ÷ 5.5 = 17.5, so 18 pickets per 8 ft section.\n\n### How many bags of concrete per fence post?\n\nFor a 4x4 post in a 10 in hole, 30 in deep with 4 in of gravel, it is about 2.7 bags of 50 lb, so plan on 3, or about 1.7 bags of 80 lb. The [post concrete calculator](/blog/post-hole-concrete-calculator/) works it out for your sizes.\n\n### Is it cheaper to build a fence yourself?\n\nOn materials alone, often half or less of an installed price, since labor is about half the cost. You will need a post-hole digger or auger, a level and a helper.\n\n## Next step\n\nWork out the concrete with the [fence post concrete calculator](/blog/post-hole-concrete-calculator/). Planning a deck too? The [deck board calculator](/blog/deck-board-calculator/) counts boards and screws.\n\n*Material prices vary by region and season. Check with your lumber yard before ordering.*\n\n## Sources\n\n- [Decks.com: How far apart should fence posts be?](https://www.decks.com/how-to/articles/how-far-apart-should-fence-posts-be)\n- [Angi: How much does fence installation cost? (updated October 2026)](https://www.angi.com/articles/how-much-does-fence-installation-cost.htm)\n- [Angi: Wood fence installation cost (updated August 2026)](https://www.angi.com/articles/how-much-does-it-cost-install-wood-fence.htm)\n"
+}

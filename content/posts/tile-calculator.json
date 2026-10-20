@@ -1,0 +1,42 @@
+{
+  "title": "Tile Calculator: How Many Tiles and Boxes Do You Need?",
+  "slug": "tile-calculator",
+  "description": "Count tiles and boxes for a floor, wall or backsplash, with grout joints and cut waste included. Works with any tile size in inches or millimeters.",
+  "category": "flooring",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Tile Calculator: How Many Tiles Do I Need?",
+  "cover": {
+    "src": "/assets/img/posts/cover-tile-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-tile-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of square tiles on a flooring & tile blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/tile-calculator.jpg",
+  "tool": {
+    "id": "tile",
+    "name": "Tile calculator",
+    "short": "Tiles and boxes for any tile size",
+    "icon": "tile"
+  },
+  "keywords": [
+    "tile calculator",
+    "how many tiles do I need",
+    "tile boxes",
+    "backsplash tile",
+    "floor tile calculator",
+    "subway tile calculator"
+  ],
+  "related": [
+    "grout-calculator",
+    "flooring-waste-factor",
+    "flooring-calculator"
+  ],
+  "takeaways": [
+    "Divide the area by the size of one tile plus its grout joint, then add 10% for a straight layout or 15% for diagonal or herringbone.",
+    "An 8 x 6 ft bathroom floor in 12 x 12 in tile with 1/8 in joints needs about 52 tiles with 10% extra.",
+    "Buy all the boxes from one lot, and keep a few spare tiles for future repairs."
+  ],
+  "body": "Tile is unforgiving about running short. Once a job is half done, the same tile can be out of stock, and a box from a different production run may be a shade off. This calculator counts tiles and boxes for any size, from 3 x 6 in subway tile to 24 x 48 in porcelain slabs, with the grout joint and the extra for cuts already included.\n\n## How the calculator works\n\n1. **Area.** Length times width of each part of the floor or wall. Add as many rectangles as you need.\n2. **Tile size plus joint.** Each tile takes up its own size plus one grout joint in each direction. A 12 x 12 in tile with a 1/8 in joint takes up 12.125 x 12.125 in.\n3. **Exact count.** Area divided by that footprint.\n4. **Extra.** 10% for a straight layout, 15% for diagonal or herringbone, 20% for complex rooms or very large tiles that are hard to cut without breaking.\n5. **Boxes.** Tiles divided by how many come in a box, rounded up.\n\n## A worked example: a small bathroom floor\n\nAn 8 x 6 ft bathroom in 12 x 12 in tile with 1/8 in grout joints, laid straight:\n\n- Area: 8 × 6 = 48 sq ft\n- One tile with its joint: 12.125 × 12.125 = 147 sq in, or 1.02 sq ft\n- Exact: 48 ÷ 1.02 = 47 tiles\n- With 10% extra: 47 × 1.10 = **52 tiles**\n- At 10 tiles per box: **6 boxes**, which at $30 a box is $180\n\nThe joint matters more with small tiles. For a 3 x 6 in subway tile backsplash of 30 sq ft with 1/8 in joints, each tile takes up 3.125 × 6.125 = 19.1 sq in. That is about 226 tiles to cover it exactly, and 249 with 10% extra.\n\n## Measuring walls, backsplashes and showers\n\n- **Backsplash:** measure the length of the counter run and the height from countertop to the bottom of the cabinets, usually around 18 in. Take off the window if it sits in the backsplash.\n- **Shower walls:** measure each wall to the height you plan to tile. Add the shower floor as its own rectangle, and the niche as a small extra one.\n- **Floors:** measure wall to wall. Skip the area under a vanity or toilet only if you are sure it will never move. Many tilers run tile under the vanity anyway.\n\n## How much extra tile to buy\n\n| Layout | Extra |\n| --- | --- |\n| Straight lay, simple room | 10% |\n| Diagonal or herringbone | 15% |\n| Complex room, many cuts, or large-format tile | 20% |\n\nDiagonal and herringbone patterns cut a triangle or angle off almost every tile along the edges, so more pieces end up as scrap. Large-format tiles are heavy and break more easily when cut. The [flooring waste factor guide](/blog/flooring-waste-factor/) explains the numbers in more detail.\n\n## What tile costs in 2026\n\nAccording to Angi's 2026 data, basic tile installation runs $5 to $15 per sq ft including labor and materials, and high-end work such as marble or custom patterns runs $15 to $30. Labor alone is $3 to $15 per sq ft. Material prices per sq ft:\n\n| Tile | Material per sq ft |\n| --- | --- |\n| Porcelain | $2 to $15 |\n| Glazed ceramic | $4 to $15 |\n| Natural stone | $5 to $45 |\n| Glass | $10 to $180 |\n\nRemoving old tile adds $2 to $7 per sq ft. Intricate patterns like herringbone add labor time.\n\n## Before you buy\n\n- **Check the lot number** on every box. Shade can vary between production runs.\n- **Open a box and lay out tiles** before you start. Mix tiles from several boxes as you go so any shade variation spreads out.\n- **Buy grout and thinset at the same time.** The [grout calculator](/blog/grout-calculator/) works out the bags from the same tile size and joint width.\n- **Keep spares.** A handful of leftover tiles makes a cracked-tile repair simple years later.\n\n## Frequently asked questions\n\n### How many 12 x 24 tiles do I need for 100 sq ft?\n\nEach 12 x 24 in tile with a 1/8 in joint takes up about 2.03 sq ft. That is 50 tiles to cover 100 sq ft exactly, and 55 with 10% extra. If you lay them in a herringbone, use 15% and buy 57 or 58.\n\n### Should the grout joint be included in tile math?\n\nYes, especially for small tiles. With mosaics and subway tile the joints add up to a noticeable share of the wall.\n\n### How much extra tile should I buy?\n\n10% for straight layouts, 15% for diagonal or herringbone. More if the tiles are large, fragile or hard to cut.\n\n### Can I return extra tile?\n\nMany stores take back unopened boxes. Ask before you buy, and keep the receipt.\n\n## Next step\n\nWork out the grout for the same job with the [grout calculator](/blog/grout-calculator/). Doing a whole floor in plank flooring instead? Use the [flooring calculator](/blog/flooring-calculator/).\n\n*Counts are estimates. Lay out the pattern on paper or with a few dry tiles before you cut.*\n\n## Sources\n\n- [Angi: How much does tile installation cost? (updated September 2026)](https://www.angi.com/articles/tile-installation-cost.htm)\n- [BuildDirect: How to measure a floor for a flooring installation](https://www.builddirect.com/blogs/expert-advice-on-flooring/how-to-measure-a-floor-for-a-flooring-installation)\n"
+}

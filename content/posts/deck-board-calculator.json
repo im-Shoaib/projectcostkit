@@ -1,0 +1,41 @@
+{
+  "title": "Deck Board Calculator: How Many Deck Boards and Screws",
+  "slug": "deck-board-calculator",
+  "description": "Count deck boards for any deck size, board width and gap, plus how many face screws you need for wood or composite decking.",
+  "category": "outdoor",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Deck Board Calculator: Boards and Screws",
+  "cover": {
+    "src": "/assets/img/posts/cover-deck-board-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-deck-board-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of deck boards on a outdoor & yard blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/deck-board-calculator.jpg",
+  "tool": {
+    "id": "deck-boards",
+    "name": "Deck board calculator",
+    "short": "Boards and screws for any deck",
+    "icon": "boards"
+  },
+  "keywords": [
+    "deck board calculator",
+    "how many deck boards",
+    "composite decking calculator",
+    "deck screws calculator",
+    "decking calculator"
+  ],
+  "related": [
+    "cost-to-build-a-deck",
+    "fence-calculator",
+    "post-hole-concrete-calculator"
+  ],
+  "takeaways": [
+    "Rows of boards = deck width in inches ÷ (board width + gap). A 12 ft wide deck with 5.5 in boards and 3/16 in gaps needs 26 rows.",
+    "Trex recommends a 3/16 in gap between composite boards, and 16 in joist spacing for standard 1 in boards laid straight.",
+    "Face-screwing takes two screws at every joist. A 16 x 12 ft deck on 16 in joists uses about 676 screws."
+  ],
+  "body": "Deck boards run in rows across the joists, with a small gap between each row for drainage and movement. Four things set the count: how wide the deck is, how wide each board is, how big the gap is, and how long the boards you buy are. Enter those four and you get the boards, plus the screws to hold them down.\n\n## How the calculator works\n\n- **Rows** = deck width (across the boards) in inches ÷ (board width + gap), rounded up\n- **Boards per row** = deck length ÷ board length, rounded up\n- **Boards** = rows × boards per row, plus extra for cuts\n- **Joists** = deck length in inches ÷ joist spacing, plus one\n- **Screws** = rows × joists × 2\n\nA \"6 inch\" deck board is actually about 5.5 inches wide, so the calculator uses the real width. A \"4 inch\" board is about 3.5 inches.\n\n## A worked example: a 16 x 12 ft deck\n\nThe boards run the 16 ft direction, the deck is 12 ft wide across the boards. Composite boards, 5.5 in wide, 3/16 in gap, bought in 16 ft lengths, on joists 16 in apart, with 10% extra:\n\n- Rows: 144 in ÷ (5.5 + 0.1875) = 25.3, so **26 rows**\n- Boards per row: 16 ft ÷ 16 ft = **1** (no end joints)\n- Boards: 26 × 1 × 1.10 = 28.6, so **29 boards**\n- Joists: 192 in ÷ 16 + 1 = **13 joists**\n- Face screws: 26 × 13 × 2 = **676 screws**\n\nAt $38 a board, that is about **$1,102** in decking. Framing, posts, footings, railings and stairs are separate.\n\nChoosing board length to match the deck saves both money and seams. On this deck, 12 ft boards would need two per row, with a joint in every row and more offcut waste.\n\n## Gaps between boards\n\nTrex recommends a **3/16 inch** gap between the long edges of its composite boards, and up to 3/8 inch on heavily wooded sites so leaves and debris fall through. At the ends, where two boards butt together, Trex wants 1/8 inch when installing above 40°F and 3/16 inch below 40°F. Where a board end meets the house or another solid object, leave 1/4 inch above 40°F and 1/2 inch below it.\n\nWood boards behave differently because they shrink as they dry. Trex's guidance on wood is to check that the moisture content is below 15% before installing. Every decking brand has its own spacing rules, so check the instructions for the product you buy.\n\n## Joist spacing\n\nJoist spacing limits which boards you can use. Trex's 2024 installation guide sets these maximums for residential decks with boards laid straight across the joists:\n\n| Board | Maximum joist spacing |\n| --- | --- |\n| Standard 1 in composite board | 16 in on center |\n| 2x6 composite board | 24 in on center |\n\nDiagonal layouts need closer joists. For a 45 degree layout, subtract 4 inches from the chart: 12 in for 1 in boards. For a 30 degree layout, use half the chart value: 8 in for 1 in boards.\n\nIf you are resurfacing an old deck that was framed at 24 in for wood boards, standard composite boards may need extra joists added between the old ones.\n\n## Screws or hidden fasteners?\n\nTrex calls for two face screws per joist, or one hidden fastener at every joist if you use clips. Hidden fasteners give a clean surface with no screw heads, cost more and take longer. Face screws are faster, and color-matched composite screws are hard to spot.\n\nFor hidden clips, the count is roughly rows × joists. Check the clip maker's coverage chart for the exact number.\n\n## Frequently asked questions\n\n### How many deck boards do I need for a 12 x 12 deck?\n\nWith 5.5 in boards, 3/16 in gaps and 12 ft boards, 26 rows of one board each. With 10% extra, 29 boards.\n\n### Which way should deck boards run?\n\nUsually perpendicular to the joists. On a deck attached to a house, the joists normally run out from the house, so the boards end up parallel to the wall.\n\n### How many screws per deck board?\n\nTwo at every joist the board crosses. On 16 in joists, a 16 ft board crosses 13 joists, so 26 screws.\n\n### Do I need extra boards for a picture frame border?\n\nYes. A border around the edge is another row of boards on each side, and the boards inside it get mitered at the corners. Add the border's length to your order separately.\n\n## Next step\n\nSee what the whole deck costs, including labor and permits, with the [deck cost estimator](/blog/cost-to-build-a-deck/). Setting posts for a railing or fence? The [post hole concrete calculator](/blog/post-hole-concrete-calculator/) counts the bags.\n\n*Always follow your decking maker's installation guide and your local building code for framing and fastening.*\n\n## Sources\n\n- [Trex: How to space deck boards (gaps and temperature)](https://www.trex.com/deck-ideas/how-to-space-deck-boards/)\n- [Trex 2024 decking installation guide (joist spacing and fasteners)](https://images.trex.com/is/content/trexcompany/2024_Trex_Decking_Installation_Guide(update)pdf)\n"
+}

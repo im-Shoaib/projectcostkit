@@ -1,0 +1,41 @@
+{
+  "title": "Drywall Calculator: Sheets, Screws, Mud and Tape",
+  "slug": "drywall-calculator",
+  "description": "Work out how many sheets of drywall a room needs, plus screws, joint compound and tape, for 4 x 8, 4 x 10 or 4 x 12 sheets or metric boards.",
+  "category": "building",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Drywall Calculator: Sheets, Screws and Mud",
+  "cover": {
+    "src": "/assets/img/posts/cover-drywall-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-drywall-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a drywall sheet with screws on a concrete & walls blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/drywall-calculator.jpg",
+  "tool": {
+    "id": "drywall",
+    "name": "Drywall calculator",
+    "short": "Sheets, screws, mud and tape",
+    "icon": "drywall"
+  },
+  "keywords": [
+    "drywall calculator",
+    "how many sheets of drywall",
+    "drywall screws per sheet",
+    "joint compound calculator",
+    "plasterboard calculator"
+  ],
+  "related": [
+    "primer-calculator",
+    "paint-calculator",
+    "square-footage-calculator"
+  ],
+  "takeaways": [
+    "A 12 x 12 ft room with 8 ft walls and a ceiling takes about 17 sheets of 4 x 8 drywall with 10% extra.",
+    "Screws go every 16 in on walls and every 12 in on ceilings when framing is 16 in apart, under the IRC.",
+    "Plan on about 9 gallons of ready-mixed joint compound per 1,000 sq ft of drywall."
+  ],
+  "body": "Hanging drywall is mostly about getting the right number of sheets to the room in one trip, because 4 x 12 sheets do not fit in most cars. This one counts sheets for the walls and ceiling separately, and adds the screws, joint compound and tape you need to finish the job.\n\n## How the calculator works\n\n- **Wall area** = room perimeter × wall height, minus about 21 sq ft per door and 15 sq ft per window\n- **Ceiling area** = length × width\n- **Sheets** = area × (1 + waste) ÷ the area of one sheet, worked out separately for walls and ceiling\n- **Screws** = a grid based on code spacing, rounded up to the nearest 50\n- **Joint compound** = 9 gallons of ready-mix per 1,000 sq ft\n- **Tape** = roughly the length of one long edge plus one short edge for every sheet\n\n## A worked example: a 12 x 12 ft room\n\n8 ft walls, one door, one window, ceiling included, 4 x 8 sheets, 10% extra:\n\n- Walls: 48 ft × 8 ft = 384 sq ft, minus 36 sq ft of openings = 348 sq ft\n- Ceiling: 144 sq ft\n- Wall sheets: 348 × 1.10 ÷ 32 = 11.96, so **12 sheets**\n- Ceiling sheets: 144 × 1.10 ÷ 32 = 4.95, so **5 sheets**\n- Total: **17 sheets**\n- Screws: about 550\n- Joint compound: 492 sq ft × 9 ÷ 1,000 = about **4.4 gallons**\n- Tape: about 200 ft\n\nAt $18 a sheet, the drywall costs about **$306**.\n\n## Which sheet size to use\n\n| Sheet | Area | Best for |\n| --- | --- | --- |\n| 4 x 8 ft | 32 sq ft | Easy to carry, fits in a car, good for DIY |\n| 4 x 10 ft | 40 sq ft | Rooms with 9 or 10 ft ceilings, hung vertically |\n| 4 x 12 ft | 48 sq ft | Long walls and ceilings, fewer seams |\n\nLonger sheets mean fewer joints to tape and sand, which is where most of the time goes. They are also heavy and awkward, so they usually need two people and a delivery.\n\nIn the UK and Europe, plasterboard is commonly 1200 x 2400 mm. Switch the calculator to meters to use metric board sizes.\n\n## How many screws?\n\nThe International Residential Code (IRC) sets the maximum spacing for screws in gypsum board. For 1/2 in or 5/8 in board on framing 16 in apart, without adhesive:\n\n- **Walls:** screws at most **16 in** apart\n- **Ceilings:** screws at most **12 in** apart\n\nOn a 4 x 8 sheet hung on studs 16 in apart, that works out to roughly 28 screws on a wall and 36 on a ceiling. The calculator uses that grid and rounds the total up. Screws are cheap, so buy a box more than you think you need.\n\n## How much joint compound?\n\nProForm, which makes ready-mixed joint compound, gives a rule of thumb of **9 gallons of ready-mix for every 1,000 sq ft** of wallboard, covering the tape coat and finish coats. That is about two 4.5-gallon buckets per 1,000 sq ft.\n\nCorners, patches and a heavy texture use more. A smooth Level 5 finish, with a skim coat over the whole surface, uses a lot more.\n\n## What drywall costs in 2026\n\nAccording to Angi's 2026 data:\n\n- **Installed:** $1.50 to $3 per sq ft, materials and labor\n- **Average project:** $2,104, typically $1,000 to $3,253\n- **A standard 1/2 in panel:** about $20\n- **Labor:** about 70% of the total, or $1 to $2.10 per sq ft\n- **Finish levels:** from $0.80 to $1 per sq ft for hung only, up to $2 to $3.50 for a Level 5 skim coat\n\n## Tips for hanging\n\n- **Ceilings first, then walls.** The wall sheets help hold up the edges of the ceiling.\n- **Hang walls horizontally** on 8 ft walls. It usually means fewer seams at eye level.\n- **Stagger the joints** so the ends of sheets do not line up from one row to the next.\n- **Do not over-drive screws.** The head should sit just below the paper, not tear it.\n- **Prime before painting.** New drywall needs a primer to take paint evenly. See the [primer calculator](/blog/primer-calculator/).\n\n## Frequently asked questions\n\n### How many sheets of drywall for a 10 x 12 room?\n\nWith 8 ft walls, one door, one window and the ceiling, about 16 sheets of 4 x 8 with 10% extra: 11 for the walls and 5 for the ceiling.\n\n### How many screws per sheet of drywall?\n\nAbout 28 on a wall and 36 on a ceiling for a 4 x 8 sheet on framing 16 in apart.\n\n### Should I subtract doors and windows?\n\nFor an estimate, yes. Some installers skip it and keep the extra for mistakes. The 10% waste covers most of the cut-outs either way.\n\n### What thickness of drywall should I use?\n\n1/2 in is standard for walls in homes. Some places need 5/8 in Type X fire-rated board; the IRC, for example, calls for it on a garage ceiling that has living space above. Check local code.\n\n## Next step\n\nOnce the walls are finished, the [primer calculator](/blog/primer-calculator/) and [paint calculator](/blog/paint-calculator/) cover the rest of the job.\n\n*Follow your local building code for board type, thickness and fastening, especially for fire-rated assemblies.*\n\n## Sources\n\n- [IRC Table R702.3.5 gypsum board fastening (Coeur d'Alene handout)](https://www.cdaid.org/files/Building/Handouts/Drywall_Nailing_Fastening.pdf)\n- [ProForm multi-use joint compound: 9 gallons per 1,000 sq ft](https://www.proformfinishing.com/products/ready-mix/multi-use-joint-compound)\n- [Angi: How much does drywall installation cost? (updated July 2026)](https://www.angi.com/articles/what-cost-install-drywall.htm)\n"
+}

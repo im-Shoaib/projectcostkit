@@ -1,0 +1,43 @@
+{
+  "title": "Flooring Calculator: How Many Boxes of Flooring to Buy",
+  "slug": "flooring-calculator",
+  "description": "Measure your room, add the right waste factor and get the number of boxes of laminate, vinyl plank or hardwood to buy, plus the material cost.",
+  "category": "flooring",
+  "date": "2026-10-20",
+  "status": "published",
+  "featured": 3,
+  "seoTitle": "Flooring Calculator: Square Feet and Boxes",
+  "cover": {
+    "src": "/assets/img/posts/cover-flooring-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-flooring-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of floor planks on a flooring & tile blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/flooring-calculator.jpg",
+  "tool": {
+    "id": "flooring",
+    "name": "Flooring calculator",
+    "short": "Boxes of laminate, LVP or hardwood",
+    "icon": "floor"
+  },
+  "keywords": [
+    "flooring calculator",
+    "how much flooring do I need",
+    "boxes of flooring",
+    "laminate calculator",
+    "vinyl plank calculator",
+    "hardwood calculator"
+  ],
+  "related": [
+    "flooring-waste-factor",
+    "laminate-vs-vinyl-plank-cost",
+    "baseboard-calculator"
+  ],
+  "takeaways": [
+    "Measure each rectangle of floor, add them up, then add 5% to 15% for cuts depending on the room.",
+    "Divide by the coverage printed on the box and always round up to a whole box.",
+    "A 12 x 14 ft room with 10% extra needs about 185 sq ft, which is 10 boxes at 20 sq ft per box."
+  ],
+  "body": "Flooring is sold by the box, and every box covers a fixed number of square feet. That turns the job into three steps: measure the floor, add extra for the pieces you will cut off, and divide by what one box covers. The tool at the top of the page does all three. You can add as many rectangles as the room needs, which is how you handle L-shaped rooms, closets and hallways.\n\n## How to measure a room for flooring\n\n1. **Sketch the floor plan** on paper, roughly to shape. Mark doorways, closets and any island or fixed cabinet.\n2. **Break it into rectangles.** An L-shaped room is two rectangles. A room with a closet is a big rectangle plus a small one.\n3. **Measure each rectangle** wall to wall, at the floor. Round up to the next inch, or the next centimeter.\n4. **Include closets and the space under doors.** The floor runs to the middle of each doorway, where it meets a transition strip.\n5. **Leave out fixed things** like kitchen islands and cabinets. Measure the floor on each side of them as separate rectangles instead.\n\nBuildDirect's measuring guide recommends exactly this: split the space into rectangles, sketch it, and treat triangles as length times width divided by two.\n\n## How much extra to add\n\nYou will cut planks at every wall, around door frames and at the end of each row. Those offcuts are the waste. A sensible amount:\n\n- **5%** for a simple square room with a straight layout, if you are careful with offcuts.\n- **10%** for most rooms. This is the default in the calculator.\n- **15%** for diagonal layouts, triangular rooms or rooms with a lot of angles and obstacles.\n\nBuildDirect puts it at least 5% for DIY installs, 10% for complicated shapes and 15% for triangular rooms. Our [flooring waste factor guide](/blog/flooring-waste-factor/) goes into more detail, including tile and herringbone patterns.\n\n## A worked example: a 12 x 14 ft bedroom\n\n- Floor area: 12 × 14 = 168 sq ft\n- With 10% extra: 168 × 1.10 = 184.8 sq ft\n- Boxes at 20 sq ft each: 184.8 ÷ 20 = 9.24, so **10 boxes**\n- You actually receive 10 × 20 = 200 sq ft\n- At $3.50 per sq ft, the material costs **$700**\n\nNow say the bedroom has a 6 x 4 ft walk-in closet. Add a second rectangle: 24 sq ft more. The total becomes 192 sq ft, 211.2 with waste, and 11 boxes.\n\n## Box sizes vary, so check yours\n\nTwo laminate floors that look alike on the shelf can come in boxes of very different sizes, because plank length, width and thickness all change how much fits in a carton. Tile is sold by the box too, but usually by piece count, so use the [tile calculator](/blog/tile-calculator/) for that.\n\nThe coverage is printed on the end of the box and on the product page. Type it into the calculator, because a 19.3 sq ft box and a 23.4 sq ft box make a real difference over a whole floor.\n\n## What flooring costs in 2026\n\nMaterial prices per square foot, from Angi's 2026 flooring data:\n\n| Flooring | Material per sq ft |\n| --- | --- |\n| Laminate | $3 to $13 |\n| Vinyl | $2 to $14 |\n| Carpet | $3.50 to $11 |\n| Hardwood | $6 to $25 |\n| Tile | $15 to $20 |\n\nProfessional installation adds about $0.60 to $4 per sq ft for labor, and taking out the old floor adds $1.50 to $3.50 per sq ft. If you are choosing between laminate and vinyl plank, our [laminate vs vinyl plank cost guide](/blog/laminate-vs-vinyl-plank-cost/) compares the two side by side.\n\n## Before you order\n\n- **Buy everything at once.** Flooring is made in production runs, and the color can shift slightly between them. Check that every box shows the same lot number.\n- **Keep a spare box.** After the job, a full box in the garage is the easiest way to repair a damaged plank years later.\n- **Let it acclimate.** Most laminate and wood makers want the boxes in the room for a day or two before installation. Check the instructions on the box.\n- **Remember the extras.** Underlayment (unless it is attached), transition strips, baseboard or quarter round, and spacers. The [baseboard calculator](/blog/baseboard-calculator/) handles the trim.\n\n## Frequently asked questions\n\n### How many boxes of flooring do I need for a 12 x 12 room?\n\n144 sq ft plus 10% is 158.4 sq ft. At 20 sq ft per box, that is 8 boxes (160 sq ft).\n\n### Do I include the closet in my measurements?\n\nYes. Measure it as its own rectangle and add it in. The flooring usually continues into the closet without a break.\n\n### Should I add waste if the store accepts returns?\n\nYes. Running short in the middle of a job is worse than returning an unopened box. Many stores take unopened boxes back within a set time, so ask before you buy.\n\n### Is the calculator good for carpet?\n\nCarpet is sold off a roll, usually 12 ft wide, so the waste depends on seams rather than a simple percentage. Use the calculator for the square footage, then ask the carpet store to plan the seams.\n\n## Next step\n\nOnce you know the boxes, check the [flooring waste factor guide](/blog/flooring-waste-factor/) if your room has angles, and use the [baseboard calculator](/blog/baseboard-calculator/) for the trim around the edges.\n\n*Quantities are estimates. Confirm box coverage and installation requirements with the flooring maker before ordering.*\n\n## Sources\n\n- [BuildDirect: How to measure a floor for a flooring installation (waste factors)](https://www.builddirect.com/blogs/expert-advice-on-flooring/how-to-measure-a-floor-for-a-flooring-installation)\n- [Angi: How much does flooring installation cost? (updated October 2026)](https://www.angi.com/articles/how-much-should-my-new-floor-cost.htm)\n"
+}

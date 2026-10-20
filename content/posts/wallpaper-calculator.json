@@ -1,0 +1,41 @@
+{
+  "title": "Wallpaper Calculator: How Many Rolls Do I Need?",
+  "slug": "wallpaper-calculator",
+  "description": "Count rolls of wallpaper for a room or a feature wall, with the pattern repeat included, for US double rolls and European rolls.",
+  "category": "building",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Wallpaper Calculator: How Many Rolls to Buy",
+  "cover": {
+    "src": "/assets/img/posts/cover-wallpaper-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-wallpaper-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a roll of wallpaper on a concrete & walls blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/wallpaper-calculator.jpg",
+  "tool": {
+    "id": "wallpaper",
+    "name": "Wallpaper calculator",
+    "short": "Rolls for a room or feature wall",
+    "icon": "wallpaper"
+  },
+  "keywords": [
+    "wallpaper calculator",
+    "how many rolls of wallpaper",
+    "wallpaper pattern repeat",
+    "double roll wallpaper",
+    "european wallpaper roll"
+  ],
+  "related": [
+    "paint-calculator",
+    "drywall-calculator",
+    "square-footage-calculator"
+  ],
+  "takeaways": [
+    "Count strips, not square feet: strips needed = wall width ÷ roll width, and strips per roll = roll length ÷ (wall height + repeat + trim).",
+    "A 12 x 10 ft room with 8 ft walls takes 9 US double rolls of plain paper.",
+    "A European roll (about 53 cm x 10 m) covers about the same as a US double roll, about 57 sq ft."
+  ],
+  "body": "Wallpaper is the one material where square feet will lead you astray. Paper is hung in vertical strips the full height of the wall, and whatever is left at the end of a roll is often too short for another strip. A large pattern repeat makes that worse, because each strip has to start at the same point in the design. So this calculator counts the way a paper hanger does: in strips.\n\n## How the calculator works\n\n1. **Wall width.** For a whole room, the perimeter. For a feature wall, just that wall.\n2. **Strip length** = wall height + pattern repeat + 4 inches (2 in of trim at the top and bottom).\n3. **Strips per roll** = roll length ÷ strip length, rounded **down**, because a partial strip is useless.\n4. **Strips needed** = wall width ÷ roll width, rounded up.\n5. **Rolls** = strips needed ÷ strips per roll, rounded up.\n\nThe trim margin matches what one wallpaper retailer, Selected Wallpapers, uses in its own calculator: about 2 inches (5 cm) on every side, plus extra length for the repeat.\n\n## A worked example: a 12 x 10 ft bedroom\n\n8 ft walls, US double rolls (20.5 in wide, 33 ft long), plain paper with no repeat:\n\n- Wall width: 2 × (12 + 10) = 44 ft, or 528 in\n- Strips needed: 528 ÷ 20.5 = 25.8, so **26 strips**\n- Strip length: 96 + 0 + 4 = 100 in\n- Strips per roll: 396 in ÷ 100 = 3.96, so **3 strips per roll**\n- Rolls: 26 ÷ 3 = 8.7, so **9 rolls**\n\nWith a 21 inch repeat, each strip becomes 121 inches long. A 396 inch roll still gives 3 strips, so the answer stays at 9 rolls. A bigger repeat on a taller wall can drop you to 2 strips per roll, and then the count jumps.\n\nA single 12 ft feature wall in the same paper needs 8 strips, or **3 rolls**.\n\n## Roll sizes\n\n| Roll | Size | Coverage |\n| --- | --- | --- |\n| US double roll | 20.5 to 27 in wide, 27 to 33 ft long | about 56 to 70 sq ft |\n| European roll | about 53 cm x 10 m (20.9 in x 32.8 ft) | about 57 sq ft (5.3 m²) |\n\nSelected Wallpapers treats one European roll as roughly equal to one US double roll. US wallpaper is often priced per single roll but sold only in double rolls, so check what the price refers to.\n\nIf your paper is a different size, pick the closest roll type and check the strips per roll against the label.\n\n## Why doors and windows are not taken off\n\nThe calculator does not subtract openings, and neither do most professional estimates. Over a door, you still need a short strip at the top, and those short pieces rarely come from offcuts that match the pattern. Selected Wallpapers' calculator does not subtract windows or doors either. The paper you would save is your safety margin.\n\n## Pattern repeat and match\n\nThe repeat is the vertical distance before the design starts over. It is printed on the label.\n\n- **Random or free match:** no repeat. Use 0.\n- **Straight match:** the pattern lines up straight across from strip to strip. Add the repeat.\n- **Half-drop match:** every other strip is shifted down by half the repeat. Add the full repeat to be safe.\n\n## Buying tips\n\n- **Buy every roll from the same batch.** Wallpaper is printed in batches, and colors can vary slightly between them. The batch or lot number is on the label.\n- **Buy one extra roll.** It covers a mistake, a hidden damaged roll, and a future repair.\n- **Check all rolls before you start** for the same batch number and any printing defects.\n- **Prime the walls** if the maker recommends it. Some papers need a wallpaper primer to stick well and come off cleanly later.\n\n## Frequently asked questions\n\n### How many rolls of wallpaper for a 10 x 10 room?\n\nWith 8 ft walls and plain US double rolls: 40 ft of wall needs 24 strips, at 3 strips per roll, so 8 rolls.\n\n### How many rolls for an accent wall?\n\nFor a 12 ft wall, 8 ft high, in 20.5 in wide double rolls: 8 strips and 3 rolls.\n\n### Does the pattern repeat really matter?\n\nYes. A large repeat can turn 3 strips per roll into 2, which can add several rolls to a room.\n\n### Should I subtract the windows?\n\nNot for buying. Keep the extra paper as your spare.\n\n## Next step\n\nPainting the other walls instead of papering them? The [paint calculator](/blog/paint-calculator/) covers a room or a single wall. Need the area of an awkward room first? Try the [square footage calculator](/blog/square-footage-calculator/).\n\n*Always check strips per roll against the label of the paper you buy.*\n\n## Sources\n\n- [Selected Wallpapers: European rolls vs double rolls (sizes, coverage, calculator method)](https://www.selectedwallpapers.com/pages/european-rolls-vs-double-rolls)\n"
+}

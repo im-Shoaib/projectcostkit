@@ -1,0 +1,10 @@
+# Cache rules (used by Netlify or Cloudflare Pages if the site ever moves there; GitHub Pages ignores this file)
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/img/*
+  Cache-Control: public, max-age=2592000
+/assets/js/*
+  Cache-Control: public, max-age=86400
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

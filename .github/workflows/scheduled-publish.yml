@@ -1,0 +1,33 @@
+name: Scheduled publish
+on:
+  schedule:
+    - cron: "10 1 * * *"      # 01:10 UTC daily (06:10 in Pakistan). GitHub often runs scheduled jobs late; that is fine.
+  workflow_dispatch:          # lets you run it by hand from the Actions tab
+permissions:
+  contents: write
+concurrency:
+  group: scheduled-publish
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Karachi        # your time zone, so "today" matches yours
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Rebuild site
+        run: node build.js
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "site-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing new to publish today."
+          else
+            git commit -m "Scheduled publish $(date +%F)"
+            git push
+          fi

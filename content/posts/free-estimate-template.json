@@ -1,0 +1,42 @@
+{
+  "title": "Free Estimate Template for Contractors: Build and Print a Quote",
+  "slug": "free-estimate-template",
+  "description": "Fill in your business, client and line items to get a clean printable estimate with tax, deposit and terms. Save it as a PDF, nothing to sign up for.",
+  "category": "for-pros",
+  "date": "2026-10-20",
+  "status": "published",
+  "seoTitle": "Free Contractor Estimate Template (Printable)",
+  "cover": {
+    "src": "/assets/img/posts/cover-free-estimate-template-1200x675.webp",
+    "src600": "/assets/img/posts/cover-free-estimate-template-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a written estimate on a for pros blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/free-estimate-template.jpg",
+  "tool": {
+    "id": "quote",
+    "name": "Free estimate builder",
+    "short": "A printable quote in two minutes",
+    "icon": "quote"
+  },
+  "keywords": [
+    "free estimate template",
+    "contractor estimate template",
+    "painting estimate template",
+    "quote template",
+    "printable estimate form",
+    "handyman estimate template"
+  ],
+  "related": [
+    "painting-estimate-calculator",
+    "markup-vs-margin-calculator",
+    "contractor-website-checklist"
+  ],
+  "takeaways": [
+    "A good estimate lists the scope line by line, the total, the deposit, how long the price is valid and what is not included.",
+    "Use \"Print or save as PDF\" to email the estimate. Your entries stay in your browser and are not sent anywhere.",
+    "Spell out exclusions. Most disputes come from what the client assumed was included."
+  ],
+  "body": "A clear written estimate wins jobs. It shows the homeowner exactly what they are paying for, it makes your price easier to compare fairly against a vaguer one, and it protects both of you when the job is done. This builder gives you a clean, professional estimate in a couple of minutes. Fill in the fields on the left, watch the preview on the right, then print it or save it as a PDF.\n\n## How to use the builder\n\n1. **Your business:** name, then phone, email and license number on one line.\n2. **Client and job:** the client's name, the job address, an estimate number and the date.\n3. **Line items:** one line per part of the job. Add as many as you need.\n4. **Terms:** sales tax if your state charges it on your work, a deposit percentage, how many days the price is valid, and your notes.\n5. **Print or save as PDF:** your browser's print window opens. Choose \"Save as PDF\" as the printer to get a file you can email.\n\nYour entries are saved in this browser so you can come back to them. Nothing is sent to us or anyone else. Use \"Start over\" to clear it for the next client.\n\n## What a solid estimate includes\n\n**A specific scope.** \"Paint living room\" is vague. \"Living room: patch nail holes, caulk trim, two coats on walls in Sherwin-Williams Duration, matte, client's color\" is a scope. The more specific the lines, the fewer arguments at the end.\n\n**Line items with quantities.** Break the job into steps or areas: prep, each room, trim, materials. Clients like seeing where the money goes, and it lets them drop a line if they need to cut cost.\n\n**The total, tax and deposit.** If you take a deposit, show the amount. Some states and cities limit how much a contractor can ask up front for home improvement work, so check your local rules.\n\n**How long the price is valid.** Materials change price. Thirty days is common; the builder fills in the expiry date for you.\n\n**Exclusions.** List what is not included: moving heavy furniture, repairing rotten wood found during prep, painting closets, permits. \"Not included\" lines prevent most \"I thought that was part of it\" disputes.\n\n**Payment terms.** When the balance is due and how you accept payment.\n\n**A signature line.** A signed estimate becomes the client's approval to start.\n\n## Line item examples\n\nFor a painting job:\n\n| Item | Qty | Price |\n| --- | --- | --- |\n| Prep: patch, sand and caulk walls and trim | 1 | $250 |\n| Living room walls, 2 coats | 1 | $850 |\n| Paint and supplies | 1 | $180 |\n\nFor a handyman visit:\n\n| Item | Qty | Price |\n| --- | --- | --- |\n| Install ceiling fan (customer-supplied) | 1 | $120 |\n| Replace 3 interior door handles | 3 | $35 |\n| Trip and supply run | 1 | $40 |\n\n## Pricing the lines\n\nYour line prices should come from your costs, not from a guess. The [painting estimate calculator](/blog/painting-estimate-calculator/) builds a paint job price from hours, materials, overhead and margin. The [handyman pricing calculator](/blog/handyman-pricing-calculator/) does the same for small jobs, including a minimum charge. If you add a markup to materials, the [markup vs margin calculator](/blog/markup-vs-margin-calculator/) shows what profit that leaves.\n\n## Estimate vs quote vs contract\n\nIn everyday use, contractors mix these words up, and the legal meaning varies by place. Broadly:\n\n- An **estimate** is your best price for the described work, which can change if the work changes.\n- A **quote** or bid is a fixed price for a defined scope.\n- A **contract** is the signed agreement, often including the estimate plus terms, timelines and warranty.\n\nFor bigger jobs, many states require a written contract with specific terms for home improvement work. Check with your state's contractor licensing board.\n\n## Frequently asked questions\n\n### How do I save the estimate as a PDF?\n\nClick \"Print or save as PDF\", then choose \"Save as PDF\" or \"Microsoft Print to PDF\" as the printer.\n\n### Can I add my logo?\n\nNot in this version. Your business name prints at the top in large type, which reads cleanly on screen and paper.\n\n### Is my client's information stored online?\n\nNo. Everything stays in your browser's local storage on this device.\n\n### Can I use it on my phone?\n\nYes. The builder works on a phone, and you can share the PDF straight from your phone's print or share menu.\n\n## Next step\n\nWant clients to find you before they ask for estimates? Read the [contractor website checklist](/blog/contractor-website-checklist/), or see how we build [websites for contractors](/websites-for-contractors/).\n\n*This template is a starting point, not legal advice. Contract requirements vary by state and country.*\n"
+}

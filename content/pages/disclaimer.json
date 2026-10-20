@@ -1,0 +1,10 @@
+{
+  "title": "Disclaimer",
+  "slug": "disclaimer",
+  "navLabel": "Disclaimer",
+  "nav": false,
+  "order": 4,
+  "updated": "2026-10-20",
+  "description": "The calculators and cost ranges on ProjectCostKit are for planning only. Read how to use them safely before you buy materials or hire anyone.",
+  "body": "The calculators, cost ranges and guides on {{siteName}} are for general information and planning only.\n\n## Estimates, not quotes\n\nMaterial quantities depend on the exact product, the condition of the surface, how it is installed and how much waste a job produces. Prices depend on your region, the season, the supplier and the details of the job. Always confirm quantities with your supplier and get written quotes from contractors before you commit.\n\n## Not professional advice\n\nNothing on this site is engineering, legal, tax or financial advice. Structural work such as footings, decks, retaining walls and load-bearing changes must follow your local building code and may need a permit, an inspection or a licensed professional. Tax figures for contractors are general and can change; check them with an accountant.\n\n## Safety\n\nFollow the safety instructions of every tool and product you use. Work on ladders, roofs and scaffolding, with power tools, or with older homes that may contain lead paint or asbestos carries real risk. If you are unsure, hire a qualified professional.\n\n## Third-party information and links\n\nWe link to manufacturers, cost-data publishers and government sources so you can check the numbers. We are not responsible for the content of those sites, and their figures can change after we cite them.\n\n## Advertising and affiliate links\n\nThis site may show ads, and some links may be affiliate links that pay us a small commission at no extra cost to you. That never changes what a calculator calculates or which sources a guide uses.\n\n## Liability\n\n{{siteName}} provides this information \"as is,\" without warranties of any kind. To the extent the law allows, we are not liable for any loss or damage arising from the use of the calculators or guides.\n"
+}

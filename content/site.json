@@ -1,0 +1,124 @@
+{
+  "name": "ProjectCostKit",
+  "shortName": "ProjectCostKit",
+  "tagline": "Free calculators and plain-English cost guides for home projects, built for homeowners and the pros they hire.",
+  "intro": "Measure the room, get the number. Paint, flooring, concrete, fencing and more, with the math shown so you can check it.",
+  "description": "Free home project calculators and cost guides: paint, flooring, tile, mulch, gravel, concrete, decks, drywall and pricing tools for contractors.",
+  "seoTitle": "ProjectCostKit: Free Home Project Calculators and Cost Guides",
+  "url": "https://projectcostkit.com",
+  "language": "en",
+  "locale": "en_US",
+  "perPage": 9,
+  "ogDefault": "assets/img/og-default.png",
+  "author": {
+    "name": "ProjectCostKit",
+    "bio": "ProjectCostKit builds free calculators and cost guides for home projects. Every formula is checked against manufacturer data or building code, and every price range links to its source.",
+    "email": "hello@projectcostkit.com",
+    "sameAs": []
+  },
+  "hero": {
+    "title": "Know what your project needs before you buy a thing.",
+    "text": "Free calculators for paint, flooring, concrete, mulch, decks and more. Every formula is checked against manufacturer data, and every price range shows where it came from.",
+    "searchLabel": "Search calculators and guides",
+    "points": [
+      "Works in feet or meters, dollars, pounds or euros",
+      "The math is explained under every calculator",
+      "No sign-up, nothing to install"
+    ]
+  },
+  "heroCalc": "paint-quick",
+  "toolsTitle": "Popular calculators",
+  "toolsText": "Each one remembers your last numbers, so you can come back to them.",
+  "startText": "Good first reads if you are planning a project this season.",
+  "popularTools": [
+    "paint-calculator",
+    "flooring-calculator",
+    "concrete-calculator",
+    "mulch-calculator",
+    "tile-calculator",
+    "fence-calculator",
+    "gravel-calculator",
+    "drywall-calculator",
+    "square-footage-calculator"
+  ],
+  "toolsPage": {
+    "title": "All calculators",
+    "seoTitle": "All Home Project Calculators",
+    "text": "Every calculator on the site, grouped by project. Each one works in feet or meters and remembers your last numbers.",
+    "description": "Every free ProjectCostKit calculator in one place: paint, flooring, tile, grout, mulch, gravel, fencing, decks, concrete, drywall and contractor pricing."
+  },
+  "promo": {
+    "title": "Run a painting, handyman or remodeling business?",
+    "text": "Price jobs with the same numbers you would use on site: estimates, hourly rates, markup and a printable quote. And if your business needs a website that brings in calls, we build those too.",
+    "links": [
+      { "label": "Tools for pros", "href": "/category/for-pros/" },
+      { "label": "Websites for contractors", "href": "/websites-for-contractors/" }
+    ]
+  },
+  "categories": [
+    {
+      "slug": "painting",
+      "name": "Painting",
+      "navLabel": "Painting",
+      "title": "Painting calculators and cost guides",
+      "seoTitle": "Paint Calculators and Painting Cost Guides",
+      "color": "#B93B35",
+      "icon": "roller",
+      "short": "How much paint and primer, and what a painter should charge.",
+      "description": "Work out how much paint and primer to buy, how many coats you need, and what it costs to paint a room or a house yourself or with a pro."
+    },
+    {
+      "slug": "flooring",
+      "name": "Flooring & Tile",
+      "navLabel": "Flooring",
+      "title": "Flooring and tile calculators",
+      "seoTitle": "Flooring, Tile and Grout Calculators",
+      "color": "#8F5F2A",
+      "icon": "floor",
+      "short": "Boxes of flooring, tiles, grout and baseboard.",
+      "description": "Measure a room once and get boxes of flooring, tiles, bags of grout and lengths of baseboard, plus what laminate and vinyl plank really cost."
+    },
+    {
+      "slug": "outdoor",
+      "name": "Outdoor & Yard",
+      "navLabel": "Outdoor",
+      "title": "Outdoor and yard project calculators",
+      "seoTitle": "Mulch, Gravel, Fence, Deck and Paver Calculators",
+      "color": "#2C7A4B",
+      "icon": "mulch",
+      "short": "Mulch, gravel, fences, decks and paver patios.",
+      "description": "Order the right amount of mulch and gravel, count fence posts and deck boards, and price a deck or paver patio before you call anyone."
+    },
+    {
+      "slug": "building",
+      "name": "Concrete & Walls",
+      "navLabel": "Building",
+      "title": "Concrete, drywall and wall calculators",
+      "seoTitle": "Concrete, Drywall and Wallpaper Calculators",
+      "color": "#566676",
+      "icon": "concrete",
+      "short": "Concrete, post holes, drywall, wallpaper and area.",
+      "description": "Bags or ready-mix for a slab, concrete for fence posts, sheets of drywall, rolls of wallpaper and the square footage of any room."
+    },
+    {
+      "slug": "for-pros",
+      "name": "For Pros",
+      "navLabel": "For Pros",
+      "title": "Pricing tools for contractors and handymen",
+      "seoTitle": "Pricing Calculators and Guides for Contractors",
+      "color": "#235C9C",
+      "icon": "clipboard",
+      "short": "Estimates, hourly rates, markup and quotes.",
+      "description": "Price jobs so they pay: painting estimates, hourly rates, markup versus margin, a printable estimate builder, and how to get found online."
+    }
+  ],
+  "newsletter": {
+    "action": "",
+    "field": "email",
+    "title": "Get new calculators by email",
+    "text": "One short email when a new calculator or guide goes up. No spam."
+  },
+  "disclaimer": "Calculators and price ranges are for planning only. Materials, labor rates and codes vary by region, so confirm quantities with your supplier and get written quotes before you start.",
+  "headCode": "",
+  "bodyCode": ""
+}
