@@ -123,6 +123,6 @@
     "text": "One short email when a new calculator or guide goes up. No spam."
   },
   "disclaimer": "Calculators and price ranges are for planning only. Materials, labor rates and codes vary by region, so confirm quantities with your supplier and get written quotes before you start.",
-  "headCode": "",
+  "headCode": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-M9FRJ53HFT\"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag(\"js\",new Date());gtag(\"config\",\"G-M9FRJ53HFT\");</script>",
   "bodyCode": ""
 }
