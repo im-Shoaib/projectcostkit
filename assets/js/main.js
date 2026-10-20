@@ -147,4 +147,34 @@
     }, { rootMargin: '-80px 0px -70% 0px' });
     Object.keys(map).forEach(function (id) { var h = document.getElementById(id); if (h) obs.observe(h); });
   }
+
+  /* ---- website enquiry form: opens WhatsApp (or email) with the details filled in ---- */
+  var waForm = document.querySelector('form[data-wa-form]');
+  if (waForm) {
+    var compose = function () {
+      var f = waForm.elements, val = function (n) { return f[n] && f[n].value.trim(); };
+      var lines = ['Hi, I would like a website for my business.', ''];
+      [['Name', 'name'], ['Business', 'business'], ['Trade', 'trade'], ['Location', 'city'], ['Plan', 'plan'], ['Current website', 'site'], ['Notes', 'msg']]
+        .forEach(function (x) { var v = val(x[1]); if (v) lines.push(x[0] + ': ' + v); });
+      return lines.join('\n');
+    };
+    waForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!waForm.reportValidity()) return;
+      window.open('https://wa.me/' + waForm.getAttribute('data-wa') + '?text=' + encodeURIComponent(compose()), '_blank', 'noopener');
+    });
+    var mailBtn = waForm.querySelector('[data-wa-mail]');
+    if (mailBtn) mailBtn.addEventListener('click', function () {
+      if (!waForm.reportValidity()) return;
+      var biz = waForm.elements.business.value.trim();
+      location.href = 'mailto:' + waForm.getAttribute('data-email') + '?subject=' + encodeURIComponent('Website for ' + (biz || 'my business')) + '&body=' + encodeURIComponent(compose());
+    });
+    // "Choose plan" buttons pick that plan in the form
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('[data-plan]');
+      if (!b || !waForm.elements.plan) return;
+      var want = b.getAttribute('data-plan');
+      Array.prototype.forEach.call(waForm.elements.plan.options, function (o) { if (o.text.indexOf(want) === 0) o.selected = true; });
+    });
+  }
 })();

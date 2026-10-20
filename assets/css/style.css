@@ -262,6 +262,70 @@ p { margin: 0 0 1em; }
 .cta-box h3 { color: #fff; margin-top: 0 !important; }
 .cta-box p { color: #C9D7E5; }
 .cta-box a:not(.btn) { color: #fff; }
+
+/* ---------- websites for contractors page ---------- */
+.prose .wide { width: min(1076px, 100vw - 32px); margin-left: calc((100% - min(1076px, 100vw - 32px)) / 2); }
+.svc-cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 1.6em 0 .6em; }
+.btn-wa { background: #25D366; color: #0B2E17; }
+.btn-wa:hover { background: #1EBE5A; }
+.btn-wa .ico { width: 20px; height: 20px; }
+.pf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 1.6em 0 2.4em; }
+.prose a.pf-card, .pf-card { display: flex; flex-direction: column; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none; box-shadow: var(--shadow); transition: border-color .15s, transform .15s; }
+.prose a.pf-card:hover { border-color: var(--navy); transform: translateY(-2px); }
+.prose .pf-card img { margin: 0; border-radius: 0; aspect-ratio: 8 / 5; object-fit: cover; object-position: top; width: 100%; border-bottom: 1px solid var(--line); }
+.pf-body { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 18px; font-size: .94rem; color: var(--muted); line-height: 1.5; flex: 1; }
+.pf-body b { color: var(--ink); font-size: 1.05rem; line-height: 1.3; }
+.pf-trade { align-self: flex-start; font-size: .78rem; font-weight: 600; padding: 2px 10px; border-radius: 999px; background: var(--surface-2); color: var(--ink); }
+.pf-open { margin-top: auto; padding-top: 8px; font-weight: 600; color: var(--link); }
+.pf-yours { background: var(--surface-2); border-style: dashed; border-color: var(--line-strong); box-shadow: none; justify-content: center; }
+.pf-yours .pf-body { justify-content: center; gap: 10px; padding: 24px; }
+.pf-yours .btn { align-self: flex-start; margin-top: 6px; }
+.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; margin: 1.6em 0 1.2em; }
+.price-card { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 26px 24px 24px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); }
+.price-card.is-pop { border: 2px solid var(--navy); background: color-mix(in srgb, var(--navy) 5%, var(--surface)); }
+.prose .price-card p { margin: 0; }
+.price-flag { position: absolute; top: -13px; left: 24px; padding: 3px 12px; border-radius: 999px; background: var(--tape); color: var(--tape-ink); font-size: .8rem; font-weight: 600; }
+.price-name { font-weight: 600; font-size: 1.1rem; }
+.price-amt { font-size: 2.9rem; font-weight: 700; line-height: 1.05; letter-spacing: -.03em; color: var(--ink); }
+.price-amt span { font-size: 1.4rem; vertical-align: top; position: relative; top: .35em; margin-right: 2px; font-weight: 600; }
+.price-for { color: var(--muted); font-size: .94rem; line-height: 1.55; min-height: 4.6em; }
+.prose .price-list { list-style: none; padding: 14px 0 0; margin: 10px 0 18px; border-top: 1px solid var(--line); display: grid; gap: 8px; font-size: .93rem; line-height: 1.45; }
+.prose .price-list li { margin: 0; padding-left: 26px; position: relative; }
+.price-list li::before { content: ""; position: absolute; left: 0; top: .2em; width: 17px; height: 17px; border-radius: 50%; background: color-mix(in srgb, var(--good) 16%, var(--surface)); }
+.price-list li::after { content: ""; position: absolute; left: 5.5px; top: calc(.2em + 4px); width: 6px; height: 3.5px; border-left: 2px solid var(--good); border-bottom: 2px solid var(--good); transform: rotate(-45deg); }
+.price-card .btn { margin-top: auto; }
+.price-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; padding: 18px 20px; border-radius: var(--radius); background: var(--surface-2); font-size: .93rem; color: var(--muted); }
+.prose .price-notes p { margin: 0; }
+.price-notes b { color: var(--ink); }
+.faq-list { border-top: 1px solid var(--line); margin: 1em 0 1.6em; }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; padding: 15px 2px; font-weight: 600; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--muted); }
+.faq-list details[open] summary::after { content: "\2212"; }
+.prose .faq-list details p { margin: 0 2px 16px; color: var(--muted); }
+.wa-form { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 16px; margin: 1.4em 0 1em; padding: 24px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); }
+.wa-form label { display: grid; gap: 6px; font-size: .9rem; font-weight: 600; }
+.wa-form .full { grid-column: 1 / -1; }
+.wa-form input, .wa-form select, .wa-form textarea { width: 100%; min-height: 46px; padding: 10px 12px; border-radius: var(--radius-sm); border: 1.5px solid var(--line-strong); background: var(--paper); color: var(--ink); font: 400 1rem var(--font); }
+.wa-form textarea { min-height: 0; resize: vertical; }
+.wa-form input:focus, .wa-form select:focus, .wa-form textarea:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 25%, transparent); }
+.wa-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 40; display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: #25D366; color: #fff; box-shadow: 0 10px 24px -8px rgba(0, 0, 0, .45); }
+.prose .wa-float { color: #fff; }
+.wa-float:hover { background: #1EBE5A; }
+@media (max-width: 1000px) {
+  .pf-grid, .price-grid { grid-template-columns: 1fr 1fr; }
+  .price-grid .price-card:last-child { grid-column: 1 / -1; }
+  .wa-form { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .pf-grid, .price-grid, .price-notes, .wa-form { grid-template-columns: 1fr; }
+  .price-grid { gap: 26px; }
+  .price-for { min-height: 0; }
+  .wa-form { padding: 18px; }
+}
+@media print { .wa-float, .svc-cta { display: none; } }
 .share { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 18px 0; margin-top: 32px; border-top: 1px solid var(--line); font-size: .92rem; }
 .share span { font-weight: 600; }
 .share a { color: var(--muted); }

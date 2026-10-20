@@ -16,6 +16,10 @@
     "email": "hello@projectcostkit.com",
     "sameAs": []
   },
+  "whatsapp": {
+    "number": "923020074606",
+    "display": "+92 302 0074606"
+  },
   "hero": {
     "title": "Know what your project needs before you buy a thing.",
     "text": "Free calculators for paint, flooring, concrete, mulch, decks and more. Every formula is checked against manufacturer data, and every price range shows where it came from.",
@@ -49,10 +53,10 @@
   },
   "promo": {
     "title": "Run a painting, handyman or remodeling business?",
-    "text": "Price jobs with the same numbers you would use on site: estimates, hourly rates, markup and a printable quote. And if your business needs a website that brings in calls, we build those too.",
+    "text": "Price jobs with the same numbers you would use on site: estimates, hourly rates, markup and a printable quote. And if your business needs a website that brings in calls, we build those too, from $50.",
     "links": [
       { "label": "Tools for pros", "href": "/category/for-pros/" },
-      { "label": "Websites for contractors", "href": "/websites-for-contractors/" }
+      { "label": "Websites from $50", "href": "/websites-for-contractors/" }
     ]
   },
   "categories": [

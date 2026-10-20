@@ -111,7 +111,11 @@
       var renderer = {
         heading: function (text, level, raw) {
           var lvl = level === 1 ? 2 : level;
-          var id = slugify(stripTags(raw || text)) || 'section';
+          // "## Heading {#custom-id}" sets the id by hand
+          var reId = /\s*\{#([a-z0-9-]+)\}\s*$/i;
+          var custom = reId.exec(raw || text);
+          if (custom) { text = String(text).replace(reId, ''); raw = String(raw || '').replace(reId, ''); }
+          var id = custom ? custom[1].toLowerCase() : slugify(stripTags(raw || text)) || 'section';
           var base = id, n = 2;
           while (ctx.ids[id]) id = base + '-' + (n++);
           ctx.ids[id] = true;
@@ -530,6 +534,9 @@
         .replace(/\{\{siteUrl\}\}/g, baseUrl)
         .replace(/\{\{email\}\}/g, (site.author && site.author.email) || '')
         .replace(/\{\{author\}\}/g, (site.author && site.author.name) || site.name || '')
+        .replace(/\{\{whatsappLink\}\}/g, site.whatsapp && site.whatsapp.number ? 'https://wa.me/' + String(site.whatsapp.number).replace(/\D/g, '') : '')
+        .replace(/\{\{whatsappNumber\}\}/g, site.whatsapp && site.whatsapp.number ? String(site.whatsapp.number).replace(/\D/g, '') : '')
+        .replace(/\{\{whatsapp\}\}/g, (site.whatsapp && (site.whatsapp.display || site.whatsapp.number)) || '')
         .replace(/\{\{year\}\}/g, String(year));
     }
     function plainPages() {

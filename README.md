@@ -16,6 +16,8 @@ The site is plain HTML, CSS and JavaScript. There is no server, no database and 
 | `assets/js/main.js` | Menu, search and dark mode |
 | `assets/js/calc.js` | All 26 calculators and the estimate builder |
 | `assets/img/` | Covers, social images and icons |
+| `demos/` | Five demo contractor websites linked from the websites-for-contractors page. Plain HTML, not touched by the builder, hidden from Google with noindex |
+| `assets/img/portfolio/` | Screenshots of the demos used on that page |
 | `build.js` | Builds the site from the terminal |
 | `.github/workflows/scheduled-publish.yml` | Rebuilds the site every morning |
 | Everything else at the top level | Generated pages. Do not edit them by hand |
