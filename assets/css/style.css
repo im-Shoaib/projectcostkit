@@ -395,7 +395,10 @@ p { margin: 0 0 1em; }
 /* quote builder */
 .quote-items { display: grid; gap: 8px; }
 .q-row { display: grid; grid-template-columns: 1fr 90px 120px 46px; gap: 8px; align-items: end; }
-@media (max-width: 560px) { .q-row { grid-template-columns: 1fr 1fr 46px; } .q-row .field:first-child { grid-column: 1 / -1; } }
+.q-row.has-tax { grid-template-columns: 1fr 80px 120px 58px 46px; }
+.inp.chk { justify-content: center; min-height: 46px; }
+.inp.chk input { width: 22px; height: 22px; min-height: 0; padding: 0; appearance: auto; -webkit-appearance: checkbox; accent-color: var(--navy); cursor: pointer; }
+@media (max-width: 560px) { .q-row, .q-row.has-tax { grid-template-columns: 1fr 1fr 46px; } .q-row.has-tax { grid-template-columns: 1fr 1fr 58px 46px; } .q-row .field:first-child { grid-column: 1 / -1; } }
 .quote-preview { background: #fff; color: #1F2933; border-radius: 12px; border: 1px solid var(--line); padding: 22px; font-size: .9rem; }
 .quote-preview h3 { color: #16324F; margin: 0 0 2px; }
 .quote-preview table { width: 100%; border-collapse: collapse; margin: 12px 0; }

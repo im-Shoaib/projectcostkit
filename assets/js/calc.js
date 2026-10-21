@@ -20,7 +20,9 @@
     perLen: { imp: 'per ft', met: 'per m', k: 1 / 3.28084 },
     perYd3: { imp: 'per cu yd', met: 'per m³', k: 0.764555 },
     perTon: { imp: 'per ton', met: 'per tonne', k: 0.907185 },
-    weight: { imp: 'lb', met: 'kg', k: 2.204623 }
+    weight: { imp: 'lb', met: 'kg', k: 2.204623 },
+    perSqyd: { imp: 'per sq yd', met: 'per m²', k: 0.836127 },
+    nRate: { imp: 'lb N per 1,000 sq ft', met: 'g N per m²', k: 0.204816 }
   };
   var GAL_L = 3.785412, YD3_FT3 = 27, M3_FT3 = 35.31467, SQM = 10.76391, KG_LB = 2.204623;
 
@@ -848,6 +850,635 @@
   CALCS.quote = { title: 'Free estimate builder', icon: 'quote', custom: true };
 
   /* =========================================================================
+     Batch 2 calculators (October 2026). Each one reproduces the worked example
+     in its article with the default values.
+     ========================================================================= */
+  function up(x) { return Math.ceil(x - 1e-9); }
+  function upStep(x, step) { return Math.ceil(x / step - 1e-9) * step; }
+  function inch(f, x, d) { return f.u === 'met' ? num(x * 25.4, 0) + ' mm' : num(x, d == null ? 2 : d) + ' in'; }
+  function ftIn(inches) { var ft = Math.floor(inches / 12 + 1e-9), i = inches - ft * 12; return ft + ' ft' + (i > 0.05 ? ' ' + num(i, 1) + ' in' : ''); }
+  function cuft(f, ft3) { return f.u === 'met' ? num(ft3 / M3_FT3 * 1000, 0) + ' L' : num(ft3, 1) + ' cu ft'; }
+  function orderVol(f, ft3) { // bulk orders in quarter steps
+    return f.u === 'met' ? num(upStep(ft3 / M3_FT3, 0.25), 2) + ' m³' : num(upStep(ft3 / YD3_FT3, 0.25), 2) + ' cu yd';
+  }
+  function weightTxt(f, lb, d) { return f.u === 'met' ? num(lb / KG_LB, d == null ? 1 : d) + ' kg' : num(lb, d == null ? 1 : d) + ' lb'; }
+  function buyCans(f, gal) { // stain and paint in whole gallons, 5-gallon pails for big jobs; litres in metric
+    if (f.u === 'met') { var t = buyLitres(gal * GAL_L); return { text: t.text, gal: t.litres / GAL_L }; }
+    var n = up(gal), p5 = Math.floor(n / 5), r = n - p5 * 5;
+    if (r === 4) { p5++; r = 0; }
+    var parts = [];
+    if (p5) parts.push(p5 + ' × 5-gallon ' + plural(p5, 'pail'));
+    if (r) parts.push(r + ' ' + plural(r, 'gallon'));
+    return { text: parts.join(' + ') || '0 gallons', gal: p5 * 5 + r };
+  }
+
+  /* ----- roofing ----- */
+  var PITCH = [['0', 'Flat or almost flat'], ['3', '3/12 (14°)'], ['4', '4/12 (18°)'], ['5', '5/12 (23°)'], ['6', '6/12 (27°)'], ['7', '7/12 (30°)'], ['8', '8/12 (34°)'], ['9', '9/12 (37°)'], ['10', '10/12 (40°)'], ['12', '12/12 (45°)']];
+  CALCS.roofing = {
+    title: 'Roofing calculator', icon: 'roof',
+    fields: [
+      { group: 'Roof', id: 'secs', type: 'rects', label: 'Section', def: { imp: [[40, 30]], met: [[12.2, 9.1]] }, addLabel: 'Add a roof section', hint: 'Measure the flat footprint under each roof section. Length runs along the eaves.' },
+      { group: 'Roof', id: 'pitch', label: 'Roof pitch', type: 'select', def: '6', opts: PITCH },
+      { group: 'Roof', id: 'style', label: 'Roof style', type: 'select', def: 'gable', opts: [['gable', 'Gable (two slopes, rakes at the ends)'], ['hip', 'Hip (slopes on all four sides)']] },
+      { group: 'Materials', id: 'waste', label: 'Waste', type: 'select', def: '10', opts: [['10', '10% (simple gable)'], ['15', '15% (hip, valleys, dormers)'], ['5', '5% (very plain roof)']] },
+      { group: 'Materials', id: 'bps', label: 'Bundles per square', type: 'select', def: '3', opts: [['3', '3 (most architectural and 3-tab)'], ['4', '4 (heavy designer shingles)'], ['5', '5 (heavy designer shingles)']] },
+      { group: 'Materials', id: 'under', label: 'Underlayment roll', type: 'select', def: '1000', opts: [['1000', 'Synthetic, 1,000 sq ft per roll'], ['400', '15 lb felt, about 400 sq ft per roll'], ['200', '30 lb felt, about 200 sq ft per roll']] }
+    ],
+    compute: function (v, f) {
+      var plan = 0, drip = 0, pf = Math.sqrt(1 + Math.pow(+v.pitch / 12, 2));
+      (v.secs || []).forEach(function (r) {
+        var a = Math.max(0, r.a), b = Math.max(0, r.b);
+        plan += a * b;
+        drip += v.style === 'hip' ? 2 * (a + b) : 2 * a + 2 * b * pf;
+      });
+      if (!plan) return { error: 'Enter the length and width of at least one roof section.' };
+      var roof = plan * pf, cover = roof * (1 + v.waste / 100), squares = cover / 100;
+      var bundles = up(squares * +v.bps), rolls = up(roof / +v.under), pieces = up(drip / 10);
+      return {
+        main: { label: 'Shingles to buy', value: num(bundles) + ' bundles', sub: num(squares, 2) + ' squares, including ' + v.waste + '% waste' },
+        rows: [['Footprint (flat plan)', f.area(plan)], ['Pitch factor', num(pf, 3)], ['Roof surface area', f.area(roof)], ['Underlayment', num(rolls) + ' ' + plural(rolls, 'roll')], ['Drip edge', f.len(drip) + ', ' + num(pieces) + ' pieces of 10 ft (3 m)'], ['Squares to cover', num(squares, 2), 'total']],
+        note: 'A square is 100 sq ft of roof. Ridge cap, starter strip, nails and flashing are extra. Check the coverage printed on your shingle bundle.'
+      };
+    }
+  };
+
+  var ROOF_MAT = { arch: [100, 250, 'Architectural shingles'], tab: [80, 130, '3-tab shingles'], metal: [100, 800, 'Metal'], tile: [300, 2500, 'Tile'], slate: [600, 1600, 'Slate'] };
+  CALCS['roof-cost'] = {
+    title: 'Roof replacement cost estimator', icon: 'roofcost',
+    fields: [
+      { id: 'area', label: 'Roof surface area', fam: 'area', def: { imp: 1700, met: 158 }, hint: 'The sloped area, not the floor area. 1 square = 100 sq ft.' },
+      { id: 'mat', label: 'Roofing material', type: 'select', def: 'arch', opts: [['arch', 'Architectural shingles'], ['tab', '3-tab shingles'], ['metal', 'Metal'], ['tile', 'Tile'], ['slate', 'Slate']] },
+      { id: 'layers', label: 'Old roof to remove', type: 'select', def: '1', opts: [['1', 'One layer'], ['2', 'Two layers'], ['0', 'None (roof-over)']] },
+      { id: 'steep', label: 'Pitch', type: 'select', def: 'no', opts: [['no', 'Up to 7/12'], ['yes', 'Steeper than 7/12']] },
+      { id: 'extras', label: 'Extras (decking, vents, permit)', type: 'money', def: 0, min: 0, hint: 'Often $400 to $1,200 on a mid-size job' }
+    ],
+    compute: function (v, f) {
+      var m = ROOF_MAT[v.mat] || ROOF_MAT.arch, sq = v.area / 100, L = +v.layers;
+      var lo = 100 * L + m[0] + 200, hi = 300 * L + m[1] + 350;
+      if (v.steep === 'yes') { lo *= 1.15; hi *= 1.5; }
+      var tLo = lo * sq + v.extras, tHi = hi * sq + v.extras, tMid = (lo + hi) / 2 * sq + v.extras;
+      return {
+        main: { label: 'Typical installed price', value: f.money(tMid, 0), sub: 'Range ' + f.money(tLo, 0) + ' to ' + f.money(tHi, 0) },
+        rows: [['Roof size', num(sq, 1) + ' squares'], ['Installed price per square', f.money(lo, 0) + ' to ' + f.money(hi, 0)], ['Per sq ft of roof', f.money(lo / 100) + ' to ' + f.money(hi / 100)], ['Material, per square', '$' + num(m[0]) + ' to $' + num(m[1])], ['Labor, per square', '$200 to $350'], ['Tear-off, per layer per square', L ? '$100 to $300' : 'None'], v.steep === 'yes' ? ['Steep roof', '+15% to +50%'] : null, v.extras ? ['Extras', f.money(v.extras, 0)] : null],
+        note: 'Per-square figures are 2026 US averages from HomeGuide, with the steep-roof premium from Angi. Metal, tile and slate need specialist crews, so their labor often runs above the shingle labor used here.'
+      };
+    }
+  };
+
+  /* ----- soil: topsoil and raised beds ----- */
+  var SOIL_BAG = { imp: [['1.5', '1.5 cu ft'], ['1', '1 cu ft'], ['0.75', '0.75 cu ft'], ['2', '2 cu ft']], met: [['50', '50 L'], ['40', '40 L'], ['25', '25 L'], ['70', '70 L']] };
+  var SETTLE = [['10', '10% (loose soil settles)'], ['0', 'None'], ['15', '15%']];
+  function soil(v, f, rows, depthIn) {
+    var area = rowsArea(rows);
+    if (!area) return null;
+    var ft3 = area * depthIn / 12, buy = ft3 * (1 + v.settle / 100);
+    var bagFt3 = f.u === 'met' ? +v.bag / 1000 * M3_FT3 : +v.bag;
+    var bags = up(buy / bagFt3);
+    var orderYd = f.u === 'met' ? upStep(buy / M3_FT3, 0.25) * M3_FT3 / YD3_FT3 : upStep(buy / YD3_FT3, 0.25);
+    return { area: area, ft3: ft3, buy: buy, bags: bags, bulkCost: orderYd * v.bulk, bagCost: bags * v.bagPrice, bagLabel: f.u === 'met' ? v.bag + ' L' : v.bag + ' cu ft' };
+  }
+  CALCS.topsoil = {
+    title: 'Topsoil calculator', icon: 'soil',
+    fields: [
+      { group: 'Area', id: 'areas', type: 'rects', label: 'Area', shapes: true, def: { imp: [['rect', 20, 25]], met: [['rect', 6.1, 7.6]] }, addLabel: 'Add another area' },
+      { group: 'Soil', id: 'depth', label: 'Depth', fam: 'depth', def: { imp: 4, met: 10 }, hint: 'New lawn: 4 to 6 in. Beds: 6 to 8 in. Topdressing: 0.5 to 1 in.' },
+      { group: 'Soil', id: 'settle', label: 'Extra for settling', type: 'select', def: '10', opts: SETTLE },
+      { group: 'Soil', id: 'bag', label: 'Bag size', type: 'select', def: { imp: '1.5', met: '50' }, opts: SOIL_BAG },
+      { group: 'Prices', id: 'bulk', label: 'Bulk price', fam: 'perYd3', money: true, def: { imp: 30, met: 40 }, hint: 'HomeGuide: $10 to $50 per cu yd before delivery' },
+      { group: 'Prices', id: 'bagPrice', label: 'Price per bag', type: 'money', def: 5 }
+    ],
+    compute: function (v, f) {
+      var s = soil(v, f, v.areas, v.depth);
+      if (!s) return { error: 'Enter the size of the area you are covering.' };
+      return {
+        main: { label: 'Topsoil to order', value: f.vol(s.buy), sub: 'Order ' + orderVol(f, s.buy) + ', or ' + num(s.bags) + ' bags of ' + s.bagLabel },
+        rows: [['Area', f.area(s.area)], ['Volume before settling', f.vol(s.ft3)], ['Bulk cost (before delivery)', f.money(s.bulkCost, 0)], ['Bagged cost', f.money(s.bagCost, 0)], ['Cheaper here', s.bagCost > s.bulkCost ? 'Bulk delivery' : 'Bags', 'total']],
+        note: 'Bulk orders are rounded up to the next quarter yard. Delivery is usually a flat fee per load, so get the amount right in one order.'
+      };
+    }
+  };
+  CALCS['raised-bed'] = {
+    title: 'Raised bed soil calculator', icon: 'bed',
+    fields: [
+      { group: 'Beds', id: 'beds', type: 'rects', label: 'Bed', def: { imp: [[8, 4], [8, 4]], met: [[2.4, 1.2], [2.4, 1.2]] }, addLabel: 'Add another bed', hint: 'Measure the inside of each bed.' },
+      { group: 'Soil', id: 'depth', label: 'Fill depth', fam: 'depth', def: { imp: 12, met: 30 }, hint: 'The soil depth, not the board height' },
+      { group: 'Soil', id: 'settle', label: 'Extra for settling', type: 'select', def: '10', opts: SETTLE },
+      { group: 'Soil', id: 'bag', label: 'Bag size', type: 'select', def: { imp: '1.5', met: '50' }, opts: SOIL_BAG },
+      { group: 'Prices', id: 'bagPrice', label: 'Price per bag', type: 'money', def: 9 },
+      { group: 'Prices', id: 'bulk', label: 'Bulk blend price', fam: 'perYd3', money: true, def: { imp: 50, met: 65 } }
+    ],
+    compute: function (v, f) {
+      var s = soil(v, f, v.beds, v.depth);
+      if (!s) return { error: 'Enter the length and width of at least one bed.' };
+      return {
+        main: { label: 'Soil to buy', value: cuft(f, s.buy), sub: num(s.bags) + ' bags of ' + s.bagLabel + ', or ' + f.vol(s.buy) + ' in bulk' },
+        rows: [['Bed area', f.area(s.area)], ['Bed volume before settling', cuft(f, s.ft3) + ' (' + f.vol(s.ft3) + ')'], ['Bulk order, quarter steps', orderVol(f, s.buy)], ['Bagged cost', f.money(s.bagCost, 0)], ['Bulk cost (before delivery)', f.money(s.bulkCost, 0), 'total']],
+        note: 'Ask the yard for a raised bed blend, not fill dirt. Past about one cubic yard in total, bulk usually costs less, even with delivery.'
+      };
+    }
+  };
+
+  /* ----- sod ----- */
+  CALCS.sod = {
+    title: 'Sod calculator', icon: 'sod',
+    fields: [
+      { group: 'Lawn', id: 'areas', type: 'rects', label: 'Area', shapes: true, def: { imp: [['rect', 30, 50]], met: [['rect', 9.1, 15.2]] }, addLabel: 'Add another lawn area' },
+      { group: 'Lawn', id: 'waste', label: 'Waste', type: 'select', def: '10', opts: [['5', '5% (plain rectangle)'], ['10', '10% (curved beds)'], ['15', '15% (odd shapes)']] },
+      { group: 'Sod', id: 'pallet', label: 'Pallet coverage', fam: 'area', def: { imp: 450, met: 42 }, hint: 'Ask your farm. Usually 400 to 500 sq ft.' },
+      { group: 'Sod', id: 'roll', label: 'Roll coverage', fam: 'area', def: { imp: 10, met: 0.93 }, hint: 'A standard 2 x 5 ft roll is 10 sq ft' },
+      { group: 'Sod', id: 'price', label: 'Sod price', fam: 'perArea', money: true, def: { imp: 0.6, met: 6.5 }, hint: 'HomeGuide: $0.30 to $0.80 per sq ft' }
+    ],
+    compute: function (v, f) {
+      var area = rowsArea(v.areas);
+      if (!area) return { error: 'Enter the size of your lawn.' };
+      var need = area * (1 + v.waste / 100);
+      var pallets = up(need / v.pallet), rolls = up(need / v.roll);
+      return {
+        main: { label: 'Sod to order', value: num(pallets) + ' ' + plural(pallets, 'pallet'), sub: f.area(need) + ', or ' + num(rolls) + ' rolls' },
+        rows: [['Lawn area', f.area(area)], ['With ' + v.waste + '% waste', f.area(need)], ['Sod cost at your price', f.money(need * v.price, 0)], ['Range at $0.30 to $0.80 per sq ft', f.money(need * 0.3, 0) + ' to ' + f.money(need * 0.8, 0)], ['Pro install, $1 to $2 per sq ft', f.money(area, 0) + ' to ' + f.money(area * 2, 0), 'total']],
+        note: 'Confirm the pallet size before you order. A farm that cuts 400 sq ft pallets can change your count by a full pallet.'
+      };
+    }
+  };
+
+  /* ----- carpet ----- */
+  CALCS.carpet = {
+    title: 'Carpet calculator', icon: 'carpet',
+    fields: [
+      { group: 'Rooms', id: 'rooms', type: 'rects', label: 'Room', def: { imp: [[12, 12], [14, 12]], met: [[3.7, 3.7], [4.3, 3.7]] }, addLabel: 'Add another room' },
+      { group: 'Carpet', id: 'rw', label: 'Roll width', type: 'select', def: { imp: '12', met: '4' }, opts: { imp: [['12', '12 ft'], ['13.5', '13.5 ft'], ['15', '15 ft']], met: [['3.66', '3.66 m (12 ft)'], ['4', '4 m'], ['5', '5 m']] } },
+      { group: 'Carpet', id: 'pile', label: 'Pile direction', type: 'select', def: 'auto', opts: [['auto', 'Fewest cuts (pile may turn between rooms)'], ['length', 'Pile runs along the length I entered']] },
+      { group: 'Prices', id: 'price', label: 'Carpet price', fam: 'perSqyd', money: true, def: { imp: 27, met: 32 } },
+      { group: 'Prices', id: 'pad', label: 'Pad price', fam: 'perSqyd', money: true, def: { imp: 4.5, met: 5.4 }, min: 0 },
+      { group: 'Prices', id: 'labor', label: 'Installation', fam: 'perArea', money: true, def: { imp: 1, met: 10.75 }, min: 0 }
+    ],
+    compute: function (v, f) {
+      var rw = f.u === 'met' ? +v.rw * 3.28084 : +v.rw;
+      var net = 0, lin = 0, seams = 0;
+      (v.rooms || []).forEach(function (r) {
+        var a = Math.max(0, r.a), b = Math.max(0, r.b);
+        if (!a || !b) return;
+        net += a * b;
+        var nA = up(b / rw), linA = nA * a, nB = up(a / rw), linB = nB * b;
+        var useA = v.pile === 'length' || linA < linB - 1e-9 || (Math.abs(linA - linB) < 1e-9 && nA <= nB);
+        lin += useA ? linA : linB; seams += (useA ? nA : nB) - 1;
+      });
+      if (!net) return { error: 'Enter the length and width of at least one room.' };
+      var ordered = rw * lin;
+      var buy, buyTxt, cost, padN;
+      if (f.u === 'met') {
+        buy = up(ordered / SQM); padN = up(net / SQM);
+        buyTxt = num(buy) + ' m²';
+        cost = (buy + 0) * v.price / 0.836127 + padN * v.pad / 0.836127 + net * v.labor;
+      } else {
+        buy = up(ordered / 9); padN = up(net / 9);
+        buyTxt = num(buy) + ' sq yd';
+        cost = buy * v.price + padN * v.pad + net * v.labor;
+      }
+      return {
+        main: { label: 'Carpet to order', value: buyTxt, sub: f.len(lin) + ' off a ' + (f.u === 'met' ? v.rw + ' m' : v.rw + ' ft') + ' roll' },
+        rows: [['Floor area', f.area(net)], ['Area you pay for', f.area(ordered)], ['Seams inside rooms', num(seams)], ['Pad', f.u === 'met' ? num(padN) + ' m²' : num(padN) + ' sq yd'], ['Carpet, pad and install', f.money(cost, 0)], ['Per ' + (f.u === 'met' ? 'm²' : 'sq ft') + ' of floor', f.money(f.areaRate(cost / net)), 'total']],
+        note: 'Each room is cut from full-width strips. Offcuts can sometimes fill closets, so ask the installer to plan the cuts. Removal of old carpet is extra.'
+      };
+    }
+  };
+
+  /* ----- cabinet painting cost ----- */
+  CALCS['cabinet-cost'] = {
+    title: 'Cabinet painting cost calculator', icon: 'cabinet',
+    fields: [
+      { group: 'Kitchen', id: 'doors', label: 'Cabinet doors', type: 'int', def: 20, min: 0 },
+      { group: 'Kitchen', id: 'drawers', label: 'Drawer fronts', type: 'int', def: 8, min: 0 },
+      { group: 'Kitchen', id: 'lf', label: 'Cabinet run (linear)', fam: 'len', def: { imp: 30, met: 9.1 }, hint: 'Base, wall and island runs added together' },
+      { group: 'Kitchen', id: 'box', label: 'Boxes and frames to paint', fam: 'area', def: { imp: 66, met: 6.1 }, min: 0, hint: 'Face frames, exposed sides, island back. About 2 sq ft per foot of cabinets.' },
+      { group: 'Doing it yourself', id: 'cov', label: 'Paint coverage', fam: 'cov', def: { imp: 400, met: 9.8 }, hint: 'Cabinet enamel: 400 to 500 sq ft per gallon' },
+      { group: 'Doing it yourself', id: 'paint', label: 'Cabinet paint price', fam: 'perVol', money: true, def: { imp: 60, met: 16 } },
+      { group: 'Doing it yourself', id: 'primer', label: 'Primer price', fam: 'perVol', money: true, def: { imp: 45, met: 12 } },
+      { group: 'Doing it yourself', id: 'supplies', label: 'Brushes, rollers, sandpaper, degreaser', type: 'money', def: 93 }
+    ],
+    compute: function (v, f) {
+      var area = v.doors * 6.25 + v.drawers * 1.17 + v.box;
+      if (!area) return { error: 'Enter the number of doors and drawer fronts.' };
+      var primerGal = area / v.cov, paintGal = area * 2 / v.cov * 1.1;
+      var pb = buyCans(f, primerGal), qb = buyCans(f, paintGal);
+      var diy = qb.gal * v.paint + pb.gal * v.primer + v.supplies;
+      var pieceLo = v.doors * 70 + v.drawers * 30, pieceHi = v.doors * 125 + v.drawers * 110;
+      return {
+        main: { label: 'Pro price, by the piece', value: f.money(pieceLo, 0) + ' to ' + f.money(pieceHi, 0), sub: 'Doors $70 to $125, drawer fronts $30 to $110 (HomeGuide). Boxes and masking can add more.' },
+        rows: [['Pro price, by the linear foot ($30 to $70)', f.money(v.lf * 30, 0) + ' to ' + f.money(v.lf * 70, 0)], ['Surface to paint', f.area(area)], ['Primer, 1 coat', pb.text], ['Paint, 2 coats + 10%', qb.text], ['Do it yourself, materials', f.money(diy, 0), 'total']],
+        note: 'Door area assumes 15 x 30 in doors painted on both sides. A pro quote far under the per-piece range usually means less prep.'
+      };
+    }
+  };
+
+  /* ----- stain: deck and fence ----- */
+  CALCS['stain-deck'] = {
+    title: 'Deck stain calculator', icon: 'brush',
+    fields: [
+      { group: 'Deck', id: 'decks', type: 'rects', label: 'Deck area', def: { imp: [[20, 16]], met: [[6.1, 4.9]] }, addLabel: 'Add another area' },
+      { group: 'Deck', id: 'extra', label: 'Railings and steps', fam: 'area', def: { imp: 0, met: 0 }, min: 0, hint: 'Optional. Rough guide: a 3 ft railing adds about 6 sq ft per foot, both sides.' },
+      { group: 'Stain', id: 'cond', label: 'Wood condition', type: 'select', def: '250', opts: [['250', 'Smooth and sound (250 sq ft/gal first coat)'], ['200', 'Weathered or dry (200)'], ['150', 'Rough sawn or very dry (150)']] },
+      { group: 'Stain', id: 'coats', label: 'Coats', type: 'select', def: '2', opts: [['2', '2 thin coats (second coat goes twice as far)'], ['1', 'One-coat product']] },
+      { group: 'Stain', id: 'price', label: 'Stain price', fam: 'perVol', money: true, def: { imp: 40, met: 11 }, hint: 'Angi: $30 to $50 per gallon' }
+    ],
+    compute: function (v, f) {
+      var area = rowsArea(v.decks) + v.extra;
+      if (!area) return { error: 'Enter the size of your deck.' };
+      var c1 = area / +v.cond, c2 = v.coats === '2' ? area / (2 * +v.cond) : 0, gal = c1 + c2;
+      var b = buyCans(f, gal);
+      return {
+        main: { label: 'Stain to buy', value: f.u === 'met' ? num(gal * GAL_L, 1) + ' L' : num(gal, 2) + ' gal', sub: 'Buy ' + b.text },
+        rows: [['Area to stain', f.area(area)], ['First coat', f.u === 'met' ? num(c1 * GAL_L, 1) + ' L' : num(c1, 2) + ' gal'], v.coats === '2' ? ['Second coat', f.u === 'met' ? num(c2 * GAL_L, 1) + ' L' : num(c2, 2) + ' gal'] : null, ['Stain cost', f.money(b.gal * v.price, 0), 'total']],
+        note: 'Rates use the low end of the Behr semi-transparent label, so you should not run short. Check the coverage on your can.'
+      };
+    }
+  };
+  CALCS['stain-fence'] = {
+    title: 'Fence stain calculator', icon: 'brush',
+    fields: [
+      { group: 'Fence', id: 'length', label: 'Fence length', fam: 'len', def: { imp: 100, met: 30.5 }, hint: 'Include gates' },
+      { group: 'Fence', id: 'height', label: 'Fence height', fam: 'len', def: { imp: 6, met: 1.8 } },
+      { group: 'Fence', id: 'sides', label: 'Sides to stain', type: 'select', def: '2', opts: [['2', 'Both sides'], ['1', 'One side']] },
+      { group: 'Fence', id: 'style', label: 'Fence style', type: 'select', def: '1', opts: [['1', 'Solid privacy fence'], ['0.73', 'Spaced pickets (about 73% wood)']] },
+      { group: 'Stain', id: 'cond', label: 'Wood condition', type: 'select', def: '200', opts: [['350', 'Smooth new wood (350 sq ft/gal)'], ['250', 'Average, sound boards (250)'], ['200', 'Rough sawn or dry old wood (200)']] },
+      { group: 'Stain', id: 'coats', label: 'Coats', type: 'select', def: '2', opts: [['2', '2 coats'], ['1', '1 coat']] },
+      { group: 'Stain', id: 'price', label: 'Stain price', fam: 'perVol', money: true, def: { imp: 40, met: 11 } }
+    ],
+    compute: function (v, f) {
+      var wood = v.length * v.height * +v.sides * +v.style, coatArea = wood * +v.coats;
+      var gal = coatArea / +v.cond, b = buyCans(f, gal);
+      return {
+        main: { label: 'Stain to buy', value: f.u === 'met' ? num(gal * GAL_L, 1) + ' L' : num(gal, 1) + ' gal', sub: 'Buy ' + b.text },
+        rows: [['Wood surface', f.area(wood)], ['Area to cover, all coats', f.area(coatArea)], ['Coverage used', f.u === 'met' ? num(+v.cond / SQM / GAL_L, 1) + ' m²/L' : v.cond + ' sq ft per gallon'], ['Stain cost', f.money(b.gal * v.price, 0), 'total']],
+        note: 'Coverage follows the Behr and Sherwin-Williams labels (200 to 400 sq ft per gallon). Mix pails of the same color together so the shade stays even.'
+      };
+    }
+  };
+
+  /* ----- masonry ----- */
+  var WALL_BLOCK = [['18x8', '18 x 8 in face (Allan Block Classic, Keystone Compac III)'], ['16x6', '16 x 6 in face (Keystone Legacy Stone)'], ['18x4', '18 x 4 in face (Allan Block Lite Stone)']];
+  CALCS['wall-blocks'] = {
+    title: 'Retaining wall block calculator', icon: 'wallblock',
+    fields: [
+      { group: 'Wall', id: 'length', label: 'Wall length', fam: 'len', def: { imp: 30, met: 9.1 } },
+      { group: 'Wall', id: 'above', label: 'Height above ground', fam: 'depth', def: { imp: 32, met: 81 } },
+      { group: 'Wall', id: 'buried', label: 'Courses buried', type: 'int', def: 1, min: 0, hint: 'Bury at least one course' },
+      { group: 'Blocks', id: 'block', label: 'Block face size', type: 'select', def: '18x8', opts: WALL_BLOCK },
+      { group: 'Blocks', id: 'caps', label: 'Cap row', type: 'select', def: 'yes', opts: [['yes', 'Yes'], ['no', 'No caps']] },
+      { group: 'Blocks', id: 'waste', label: 'Extra for cuts and breakage', type: 'select', def: '10', opts: [['10', '10%'], ['5', '5%'], ['15', '15%']] },
+      { group: 'Base and drainage', id: 'base', label: 'Base depth', fam: 'depth', def: { imp: 6, met: 15 }, hint: 'Allan Block: at least 6 in' },
+      { group: 'Base and drainage', id: 'trench', label: 'Trench width', fam: 'depth', def: { imp: 24, met: 60 } }
+    ],
+    compute: function (v, f) {
+      var p = v.block.split('x'), bl = +p[0], bh = +p[1];
+      var total = v.above + v.buried * bh, courses = up(total / bh), perCourse = up(v.length * 12 / bl);
+      var blocks = courses * perCourse, buy = up(blocks * (1 + v.waste / 100));
+      var caps = v.caps === 'yes' ? up(perCourse * (1 + v.waste / 100)) : 0;
+      var wallFt = courses * bh / 12;
+      var baseFt3 = v.length * (v.trench / 12) * (v.base / 12), drainFt3 = v.length * 1 * wallFt;
+      return {
+        main: { label: 'Blocks to buy', value: num(buy) + ' blocks', sub: num(blocks) + ' before ' + v.waste + '% extra' + (caps ? ', plus ' + num(caps) + ' caps' : '') },
+        rows: [['Courses (including buried)', num(courses)], ['Blocks per course', num(perCourse)], ['Wall height, footing to top', inch(f, courses * bh, 0)], ['Base gravel', f.vol(baseFt3) + ', order ' + orderVol(f, baseFt3)], ['Drainage stone (12 in behind the wall)', f.vol(drainFt3) + ', order ' + orderVol(f, drainFt3)], ['Caps', caps ? num(caps) : 'None', 'total']],
+        note: courses * bh > 48 ? 'This wall is over 4 ft from footing to top. Most places need a permit and an engineered design at that height.' : 'Walls up to 4 ft (some towns: 3 ft) usually need no engineer. Check your local rules, and keep slopes and driveways back from the top.'
+      };
+    }
+  };
+
+  CALCS.brick = {
+    title: 'Brick calculator', icon: 'brick',
+    fields: [
+      { group: 'Wall', id: 'length', label: 'Wall length', fam: 'len', def: { imp: 20, met: 6.1 } },
+      { group: 'Wall', id: 'height', label: 'Wall height', fam: 'len', def: { imp: 8, met: 2.4 } },
+      { group: 'Wall', id: 'open', label: 'Doors and windows', fam: 'area', def: { imp: 20, met: 1.9 }, min: 0, hint: 'Total area of openings' },
+      { group: 'Brick', id: 'rate', label: 'Brick size', type: 'select', def: '6.75', opts: { imp: [['6.75', 'Modular (6.75 per sq ft)'], ['5.5', 'Queen (5.50 per sq ft)'], ['4.5', 'Norman (4.50 per sq ft)'], ['3', 'Utility (3.00 per sq ft)'], ['5.574', 'UK standard 215 x 65 mm (5.57 per sq ft)']], met: [['6.75', 'Modular (72.7 per m²)'], ['5.5', 'Queen (59.2 per m²)'], ['4.5', 'Norman (48.4 per m²)'], ['3', 'Utility (32.3 per m²)'], ['5.574', 'UK standard 215 x 65 mm (60 per m²)']] }, hint: '3/8 in (10 mm) mortar joints' },
+      { group: 'Brick', id: 'waste', label: 'Waste', type: 'select', def: '10', opts: [['10', '10%'], ['5', '5% (BIA minimum)'], ['15', '15%']] },
+      { group: 'Mortar', id: 'perBag', label: 'Bricks laid per 80 lb (36 kg) bag', type: 'int', def: 35, min: 1, hint: 'Sakrete Type N: 35. Quikrete Mortar Mix: up to 37.' }
+    ],
+    compute: function (v, f) {
+      var net = v.length * v.height - v.open;
+      if (net <= 0) return { error: 'The openings are bigger than the wall. Check the sizes.' };
+      var bricks = net * +v.rate, buy = up(bricks * (1 + v.waste / 100)), bags = up(buy / v.perBag);
+      return {
+        main: { label: 'Bricks to buy', value: num(buy) + ' bricks', sub: num(bags) + ' bags of mortar' },
+        rows: [['Net wall area', f.area(net)], ['Bricks before waste', num(bricks, 1)], ['With ' + v.waste + '% waste', num(buy)], ['Mortar, 80 lb bags', num(bags), 'total']],
+        note: 'Brick counts per square foot are from Brick Industry Association Technical Note 10, single wythe in running bond.'
+      };
+    }
+  };
+
+  CALCS.cmu = {
+    title: 'Concrete block calculator', icon: 'block',
+    fields: [
+      { group: 'Wall', id: 'length', label: 'Wall length', fam: 'len', def: { imp: 24, met: 7.3 } },
+      { group: 'Wall', id: 'height', label: 'Wall height', fam: 'len', def: { imp: 8, met: 2.4 } },
+      { group: 'Wall', id: 'open', label: 'Doors and windows', fam: 'area', def: { imp: 21, met: 2 }, min: 0 },
+      { group: 'Block', id: 'rate', label: 'Block face', type: 'select', def: '1.125', opts: [['1.125', '8 x 16 in (standard block)'], ['2.25', '8 x 8 in or 4 x 16 in']] },
+      { group: 'Block', id: 'waste', label: 'Waste', type: 'select', def: '10', opts: [['10', '10%'], ['5', '5%']] },
+      { group: 'Block', id: 'perBag', label: 'Blocks per 80 lb mortar bag', type: 'int', def: 13, min: 1, hint: 'Quikrete Mortar Mix: 13 standard blocks' }
+    ],
+    compute: function (v, f) {
+      var net = v.length * v.height - v.open;
+      if (net <= 0) return { error: 'The openings are bigger than the wall. Check the sizes.' };
+      var blocks = net * +v.rate, buy = up(blocks * (1 + v.waste / 100));
+      return {
+        main: { label: 'Blocks to buy', value: num(buy) + ' blocks', sub: num(up(buy / v.perBag)) + ' bags of mortar' },
+        rows: [['Net wall area', f.area(net)], ['Blocks before waste', num(blocks, 1)], ['Mortar, 80 lb bags', num(up(buy / v.perBag))], ['Core fill if every core is filled', num(up(buy / 110)) + ' × 3,000 lb bulk bags of grout', 'total']],
+        note: 'Nominal block sizes already include the 3/8 in mortar joint. Most walls only fill the cores that hold rebar, so follow your plans.'
+      };
+    }
+  };
+
+  /* ----- stairs ----- */
+  CALCS.stairs = {
+    title: 'Stair calculator', icon: 'stairs',
+    fields: [
+      { id: 'rise', label: 'Total rise (floor to floor)', fam: 'small', def: { imp: 108, met: 2743 }, hint: 'Finished floor to finished floor' },
+      { id: 'target', label: 'Target riser height', fam: 'small', def: { imp: 7.5, met: 190 }, hint: 'IRC maximum: 7 3/4 in (196 mm)' },
+      { id: 'tread', label: 'Tread depth', fam: 'small', def: { imp: 10.5, met: 267 }, hint: 'IRC minimum: 10 in (254 mm)' },
+      { id: 'limit', label: 'Space for the run', fam: 'small', def: { imp: 150, met: 3810 }, min: 0, hint: '0 if there is no limit' }
+    ],
+    compute: function (v, f) {
+      var risers = up(v.rise / v.target), riser = v.rise / risers, treads = risers - 1;
+      var run = treads * v.tread, stringer = Math.sqrt(v.rise * v.rise + run * run);
+      var stock = up(stringer / 12 / 2) * 2; if (stock < 8) stock = 8;
+      var okR = riser <= 7.75 + 1e-9, okT = v.tread >= 10 - 1e-9;
+      var fit = !v.limit ? 'No limit set' : run <= v.limit + 1e-9 ? 'Fits, ' + inch(f, v.limit - run, 1) + ' to spare' : 'Too long by ' + inch(f, run - v.limit, 1);
+      return {
+        main: { label: 'Your stairs', value: num(risers) + ' risers at ' + inch(f, riser), sub: num(treads) + ' treads at ' + inch(f, v.tread) + ', total run ' + inch(f, run, 1) + (f.u === 'met' ? '' : ' (' + ftIn(run) + ')') },
+        rows: [['Riser height check (IRC max 7 3/4 in)', okR ? 'Passes' : 'Too tall: lower the target riser'], ['Tread depth check (IRC min 10 in)', okT ? 'Passes' : 'Too shallow'], ['Run', fit], ['Stringer length', inch(f, stringer, 1) + ' (' + f.len(stringer / 12) + ')'], ['Board to buy per stringer', stringer / 12 > 20 ? 'Over 20 ft: plan a landing' : f.u === 'met' ? num(stock * 0.3048, 1) + ' m' : stock + ' ft', 'total']],
+        note: 'Cut every riser to the actual height, not the target. Also plan 6 ft 8 in of headroom and a 36 in width (IRC R311.7). Your local code may differ.'
+      };
+    }
+  };
+
+  /* ----- insulation ----- */
+  CALCS.insulation = {
+    title: 'Insulation calculator', icon: 'insulation',
+    fields: [
+      { group: 'Space', id: 'areas', type: 'rects', label: 'Section', def: { imp: [[40, 25]], met: [[12.2, 7.6]] }, addLabel: 'Add another section' },
+      { group: 'Insulation', id: 'kind', label: 'Type', type: 'select', def: 'blown', opts: [['blown', 'Blown-in (loose fill)'], ['batt', 'Batts or rolls']] },
+      { group: 'Insulation', id: 'chart', label: 'Product and R-value', type: 'select', def: '26.4', opts: [['26.4', 'Knauf blown-in, R-49 (26.4 bags per 1,000 sq ft)'], ['20', 'Knauf blown-in, R-38 (20.0 bags)'], ['15.3', 'Knauf blown-in, R-30 (15.3 bags)'], ['22.2', 'Owens Corning L77, R-49 (22.2 bags)'], ['28', 'Owens Corning L77, R-60 (28.0 bags)']], show: function (v) { return v.kind !== 'batt'; } },
+      { group: 'Insulation', id: 'cov', label: 'Coverage per bag', fam: 'area', def: { imp: 110.42, met: 10.26 }, hint: 'From the label. Knauf R-19 bag: 110.42 sq ft', show: function (v) { return v.kind === 'batt'; } },
+      { group: 'Insulation', id: 'layers', label: 'Layers', type: 'select', def: '1', opts: [['1', '1 layer'], ['2', '2 crossed layers']], show: function (v) { return v.kind === 'batt'; } },
+      { group: 'Price', id: 'price', label: 'Price per bag', type: 'money', def: 0, min: 0, hint: 'Optional. Enter your store price for a total.' }
+    ],
+    compute: function (v, f) {
+      var area = rowsArea(v.areas);
+      if (!area) return { error: 'Enter the size of the space.' };
+      var bags, label;
+      if (v.kind === 'batt') { bags = up(area / v.cov) * +v.layers; label = num(up(area / v.cov)) + ' per layer'; }
+      else { bags = up(area / 1000 * +v.chart); label = num(area / 1000 * +v.chart, 1) + ' bags before rounding'; }
+      return {
+        main: { label: 'Bags to buy', value: num(bags) + ' bags', sub: label },
+        rows: [['Area', f.area(area)], v.price ? ['Material cost', f.money(bags * v.price, 0), 'total'] : null],
+        note: v.kind === 'batt' ? 'R-19 batts fit a 2 x 6 wall or a floor. Two crossed layers give about R-38, so attics usually get blown-in.' : 'Energy Star suggests R-49 to R-60 for an uninsulated attic in zones 5 to 8, and R-30 to R-49 in zone 1. Blow to depth markers on the joists.'
+      };
+    }
+  };
+
+  /* ----- lawn ----- */
+  var SEED = { tf: ['Tall fescue', 6, 8, 3, 4], kbg: ['Kentucky bluegrass', 2, 3, 1, 1.5], prg: ['Perennial ryegrass', 4, 5, 4, 6], ff: ['Fine fescues', 4, 5, 2, 2.5], mix: ['Bluegrass and ryegrass mix', 2, 3, 1, 1.5], berm: ['Bermudagrass', 1, 2, 0.5, 1] };
+  CALCS['grass-seed'] = {
+    title: 'Grass seed calculator', icon: 'seed',
+    fields: [
+      { group: 'Lawn', id: 'areas', type: 'rects', label: 'Area', shapes: true, def: { imp: [['rect', 50, 100]], met: [['rect', 15.2, 30.5]] }, addLabel: 'Add another area' },
+      { group: 'Seed', id: 'grass', label: 'Grass type', type: 'select', def: 'tf', opts: Object.keys(SEED).map(function (k) { return [k, SEED[k][0]]; }) },
+      { group: 'Seed', id: 'job', label: 'Job', type: 'select', def: 'new', opts: [['new', 'New lawn on bare soil'], ['over', 'Overseeding an existing lawn']] },
+      { group: 'Seed', id: 'bag', label: 'Bag size', type: 'select', def: { imp: '20', met: '10' }, opts: { imp: [['20', '20 lb'], ['10', '10 lb'], ['7', '7 lb'], ['3', '3 lb'], ['50', '50 lb']], met: [['10', '10 kg'], ['5', '5 kg'], ['2', '2 kg'], ['1', '1 kg']] } }
+    ],
+    compute: function (v, f) {
+      var area = rowsArea(v.areas);
+      if (!area) return { error: 'Enter the size of your lawn.' };
+      var s = SEED[v.grass] || SEED.tf, lo = v.job === 'over' ? s[3] : s[1], hi = v.job === 'over' ? s[4] : s[2];
+      var k = area / 1000, lb = k * (lo + hi) / 2;
+      var bagLb = f.u === 'met' ? +v.bag * KG_LB : +v.bag, bags = up(lb / bagLb);
+      return {
+        main: { label: 'Seed needed', value: weightTxt(f, lb), sub: 'Buy ' + bags + ' × ' + (f.u === 'met' ? v.bag + ' kg' : v.bag + ' lb') + ' ' + plural(bags, 'bag') + ' (' + weightTxt(f, bags * bagLb, 0) + ')' },
+        rows: [['Lawn area', f.area(area)], ['Rate used (middle of range)', f.u === 'met' ? num((lo + hi) / 2 * 4.8824, 0) + ' g per m²' : num((lo + hi) / 2, 2) + ' lb per 1,000 sq ft'], ['Range for this lawn', weightTxt(f, k * lo) + ' to ' + weightTxt(f, k * hi), 'total']],
+        note: 'Rates from Penn State, Kansas State and Nebraska extension guides. Overseeding uses about half the new-lawn rate. If your bag gives a rate for that blend, use it.'
+      };
+    }
+  };
+
+  CALCS.fertilizer = {
+    title: 'Lawn fertilizer calculator', icon: 'fertilizer',
+    fields: [
+      { id: 'area', label: 'Lawn area', fam: 'area', def: { imp: 6000, met: 557 }, hint: 'Leave out the house, driveway and beds' },
+      { id: 'n', label: 'Nitrogen to apply', fam: 'nRate', def: { imp: 1, met: 4.88 }, hint: 'Extension guides: no more than 1 lb per 1,000 sq ft (4.9 g/m²) per feeding' },
+      { id: 'pct', label: 'Nitrogen on the bag (first number)', type: 'pct', def: 24, min: 1, max: 100, hint: '24-0-6 means 24% nitrogen' },
+      { id: 'bag', label: 'Bag weight', fam: 'weight', def: { imp: 15, met: 7 } }
+    ],
+    compute: function (v, f) {
+      var per1000 = v.n / (v.pct / 100), total = per1000 * v.area / 1000, bags = up(total / v.bag);
+      return {
+        main: { label: 'Fertilizer to spread', value: weightTxt(f, total), sub: 'Buy ' + bags + ' ' + plural(bags, 'bag') + ' of ' + weightTxt(f, v.bag, 0) },
+        rows: [['Product per ' + (f.u === 'met' ? '100 m²' : '1,000 sq ft'), f.u === 'met' ? num(per1000 / KG_LB / 92.903 * 100, 2) + ' kg' : num(per1000, 2) + ' lb'], ['Nitrogen in total', weightTxt(f, v.n * v.area / 1000, 2)], ['Spreader setting target', f.u === 'met' ? num(per1000 / KG_LB / 92.903 * 1000, 0) + ' g per m²' : num(per1000, 1) + ' lb per 1,000 sq ft', 'total']],
+        note: v.n > 1.0001 ? 'That is more than 1 lb of nitrogen per 1,000 sq ft in one feeding. Extension guides advise splitting it.' : 'Returning clippings to the lawn can cut the nitrogen you need by 25 to 50 percent (Cornell).'
+      };
+    }
+  };
+
+  /* ----- flooring prep ----- */
+  CALCS.thinset = {
+    title: 'Thinset calculator', icon: 'trowel',
+    fields: [
+      { id: 'area', label: 'Tile area', fam: 'area', def: { imp: 200, met: 18.6 } },
+      { id: 'trowel', label: 'Trowel notch', type: 'select', def: '40', opts: [['85', '1/4 x 1/4 in square (tile under 8 in): 85 sq ft per bag'], ['65', '1/4 x 3/8 in (tile 8 to 15 in): 65 sq ft'], ['40', '1/2 x 1/2 in square (tile over 15 in): 40 sq ft'], ['35', '3/4 in U-notch (large format): 35 sq ft']], hint: 'Coverage per 50 lb bag, low end of the Mapei chart' },
+      { id: 'extra', label: 'Extra for cuts and back-buttering', type: 'select', def: '10', opts: [['10', '10%'], ['0', 'None'], ['20', '20% (heavy back-buttering)']] },
+      { id: 'bag', label: 'Bag size', type: 'select', def: '50', opts: [['50', '50 lb (22.7 kg)'], ['25', '25 lb (11.3 kg)']] }
+    ],
+    compute: function (v, f) {
+      var bags50 = v.area / +v.trowel * (1 + v.extra / 100), bags = up(bags50 * 50 / +v.bag);
+      return {
+        main: { label: 'Thinset to buy', value: num(bags) + ' bags', sub: (v.bag === '50' ? '50 lb (22.7 kg)' : '25 lb (11.3 kg)') + ' bags, rounded up' },
+        rows: [['Area', f.area(v.area)], ['Bags before extra', num(v.area / +v.trowel * 50 / +v.bag, 2)], ['With ' + v.extra + '% extra', num(bags50 * 50 / +v.bag, 2), 'total']],
+        note: 'We always round up from the low end of the maker chart. Running out with half a tile bed open costs more than a spare bag.'
+      };
+    }
+  };
+
+  CALCS['self-leveler'] = {
+    title: 'Self-leveling compound calculator', icon: 'leveler',
+    fields: [
+      { id: 'area', label: 'Floor area', fam: 'area', def: { imp: 240, met: 22.3 } },
+      { id: 'depth', label: 'Average depth', fam: 'small', def: { imp: 0.25, met: 6 }, hint: 'The average over the room, not the deepest spot' },
+      { id: 'bag', label: 'Bag size', type: 'select', def: '50', opts: [['50', '50 lb'], ['55.1', '25 kg']] },
+      { id: 'spare', label: 'Spare bags', type: 'int', def: 1, min: 0 }
+    ],
+    compute: function (v, f) {
+      var ft3 = v.area * v.depth / 12, perBag = +v.bag * 0.01; // 50 lb = 0.5 cu ft (48 sq ft at 1/8 in, Mapei)
+      var bags = up(ft3 / perBag);
+      return {
+        main: { label: 'Bags to buy', value: num(bags + v.spare) + ' bags', sub: num(bags) + ' for the pour + ' + v.spare + ' spare' },
+        rows: [['Volume to fill', cuft(f, ft3)], ['Coverage per bag at this depth', f.area(perBag * 12 / v.depth)], ['Coverage per bag at 1/8 in (3 mm)', f.area(perBag * 12 / 0.125), 'total']],
+        note: 'Prime the floor first and measure the water for every mix. Coverage halves each time the depth doubles.'
+      };
+    }
+  };
+
+  CALCS.underlayment = {
+    title: 'Underlayment calculator', icon: 'underlay',
+    fields: [
+      { group: 'Rooms', id: 'rooms', type: 'rects', label: 'Room', def: { imp: [[20, 12], [30, 5]], met: [[6.1, 3.7], [9.1, 1.5]] }, addLabel: 'Add another room' },
+      { group: 'Roll', id: 'waste', label: 'Waste', type: 'select', def: '10', opts: [['10', '10% (several rooms, halls)'], ['5', '5% (one plain room)'], ['15', '15%']] },
+      { group: 'Roll', id: 'roll', label: 'Roll coverage', fam: 'area', def: { imp: 100, met: 9.3 }, hint: 'Common rolls: 100 and 200 sq ft' },
+      { group: 'Roll', id: 'price', label: 'Price per roll', type: 'money', def: 0, min: 0, hint: 'Optional. Enter the shelf price for a total.' }
+    ],
+    compute: function (v, f) {
+      var area = rowsArea(v.rooms);
+      if (!area) return { error: 'Enter at least one room size.' };
+      var need = area * (1 + v.waste / 100), rolls = up(need / v.roll);
+      var alt = v.roll < 150 ? 200 : 100;
+      return {
+        main: { label: 'Underlayment to buy', value: num(rolls) + ' ' + plural(rolls, 'roll'), sub: f.area(rolls * v.roll) + ' of material for ' + f.area(need) },
+        rows: [['Floor area', f.area(area)], ['With ' + v.waste + '% waste', f.area(need)], ['Same job with ' + (f.u === 'met' ? num(alt / SQM, 1) + ' m²' : alt + ' sq ft') + ' rolls', num(up(need / alt)) + ' rolls'], v.price ? ['Cost', f.money(rolls * v.price, 0), 'total'] : null],
+        note: 'If your planks have pad attached, most makers say to add no second pad. Read the flooring box first.'
+      };
+    }
+  };
+
+  /* ----- lumber ----- */
+  CALCS['board-foot'] = {
+    title: 'Board foot calculator', icon: 'lumber',
+    fields: [
+      { group: 'Boards', id: 'thick', label: 'Thickness', fam: 'small', def: { imp: 1, met: 25 }, hint: 'Rough lumber is sold by nominal quarters: 4/4 = 1 in' },
+      { group: 'Boards', id: 'width', label: 'Width', fam: 'small', def: { imp: 8, met: 200 } },
+      { group: 'Boards', id: 'length', label: 'Length', fam: 'len', def: { imp: 10, met: 3 } },
+      { group: 'Boards', id: 'qty', label: 'How many boards', type: 'int', def: 10, min: 1 },
+      { group: 'Buying', id: 'waste', label: 'Extra for defects and cuts', type: 'select', def: '15', opts: [['15', '15%'], ['0', 'None'], ['10', '10%'], ['20', '20%'], ['30', '30% (knotty or rough stock)']] },
+      { group: 'Buying', id: 'price', label: 'Price per board foot', type: 'money', def: 7.5 }
+    ],
+    compute: function (v, f) {
+      var each = v.thick * v.width * v.length / 12, total = each * v.qty, buy = up(total * (1 + v.waste / 100));
+      return {
+        main: { label: 'Board feet to buy', value: num(buy) + ' bd ft', sub: f.money(buy * v.price, 2) + ' at ' + f.money(v.price, 2) + ' per board foot' },
+        rows: [['Board feet per board', num(each, 2)], ['Total, ' + num(v.qty) + ' ' + plural(v.qty, 'board'), num(total, 1) + ' bd ft'], ['With ' + v.waste + '% extra', num(total * (1 + v.waste / 100), 1) + ' bd ft'], ['Volume', num(buy * 0.00235974, 3) + ' m³', 'total']],
+        note: 'One board foot is 144 cubic inches: 1 in thick, 12 in wide and 1 ft long. Yards measure rough boards by nominal thickness.'
+      };
+    }
+  };
+
+  /* ----- costs ----- */
+  CALCS['refinish-cost'] = {
+    title: 'Floor refinishing cost calculator', icon: 'refinish',
+    fields: [
+      { id: 'area', label: 'Floor area', fam: 'area', def: { imp: 500, met: 46.5 } },
+      { id: 'base', label: 'Sand and finish rate', fam: 'perArea', money: true, def: { imp: 5, met: 54 }, hint: 'Angi: full refinishing $3 to $8 per sq ft' },
+      { id: 'stain', label: 'Color', type: 'select', def: 'yes', opts: [['yes', 'New stain color'], ['no', 'Natural, no stain']] },
+      { id: 'stainRate', label: 'Stain rate', fam: 'perArea', money: true, def: { imp: 2, met: 21.5 }, hint: 'Angi: $1 to $3 per sq ft', show: function (v) { return v.stain === 'yes'; } },
+      { id: 'repairs', label: 'Board repairs', type: 'money', def: 0, min: 0 }
+    ],
+    compute: function (v, f) {
+      var base = v.area * v.base, stain = v.stain === 'yes' ? v.area * v.stainRate : 0, total = base + stain + v.repairs;
+      return {
+        main: { label: 'Estimated cost', value: f.money(total, 0), sub: f.money(f.areaRate(total / v.area)) + ' ' + f.perArea() },
+        rows: [['Sanding and finish', f.money(base, 0)], v.stain === 'yes' ? ['Stain', f.money(stain, 0)] : null, v.repairs ? ['Repairs', f.money(v.repairs, 0)] : null, ['Typical range ($3 to $8 per sq ft)', f.money(v.area * 3, 0) + ' to ' + f.money(v.area * 8, 0)], ['Screen and recoat instead ($1 to $3)', f.money(v.area, 0) + ' to ' + f.money(v.area * 3, 0), 'total']],
+        note: 'Ranges are 2026 US prices from Angi and HomeGuide. Stairs are usually priced per step.'
+      };
+    }
+  };
+
+  /* ----- for pros ----- */
+  CALCS.overhead = {
+    title: 'Contractor overhead calculator', icon: 'pie',
+    fields: [
+      { group: 'Monthly overhead', id: 'ins', label: 'Insurance', type: 'money', def: 400, min: 0 },
+      { group: 'Monthly overhead', id: 'veh', label: 'Vehicle, fuel and repairs', type: 'money', def: 750, min: 0 },
+      { group: 'Monthly overhead', id: 'phone', label: 'Phone and data', type: 'money', def: 100, min: 0 },
+      { group: 'Monthly overhead', id: 'soft', label: 'Software', type: 'money', def: 150, min: 0 },
+      { group: 'Monthly overhead', id: 'rent', label: 'Shop or storage rent', type: 'money', def: 700, min: 0 },
+      { group: 'Monthly overhead', id: 'mkt', label: 'Marketing and website', type: 'money', def: 300, min: 0 },
+      { group: 'Monthly overhead', id: 'admin', label: 'Accounting, licenses, fees', type: 'money', def: 200, min: 0 },
+      { group: 'Your year', id: 'hours', label: 'Billable hours per month', type: 'num', def: 130, min: 1, hint: 'Hours you charge to customers, for the whole crew' },
+      { group: 'Your year', id: 'rev', label: 'Revenue per year', type: 'money', def: 156000, min: 0 },
+      { group: 'Price a job', id: 'jobH', label: 'Job hours', type: 'num', def: 24, min: 0 },
+      { group: 'Price a job', id: 'direct', label: 'Job labor and materials', type: 'money', def: 1800, min: 0 },
+      { group: 'Price a job', id: 'margin', label: 'Profit margin', type: 'pct', def: 15, min: 0, max: 90 }
+    ],
+    compute: function (v, f) {
+      var month = v.ins + v.veh + v.phone + v.soft + v.rent + v.mkt + v.admin, year = month * 12, hrs = v.hours * 12;
+      var perH = year / hrs, jobOh = v.jobH * perH, cost = v.direct + jobOh, price = cost / (1 - v.margin / 100);
+      return {
+        main: { label: 'Overhead per billable hour', value: f.money(perH, 2), sub: 'Yearly overhead ' + f.money(year, 0) + ' over ' + num(hrs) + ' billable hours' },
+        rows: [['Overhead per month', f.money(month, 0)], ['Overhead as % of revenue', v.rev ? num(year / v.rev * 100, 1) + '%' : 'Enter revenue'], ['This job: overhead share', f.money(jobOh, 0)], ['This job: full cost', f.money(cost, 0)], ['Price at ' + v.margin + '% margin', f.money(price, 2)], ['Quote, rounded up to $5', f.money(Math.ceil(price / 5 - 1e-9) * 5, 0), 'total']],
+        note: 'Count only billable hours. Drive time, quoting and rain days do not bill, and spreading overhead over them sets your rate too low.'
+      };
+    }
+  };
+
+  var LAWN_MKT = { '8': [30, 40, 40, 50, 'about 1/8 acre'], '4': [45, 65, 60, 85, 'about 1/4 acre'], '2': [50, 75, 65, 100, 'about 1/2 acre'], '1': [60, 100, 80, 150, 'about 1 acre'] };
+  CALCS['lawn-price'] = {
+    title: 'Lawn mowing price calculator', icon: 'mower',
+    fields: [
+      { group: 'Time', id: 'onsite', label: 'Minutes on site', type: 'num', def: 40, min: 1, hint: 'Mow, trim, edge and blow-off' },
+      { group: 'Time', id: 'travel', label: 'Travel, load and unload', type: 'num', def: 20, min: 0, hint: 'Minutes' },
+      { group: 'Price', id: 'rate', label: 'Your hourly rate', type: 'money', def: 60 },
+      { group: 'Price', id: 'freq', label: 'Service', type: 'select', def: 'w', opts: [['w', 'Weekly (4.33 visits a month)'], ['b', 'Every two weeks (2.17 a month)']] },
+      { group: 'Market check', id: 'size', label: 'Lot size', type: 'select', def: '4', opts: [['8', 'About 1/8 acre'], ['4', 'About 1/4 acre'], ['2', 'About 1/2 acre'], ['1', 'About 1 acre']] }
+    ],
+    compute: function (v, f) {
+      var mins = v.onsite + v.travel, visit = mins / 60 * v.rate, per = v.freq === 'w' ? 4.33 : 2.17;
+      var m = LAWN_MKT[v.size] || LAWN_MKT['4'], lo = v.freq === 'w' ? m[0] : m[2], hi = v.freq === 'w' ? m[1] : m[3];
+      var check = visit < lo ? 'Below the usual range. Check your times.' : visit > hi ? 'Above the usual range. Fine if the yard is slow work.' : 'Inside the usual range';
+      return {
+        main: { label: 'Price per visit', value: f.money(visit, 0), sub: f.money(visit * per, 0) + ' a month' },
+        rows: [['Paid time per visit', num(mins) + ' min'], ['On-site share', f.money(v.onsite / 60 * v.rate, 0)], ['Travel share', f.money(v.travel / 60 * v.rate, 0)], ['Market, ' + m[4] + (v.freq === 'w' ? ', weekly' : ', every two weeks'), f.money(lo, 0) + ' to ' + f.money(hi, 0)], ['Your price vs market', check, 'total']],
+        note: 'Market ranges are 2026 US prices per visit from HomeGuide data. Your own time and rate come first; the market is only a sanity check.'
+      };
+    }
+  };
+
+  var CLEAN = { std: [0.10, 0.17, 'Standard'], deep: [0.11, 0.30, 'Deep clean'], move: [0.22, 0.33, 'Move-in or move-out'] };
+  CALCS['cleaning-price'] = {
+    title: 'House cleaning price calculator', icon: 'spray',
+    fields: [
+      { group: 'Home', id: 'sqft', label: 'Home size', fam: 'area', def: { imp: 2000, met: 186 } },
+      { group: 'Home', id: 'type', label: 'Clean type', type: 'select', def: 'std', opts: [['std', 'Standard'], ['deep', 'Deep clean'], ['move', 'Move-in or move-out']] },
+      { group: 'Your numbers', id: 'hours', label: 'Labor hours for this clean', type: 'num', def: 4, min: 0.25, step: 0.25, hint: 'Total for all cleaners' },
+      { group: 'Your numbers', id: 'rate', label: 'Hourly rate per cleaner', type: 'money', def: 50 },
+      { group: 'Your numbers', id: 'sqRate', label: 'Your square foot rate', fam: 'perArea', money: true, def: { imp: 0.10, met: 1.08 }, hint: 'For the cross-check' },
+      { group: 'Recurring', id: 'rHours', label: 'Hours for each repeat visit', type: 'num', def: 3, min: 0, step: 0.25 },
+      { group: 'Recurring', id: 'freq', label: 'Repeat visits', type: 'select', def: 'b', opts: [['b', 'Every two weeks'], ['w', 'Weekly'], ['m', 'Monthly']] }
+    ],
+    compute: function (v, f) {
+      var t = CLEAN[v.type] || CLEAN.std, byTime = v.hours * v.rate, bySq = v.sqft * v.sqRate;
+      var gap = Math.abs(byTime - bySq) / Math.max(byTime, bySq);
+      var rep = v.rHours * v.rate, per = { w: 4.33, b: 2.17, m: 1 }[v.freq];
+      return {
+        main: { label: 'Price for this clean', value: f.money(byTime, 0), sub: 'Square foot check: ' + f.money(bySq, 0) + (gap < 0.1 ? ' (they agree)' : ' (more than 10% apart, so recheck your time)') },
+        rows: [['Market for ' + t[2].toLowerCase() + ', ' + f.area(v.sqft), f.money(v.sqft * t[0], 0) + ' to ' + f.money(v.sqft * t[1], 0)], v.rHours ? ['Repeat visit price', f.money(rep, 0)] : null, v.rHours ? ['Repeat visits per month', f.money(rep * per, 0), 'total'] : null],
+        note: 'Square foot ranges are 2026 US figures from HomeGuide: standard $0.10 to $0.17, deep $0.11 to $0.30, move-out $0.22 to $0.33 per sq ft.'
+      };
+    }
+  };
+
+  CALCS['pressure-price'] = {
+    title: 'Pressure washing price calculator', icon: 'washer',
+    fields: [
+      { group: 'Surface 1', id: 'a1', label: 'Area (e.g. driveway)', fam: 'area', def: { imp: 600, met: 56 }, min: 0 },
+      { group: 'Surface 1', id: 'r1', label: 'Rate', fam: 'perArea', money: true, def: { imp: 0.30, met: 3.2 }, hint: 'Driveways: $0.10 to $0.40' },
+      { group: 'Surface 2', id: 'a2', label: 'Area (e.g. patio or deck)', fam: 'area', def: { imp: 300, met: 28 }, min: 0 },
+      { group: 'Surface 2', id: 'r2', label: 'Rate', fam: 'perArea', money: true, def: { imp: 0.40, met: 4.3 }, hint: 'Decks: $0.30 to $0.80' },
+      { group: 'Surface 3', id: 'a3', label: 'Area (e.g. siding)', fam: 'area', def: { imp: 0, met: 0 }, min: 0 },
+      { group: 'Surface 3', id: 'r3', label: 'Rate', fam: 'perArea', money: true, def: { imp: 0.25, met: 2.7 }, hint: 'House exterior: $0.15 to $0.50' },
+      { group: 'Job', id: 'min', label: 'Minimum charge', type: 'money', def: 150 },
+      { group: 'Job', id: 'addons', label: 'Add-ons (stain treatment, sealing)', type: 'money', def: 0, min: 0 }
+    ],
+    compute: function (v, f) {
+      var p1 = v.a1 * v.r1, p2 = v.a2 * v.r2, p3 = v.a3 * v.r3, area = v.a1 + v.a2 + v.a3, sub = p1 + p2 + p3 + v.addons;
+      if (!area) return { error: 'Enter the size of at least one surface.' };
+      var total = Math.max(sub, v.min);
+      return {
+        main: { label: 'Job price', value: f.money(total, 0), sub: total > sub ? 'Your minimum charge applies' : f.money(f.areaRate((p1 + p2 + p3) / area)) + ' ' + f.perArea() + ' on average' },
+        rows: [v.a1 ? ['Surface 1', f.money(p1, 0)] : null, v.a2 ? ['Surface 2', f.money(p2, 0)] : null, v.a3 ? ['Surface 3', f.money(p3, 0)] : null, v.addons ? ['Add-ons', f.money(v.addons, 0)] : null, ['Total area', f.area(area)], ['Typical homeowner job (HomeGuide)', '$173 to $311', 'total']],
+        note: 'Rate hints are 2026 US ranges from HomeGuide. Price oil stains, algae treatment and sealing as separate lines.'
+      };
+    }
+  };
+
+  CALCS.invoice = { title: 'Free invoice builder', icon: 'invoice', custom: true, mode: 'invoice' };
+
+  /* =========================================================================
      ENGINE (browser only)
      ========================================================================= */
   root.PCK_CALC = { CALCS: CALCS, makeFmt: makeFmt, paintRoom: paintRoom, buyGallons: buyGallons, buyLitres: buyLitres, bagYieldFt3: bagYieldFt3, num: num };
@@ -1149,10 +1780,17 @@
 
   /* ----- free estimate builder ----- */
   function Quote(ctx) {
-    var el = ctx.el, KEY = 'pck:quote';
+    var INV = ctx.def.mode === 'invoice';
+    var el = ctx.el, KEY = INV ? 'pck:invoice' : 'pck:quote';
+    var WORD = INV ? 'invoice' : 'estimate';
     function blank() {
       var d = new Date();
       var iso = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+      if (INV) return {
+        biz: '', contact: '', client: '', address: '', number: 'INV-' + String(d.getFullYear()).slice(2) + ('0' + (d.getMonth() + 1)).slice(-2) + '-01', date: iso, work: '', due: 14, tax: 7, paid: 400,
+        items: [{ d: 'Labor: paint living room walls and ceiling, 2 coats (hours)', q: 16, p: 65, t: false }, { d: 'Paint', q: 1, p: 185, t: true }, { d: 'Primer', q: 1, p: 65, t: true }, { d: 'Supplies: tape, rollers, drop cloths', q: 1, p: 40, t: true }],
+        notes: 'Pay by check, card or bank transfer.\nLate payments: 1.5% per month, as stated in our contract.\nThank you for your business.'
+      };
       return {
         biz: '', contact: '', client: '', address: '', number: 'EST-' + String(d.getFullYear()).slice(2) + ('0' + (d.getMonth() + 1)).slice(-2) + '-01', date: iso, valid: 30, tax: 0, deposit: 0,
         items: [{ d: 'Prep: patch, sand and caulk walls', q: 1, p: 250 }, { d: 'Paint walls, 2 coats (living room)', q: 1, p: 850 }, { d: 'Paint and supplies', q: 1, p: 180 }],
@@ -1161,27 +1799,54 @@
     }
     var s = store(KEY) || blank();
     function money(x) { return makeFmt('imp', ctx.cur).money(x, 2); }
+    function line(it) { return (parseFloat(it.q) || 0) * (parseFloat(it.p) || 0); }
     function totals() {
-      var sub = s.items.reduce(function (a, it) { return a + (parseFloat(it.q) || 0) * (parseFloat(it.p) || 0); }, 0);
-      var tax = sub * (parseFloat(s.tax) || 0) / 100;
+      var sub = s.items.reduce(function (a, it) { return a + line(it); }, 0);
+      var taxable = INV ? s.items.reduce(function (a, it) { return a + (it.t ? line(it) : 0); }, 0) : sub;
+      var tax = Math.round(taxable * (parseFloat(s.tax) || 0)) / 100;
       var total = sub + tax;
+      if (INV) { var paid = parseFloat(s.paid) || 0; return { sub: sub, taxable: taxable, tax: tax, total: total, paid: paid, bal: total - paid }; }
       return { sub: sub, tax: tax, total: total, dep: total * (parseFloat(s.deposit) || 0) / 100 };
+    }
+    function addDays(iso, n) {
+      if (!iso) return '';
+      var p = String(iso).split('-');
+      var d = new Date(+p[0], +p[1] - 1, +p[2] + (parseInt(n, 10) || 0));
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
     }
     function fld(k, label, type, extra) {
       var id = ctx.uid + '-' + k;
+      if (type === 'money') return '<div class="field"><label for="' + id + '">' + label + '</label><div class="inp has-pre"><span class="pre">' + makeFmt('imp', ctx.cur).sym + '</span><input id="' + id + '" data-q="' + k + '" type="number" min="0" step="any" inputmode="decimal" value="' + esc(s[k]) + '"></div></div>';
       if (type === 'textarea') return '<div class="field wide"><label for="' + id + '">' + label + '</label><textarea id="' + id + '" data-q="' + k + '">' + esc(s[k]) + '</textarea></div>';
       return '<div class="field' + (extra || '') + '"><label for="' + id + '">' + label + '</label><div class="inp' + (type === 'pct' ? ' has-unit' : '') + '"><input id="' + id + '" data-q="' + k + '" type="' + (type === 'pct' ? 'number' : type) + '" value="' + esc(s[k]) + '"' + (type === 'pct' ? ' min="0" step="any" inputmode="decimal"' : '') + '>' + (type === 'pct' ? '<span class="unit">%</span>' : '') + '</div></div>';
     }
     function itemsHtml() {
       return s.items.map(function (it, i) {
         var p = ctx.uid + '-i' + i;
-        return '<div class="q-row"><div class="field"><label for="' + p + 'd">Item ' + (i + 1) + '</label><div class="inp"><input id="' + p + 'd" data-it="' + i + '" data-p="d" value="' + esc(it.d) + '"></div></div>' +
+        return '<div class="q-row' + (INV ? ' has-tax' : '') + '"><div class="field"><label for="' + p + 'd">Item ' + (i + 1) + '</label><div class="inp"><input id="' + p + 'd" data-it="' + i + '" data-p="d" value="' + esc(it.d) + '"></div></div>' +
           '<div class="field"><label for="' + p + 'q">Qty</label><div class="inp"><input id="' + p + 'q" type="number" min="0" step="any" inputmode="decimal" data-it="' + i + '" data-p="q" value="' + esc(it.q) + '"></div></div>' +
           '<div class="field"><label for="' + p + 'p">Unit price</label><div class="inp has-pre"><span class="pre">' + makeFmt('imp', ctx.cur).sym + '</span><input id="' + p + 'p" type="number" min="0" step="any" inputmode="decimal" data-it="' + i + '" data-p="p" value="' + esc(it.p) + '"></div></div>' +
+          (INV ? '<div class="field q-tax"><label for="' + p + 't">Taxed</label><div class="inp chk"><input id="' + p + 't" type="checkbox" data-it="' + i + '" data-p="t"' + (it.t ? ' checked' : '') + '></div></div>' : '') +
           '<button type="button" class="icon-btn" data-qdel="' + i + '" aria-label="Remove item ' + (i + 1) + '">' + ICON.del + '</button></div>';
       }).join('');
     }
+    function previewInvoice() {
+      var t = totals();
+      return '<div class="quote-preview" id="' + ctx.uid + '-pv"><div class="q-meta"><div><h3>' + esc(s.biz || 'Your business name') + '</h3><div>' + esc(s.contact || 'Address · phone · email · license number').replace(/\n/g, '<br>') + '</div></div>' +
+        '<div style="text-align:right"><strong style="font-size:1.1rem;color:#16324F">INVOICE</strong><div>' + esc(s.number) + '</div><div>Date: ' + esc(addDays(s.date, 0)) + '</div>' + (s.due ? '<div>Due: ' + esc(addDays(s.date, s.due)) + '</div>' : '') + '</div></div>' +
+        '<p style="margin:14px 0 0"><strong>Bill to:</strong> ' + esc(s.client || 'Client name') + (s.address ? '<br>' + esc(s.address) : '') + (s.work ? '<br><span style="color:#56636F">Work dates: ' + esc(s.work) + '</span>' : '') + '</p>' +
+        '<table><thead><tr><th>Description</th><th class="num">Qty</th><th class="num">Rate</th><th class="num">Amount</th></tr></thead><tbody>' +
+        s.items.map(function (it) { var q = parseFloat(it.q) || 0, pr = parseFloat(it.p) || 0; return '<tr><td>' + esc(it.d || '') + (it.t && parseFloat(s.tax) ? ' <span style="color:#56636F">(T)</span>' : '') + '</td><td class="num">' + num(q, 2) + '</td><td class="num">' + money(pr) + '</td><td class="num">' + money(q * pr) + '</td></tr>'; }).join('') +
+        '</tbody><tfoot><tr><td colspan="3">Subtotal</td><td class="num">' + money(t.sub) + '</td></tr>' +
+        (t.tax ? '<tr><td colspan="3">Tax (' + num(parseFloat(s.tax), 2) + '% on ' + (t.taxable < t.sub ? 'items marked T' : 'all items') + ')</td><td class="num">' + money(t.tax) + '</td></tr>' : '') +
+        '<tr><td colspan="3">Total</td><td class="num">' + money(t.total) + '</td></tr>' +
+        (t.paid ? '<tr><td colspan="3">Deposit paid</td><td class="num">-' + money(t.paid) + '</td></tr>' : '') +
+        '<tr class="q-total"><td colspan="3">Balance due</td><td class="num">' + money(t.bal) + '</td></tr></tfoot></table>' +
+        (s.due ? '<p><strong>Terms:</strong> due in ' + esc(s.due) + ' days, by ' + esc(addDays(s.date, s.due)) + '.</p>' : '') +
+        (s.notes ? '<p style="white-space:pre-line">' + esc(s.notes) + '</p>' : '') + '</div>';
+    }
     function preview() {
+      if (INV) return previewInvoice();
       var t = totals();
       var valid = '';
       if (s.date && s.valid) {
@@ -1205,12 +1870,12 @@
     function render() {
       var icoSvg = ctx.icon;
       el.classList.add('is-stacked');
-      el.innerHTML = '<div class="calc-top"><p class="calc-title">' + (icoSvg ? '<span class="tool-ico">' + icoSvg + '</span>' : '') + 'Free estimate builder</p>' + ctx.switches() + '</div>' +
+      el.innerHTML = '<div class="calc-top"><p class="calc-title">' + (icoSvg ? '<span class="tool-ico">' + icoSvg + '</span>' : '') + esc(ctx.def.title) + '</p>' + ctx.switches() + '</div>' +
         '<div class="calc-body"><form class="calc-form" novalidate onsubmit="return false">' +
-        '<fieldset class="calc-group"><legend>Your business</legend>' + fld('biz', 'Business name', 'text') + '<div class="field"><label for="' + ctx.uid + '-contact">Phone, email, license</label><div class="inp"><input id="' + ctx.uid + '-contact" data-q="contact" value="' + esc(s.contact) + '"></div></div></fieldset>' +
-        '<fieldset class="calc-group"><legend>Client and job</legend>' + fld('client', 'Client name', 'text') + fld('address', 'Job address', 'text') + fld('number', 'Estimate number', 'text') + fld('date', 'Date', 'date') + '</fieldset>' +
+        '<fieldset class="calc-group"><legend>Your business</legend>' + fld('biz', 'Business name', 'text') + '<div class="field"><label for="' + ctx.uid + '-contact">' + (INV ? 'Address, phone, email, license' : 'Phone, email, license') + '</label><div class="inp"><input id="' + ctx.uid + '-contact" data-q="contact" value="' + esc(s.contact) + '"></div></div></fieldset>' +
+        '<fieldset class="calc-group"><legend>Client and job</legend>' + fld('client', 'Client name', 'text') + fld('address', 'Job address', 'text') + fld('number', INV ? 'Invoice number' : 'Estimate number', 'text') + fld('date', INV ? 'Invoice date' : 'Date', 'date') + (INV ? fld('work', 'Work dates', 'text') : '') + '</fieldset>' +
         '<fieldset class="calc-group"><legend>Line items</legend><div class="field wide"><div class="quote-items">' + itemsHtml() + '</div><button type="button" class="btn btn-ghost add-row" data-qadd>' + ICON.plus + 'Add a line</button></div></fieldset>' +
-        '<fieldset class="calc-group"><legend>Terms</legend>' + fld('tax', 'Sales tax', 'pct') + fld('deposit', 'Deposit', 'pct') + fld('valid', 'Valid for (days)', 'number') + fld('notes', 'Notes and terms', 'textarea') + '</fieldset>' +
+        '<fieldset class="calc-group"><legend>Terms</legend>' + fld('tax', INV ? 'Sales tax on items marked Taxed' : 'Sales tax', 'pct') + (INV ? fld('paid', 'Deposit already paid', 'money') + fld('due', 'Due in (days)', 'number') : fld('deposit', 'Deposit', 'pct') + fld('valid', 'Valid for (days)', 'number')) + fld('notes', 'Notes and terms', 'textarea') + '</fieldset>' +
         '</form><div class="calc-out"><div data-qpv>' + preview() + '</div><div class="calc-actions"><button type="button" class="btn btn-tape" data-qprint>' + ICON.print + 'Print or save as PDF</button><button type="button" class="btn btn-ghost" data-qreset>' + ICON.reset + 'Start over</button></div>' +
         '<p class="result-note">Everything stays in this browser. Nothing is sent to us.</p></div></div>';
     }
@@ -1219,14 +1884,18 @@
     el.addEventListener('input', function (e) {
       var t = e.target;
       if (t.hasAttribute('data-q')) { s[t.getAttribute('data-q')] = t.value; refresh(); }
-      else if (t.hasAttribute('data-it')) { s.items[+t.getAttribute('data-it')][t.getAttribute('data-p')] = t.value; refresh(); }
+      else if (t.hasAttribute('data-it')) { s.items[+t.getAttribute('data-it')][t.getAttribute('data-p')] = t.type === 'checkbox' ? t.checked : t.value; refresh(); }
+    });
+    el.addEventListener('change', function (e) {
+      var t = e.target;
+      if (t.type === 'checkbox' && t.hasAttribute('data-it')) { s.items[+t.getAttribute('data-it')].t = t.checked; refresh(); }
     });
     el.addEventListener('click', function (e) {
       var t = e.target.closest ? e.target.closest('button') : null;
       if (!t) return;
-      if (t.hasAttribute('data-qadd')) { s.items.push({ d: '', q: 1, p: 0 }); render(); refresh(); var last = el.querySelector('[data-it="' + (s.items.length - 1) + '"][data-p="d"]'); if (last) last.focus(); }
+      if (t.hasAttribute('data-qadd')) { s.items.push({ d: '', q: 1, p: 0, t: INV }); render(); refresh(); var last = el.querySelector('[data-it="' + (s.items.length - 1) + '"][data-p="d"]'); if (last) last.focus(); }
       else if (t.hasAttribute('data-qdel')) { s.items.splice(+t.getAttribute('data-qdel'), 1); if (!s.items.length) s.items.push({ d: '', q: 1, p: 0 }); render(); refresh(); }
-      else if (t.hasAttribute('data-qreset')) { if (window.confirm('Clear this estimate and start over?')) { s = blank(); render(); refresh(); } }
+      else if (t.hasAttribute('data-qreset')) { if (window.confirm('Clear this ' + WORD + ' and start over?')) { s = blank(); render(); refresh(); } }
       else if (t.hasAttribute('data-qprint')) { document.body.classList.add('print-quote'); window.print(); setTimeout(function () { document.body.classList.remove('print-quote'); }, 500); }
       else if (t.hasAttribute('data-cur')) { ctx.cur = t.getAttribute('data-cur'); store('pck:cur', ctx.cur); render(); refresh(); }
     });

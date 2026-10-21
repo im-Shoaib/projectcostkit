@@ -1,0 +1,39 @@
+{
+  "title": "Board Foot Calculator for Lumber",
+  "slug": "board-foot-calculator",
+  "description": "Work out board feet for lumber with the simple formula, a price example, and a table for common board sizes and lengths.",
+  "category": "building",
+  "date": "2026-11-23",
+  "status": "published",
+  "cover": {
+    "src": "/assets/img/posts/cover-board-foot-calculator-1200x675.webp",
+    "src600": "/assets/img/posts/cover-board-foot-calculator-600x338.webp",
+    "w": 1200,
+    "h": 675,
+    "alt": "Illustration of a stack of lumber on a concrete & walls blueprint background with a measuring tape"
+  },
+  "ogImage": "/assets/img/og/board-foot-calculator.jpg",
+  "tool": {
+    "id": "board-foot",
+    "name": "Board foot calculator",
+    "short": "Board feet and lumber cost",
+    "icon": "lumber"
+  },
+  "keywords": [
+    "board foot calculator",
+    "how to calculate board feet",
+    "board feet formula",
+    "lumber board foot price"
+  ],
+  "related": [
+    "deck-board-calculator",
+    "flooring-calculator",
+    "square-footage-calculator"
+  ],
+  "takeaways": [
+    "Board feet = thickness (in) x width (in) x length (ft) / 12.",
+    "One board foot is 144 cubic inches, a 1 x 12 in board that is 1 ft long.",
+    "Hardwood is priced by the board foot, and waste of 15 to 20 percent is normal."
+  ],
+  "body": "One board foot is a piece of wood 1 in thick, 12 in wide, and 1 ft long. The formula is thickness in inches, times width in inches, times length in feet, divided by 12. Use it to check a lumber bill or to price hardwood before you drive to the yard.\n\n## The board foot formula\n\n**Board feet = thickness (in) x width (in) x length (ft) / 12**\n\nIf you measure length in inches instead, divide by 144. Both forms give the same answer, because one board foot holds 144 cubic inches. For a stack of matching boards, work out one board, then multiply by the quantity.\n\nTotal cost is just as direct. **Cost = total board feet x price per board foot.** Yards quote hardwood this way because boards come in random widths and lengths. A wide board holds more wood than a narrow one of the same length, and the price follows the volume.\n\n| Nominal size | 8 ft | 10 ft | 12 ft |\n| --- | --- | --- | --- |\n| 1 x 6 | 4.00 bf | 5.00 bf | 6.00 bf |\n| 2 x 4 | 5.33 bf | 6.67 bf | 8.00 bf |\n| 2 x 6 | 8.00 bf | 10.00 bf | 12.00 bf |\n| 2 x 8 | 10.67 bf | 13.33 bf | 16.00 bf |\n| 2 x 12 | 16.00 bf | 20.00 bf | 24.00 bf |\n\nA quick check helps at the counter. A 2 x 6 holds exactly 1 board foot per linear foot, so a 10 ft 2 x 6 is 10 board feet. A 1 x 6 holds 0.5 board foot per foot.\n\n## Worked example: 10 walnut boards for shelves\n\nSay you need 10 boards for shop shelves. Each board is 1 in thick, 8 in wide, and 10 ft long. Your yard quotes $7.50 per board foot for this stock.\n\n- Step 1, board feet per board: 1 x 8 x 10 / 12 = 6.67 board feet.\n- Step 2, total for 10 boards: 6.67 x 10 = 66.7 board feet.\n- Step 3, add 15 percent waste: 66.7 x 1.15 = 76.7 board feet.\n- Step 4, round up like a buyer: buy 77 board feet.\n- Step 5, cost: 77 x $7.50 = $577.50.\n\nCheck the math a second way, all in inches. One board is 1 x 8 x 120 in, which is 960 cubic inches. Divide by 144 and you get 6.67 board feet, the same answer. The shelf boards will be cut to length and ripped to width, so the waste allowance covers knots, end splits, and one board with grain you do not like.\n\n## How do you measure boards at the yard?\n\nMeasure thickness and width in inches, and length in feet. For rough hardwood, thickness is sold in quarters. A 4/4 board is 1 in rough, 5/4 is 1.25 in, 6/4 is 1.5 in, and 8/4 is 2 in.\n\nFor a tapered board, measure width about one third of the way from the narrow end. That is the practice in the National Hardwood Lumber Association grading rules. Yards vary on rounding, so ask how your yard rounds width and length before the tally is written.\n\nIf your project is a deck or floor, board feet is the wrong unit. Decks price by the board and floors by the square foot. See our [deck board calculator](/blog/deck-board-calculator/) and [flooring calculator](/blog/flooring-calculator/) for those jobs.\n\n## Nominal size or actual size: which do you use?\n\nUse the size the yard uses to sell the wood. Softwood sold as a 2 x 4 measures about 1.5 x 3.5 in after drying and planing. Yards still tally dimensional softwood by the nominal 2 x 4 size in most cases.\n\nHardwood works the other way. It is sold rough, and the board foot count uses the rough thickness. A 4/4 board that planes down to 3/4 in still counts as 1 in thick on the bill. If you run the math on finished size, your estimate will come in low by about a quarter on thickness.\n\nAsk one question at the counter: is this tally on rough size or finished size? The answer settles most bill disputes before they start. For room sizes behind a lumber order, our [square footage calculator](/blog/square-footage-calculator/) keeps the area math straight.\n\n## Common mistakes to avoid\n\nMixing feet and inches is the costly one. If you put a length of 96 in into the feet formula, your answer is 12 times too high. Pick one form of the formula and stay with it for the whole list.\n\nForgetting waste is next. Board feet measure the wood you buy, not the wood in the finished piece. Furniture work often needs 20 to 30 percent extra for grain match and defects. Straight shelves and framing need less, around 10 to 15 percent.\n\nLast, do not price sheet goods by the board foot. Plywood and MDF sell by the sheet and by square foot of coverage. Save board feet for solid lumber and slabs, and check a full project budget with our [cost to build a deck](/blog/cost-to-build-a-deck/) guide if the lumber is for a deck.\n\n## Frequently asked questions\n\n### How many board feet are in a 2 x 4 x 8 ft board?\n2 x 4 x 8 / 12 = 5.33 board feet. That uses the nominal size, which is how most yards tally it. The finished wood volume is lower, at about 3.5 board feet.\n\n### What does 4/4, 5/4, and 8/4 mean?\nThe numbers give rough thickness in quarter inches. 4/4 is 1 in, 5/4 is 1.25 in, 6/4 is 1.5 in, and 8/4 is 2 in. Hardwood thickness is graded this way under NHLA rules.\n\n### How many board feet do I need for 100 square feet of paneling?\nAt 1 in thick, 100 sq ft of coverage is 100 board feet before waste. Add 15 to 20 percent for cuts and defects, so buy 115 to 120 board feet. Thicker stock scales up in proportion.\n\n### Why did my yard bill show more board feet than I measured?\nYards tally rough size, and many round length up to the next full foot. A board at 8 ft 3 in may bill as 9 ft at some yards. Ask for the tally rules in writing on large orders.\n\n### Is a board foot the same as a square foot?\nNo. A square foot is area only. A board foot is volume, area times thickness, and equals 144 cubic inches. Two boards with the same area can hold very different board feet.\n\n## Next step\nRun each board size on your cut list through the calculator above, then price the same list at two yards. Board foot prices for the same species can differ by a dollar or more per foot.\n\n## Sources\n- [Board Foot Calculator - BoardFootCalculate](https://boardfootcalculate.com/)\n- [Board Foot Calculator - CalculatorPark](https://www.calculatorpark.com/general/board-foot-calculator/)\n- [Lumber Measurement - Canadian Woodworking](https://canadianwoodworking.com/techniques_and_tips/lumber-measurement/)\n- [Board Feet Explained - DreamCivil](https://dreamcivil.com/board-feet-explained/)\n"
+}

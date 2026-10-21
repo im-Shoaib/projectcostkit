@@ -102,7 +102,13 @@
 
     var liveCats = cats.filter(function (c) { return live.some(function (p) { return p.category === c.slug; }); });
     var pages = (opts.pages || []).slice().sort(function (a, b) { return (a.order || 99) - (b.order || 99); });
-    var tools = live.filter(function (p) { return p.tool && p.tool.id; });
+    // One tile per calculator: when a later guide reuses a calculator, the first article that used it keeps the tile.
+    var toolSeen = {};
+    var tools = live.slice().reverse().filter(function (p) {
+      if (!p.tool || !p.tool.id || toolSeen[p.tool.id]) return false;
+      toolSeen[p.tool.id] = true;
+      return true;
+    }).reverse();
 
     /* --- markdown renderer --- */
     var md = null;

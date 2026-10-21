@@ -14,7 +14,7 @@ The site is plain HTML, CSS and JavaScript. There is no server, no database and 
 | `admin/` | The local admin dashboard and the site builder (`builder.js`) |
 | `assets/css/style.css` | All styles. Inlined into every page when you build |
 | `assets/js/main.js` | Menu, search and dark mode |
-| `assets/js/calc.js` | All 26 calculators and the estimate builder |
+| `assets/js/calc.js` | All calculators, the estimate builder and the invoice builder |
 | `assets/img/` | Covers, social images and icons |
 | `demos/` | Five demo contractor websites linked from the websites-for-contractors page. Plain HTML, not touched by the builder, hidden from Google with noindex |
 | `assets/img/portfolio/` | Screenshots of the demos used on that page |
