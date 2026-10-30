@@ -22,6 +22,9 @@
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
   function stripTags(s) { return String(s || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim(); }
+  function decodeEntities(s) {
+    return String(s || '').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+  }
   function slugify(s) {
     return String(s || '').toLowerCase().replace(/&[a-z]+;/g, '').replace(/['’]/g, '')
       .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -97,6 +100,9 @@
       if (a.date !== b.date) return a.date < b.date ? 1 : -1;
       return a.slug < b.slug ? -1 : 1;
     });
+    // Pages in a series (state or city versions of a guide) are reached from their hub article,
+    // so they stay out of the home and category lists. They are still in the sitemap, feed and search.
+    var listed = live.filter(function (p) { return !p.series; });
     var liveBySlug = {};
     live.forEach(function (p) { liveBySlug[p.slug] = p; });
 
@@ -125,7 +131,7 @@
           var base = id, n = 2;
           while (ctx.ids[id]) id = base + '-' + (n++);
           ctx.ids[id] = true;
-          if (lvl === 2) ctx.toc.push({ id: id, text: stripTags(text) });
+          if (lvl === 2) ctx.toc.push({ id: id, text: decodeEntities(stripTags(text)) }); // escaped again when printed
           return '<h' + lvl + ' id="' + id + '">' + text + '</h' + lvl + '>\n';
         },
         image: function (href, title, text) {
@@ -384,7 +390,7 @@
       var hero = '';
       if (p.tool) {
         hero = '<section class="calc-shell" id="calculator" aria-label="' + esc(p.tool.name) + '">' +
-          '<div class="calc" data-calc="' + esc(p.tool.id) + '"><template class="calc-ico">' + icon(p.tool.icon || 'calc') + '</template><p class="calc-loading">Loading the ' + esc(p.tool.name.toLowerCase()) + '...</p>' +
+          '<div class="calc" data-calc="' + esc(p.tool.id) + '"' + (p.tool.defaults ? ' data-defaults="' + esc(JSON.stringify(p.tool.defaults)) + '" data-store="' + esc(p.slug) + '"' : '') + (p.tool.note ? ' data-note="' + esc(p.tool.note) + '"' : '') + '><template class="calc-ico">' + icon(p.tool.icon || 'calc') + '</template><p class="calc-loading">Loading the ' + esc(p.tool.name.toLowerCase()) + '...</p>' +
           '<noscript><p class="calc-loading">This calculator needs JavaScript. The guide below explains the math step by step, so you can also work it out by hand.</p></noscript></div></section>';
       } else {
         hero = '<figure class="post-cover">' + coverFigure(p, pre, { eager: true }) + '</figure>';
@@ -434,13 +440,13 @@
         var fa = typeof a.featured === 'number' ? a.featured : 99, fb = typeof b.featured === 'number' ? b.featured : 99;
         return fa - fb;
       });
-      var lead = featured[0] || live[0];
+      var lead = featured[0] || listed[0];
       var restFeatured = featured.filter(function (p) { return p !== lead; }).slice(0, 3);
-      var total = Math.max(1, Math.ceil(live.length / per));
+      var total = Math.max(1, Math.ceil(listed.length / per));
       for (var n = 1; n <= total; n++) {
         var path = n === 1 ? '' : 'page/' + n + '/';
         var pre = pathPrefix(path);
-        var slice = live.slice((n - 1) * per, n * per);
+        var slice = listed.slice((n - 1) * per, n * per);
         var body = '';
         if (n === 1) {
           var h = site.hero || {};
@@ -464,7 +470,7 @@
           }
           body += '<section class="section wrap" aria-labelledby="topics-h"><div class="section-head"><div><h2 id="topics-h">Browse by project</h2></div></div><div class="topic-grid">' +
             liveCats.map(function (c) {
-              var count = live.filter(function (p) { return p.category === c.slug; }).length;
+              var count = listed.filter(function (p) { return p.category === c.slug; }).length;
               var tcount = tools.filter(function (p) { return p.category === c.slug; }).length;
               return '<a class="topic" href="' + pre + catPath(c) + '" style="--c:' + esc(c.color) + '"><span class="topic-ico">' + icon(c.icon || 'calc') + '</span><strong>' + esc(c.name) + '</strong><small>' + esc(c.short || c.description || '') + '</small>' +
                 '<span class="topic-count">' + count + ' guides' + (tcount ? ', ' + tcount + ' calculators' : '') + '</span></a>';
@@ -496,7 +502,7 @@
       liveCats.forEach(function (c) {
         var path = catPath(c);
         var pre = pathPrefix(path);
-        var list = live.filter(function (p) { return p.category === c.slug; });
+        var list = listed.filter(function (p) { return p.category === c.slug; });
         var ctools = list.filter(function (p) { return p.tool; });
         var guides = list.filter(function (p) { return !p.tool; });
         var body = '<section class="page-head" style="--c:' + esc(c.color) + '"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="' + pre + '">Home</a></li></ol></nav>' +

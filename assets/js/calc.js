@@ -1530,9 +1530,23 @@
     var id = el.getAttribute('data-calc');
     var def = CALCS[id];
     if (!def) { el.innerHTML = '<p class="calc-loading">This calculator could not load. Refresh the page to try again.</p>'; return; }
-    this.el = el; this.id = id; this.def = def;
+    // Page-specific defaults (in US units) and note, e.g. state versions of a cost guide.
+    var pageDefs = null, pageNote = el.getAttribute('data-note');
+    try { pageDefs = JSON.parse(el.getAttribute('data-defaults') || 'null'); } catch (e) { pageDefs = null; }
+    if (pageDefs || pageNote) {
+      var base = def;
+      def = Object.create(base);
+      if (pageDefs) def.fields = base.fields.map(function (fd) {
+        if (!(fd.id in pageDefs)) return fd;
+        var c = Object.create(fd), val = pageDefs[fd.id];
+        c.def = fd.fam ? { imp: val, met: Math.round(val / FAM[fd.fam].k * 100) / 100 } : val;
+        return c;
+      });
+      if (pageNote) def.compute = function (v, f) { var r = base.compute(v, f); if (r && !r.error) r.note = pageNote; return r; };
+    }
+    this.el = el; this.id = id + (el.getAttribute('data-store') ? ':' + el.getAttribute('data-store') : ''); this.def = def;
     this.uid = 'c' + Math.random().toString(36).slice(2, 7);
-    var saved = store('pck:' + id) || {};
+    var saved = store('pck:' + this.id) || {};
     this.u = saved.u || store('pck:units') || guessUnits();
     this.cur = store('pck:cur') || guessCurrency();
     this.vals = {};
