@@ -379,6 +379,7 @@ p { margin: 0 0 1em; }
 .result-value { font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.6rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.1; margin: 2px 0 2px; }
 .result-sub { font-size: .9rem; font-weight: 500; }
 .result-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.result-main + .result-list { margin-top: 10px; }
 .result-list li { display: flex; justify-content: space-between; gap: 14px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: .93rem; }
 .result-list li:last-child { border-bottom: 0; }
 .result-list span { color: var(--muted); }
