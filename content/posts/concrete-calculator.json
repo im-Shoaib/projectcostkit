@@ -1,12 +1,12 @@
 {
   "title": "Concrete Calculator: Cubic Yards and Bags for Slabs and Footings",
   "slug": "concrete-calculator",
-  "description": "Get cubic yards and 40, 60 or 80 lb bags of concrete for a slab, footing or round column, and compare bagged mix with ready-mix delivery.",
+  "description": "One cubic yard of concrete takes 45 bags of 80 lb mix or 60 bags of 60 lb. Get yards and bags for a slab, footing or column, and compare with ready-mix.",
   "category": "building",
   "date": "2026-10-20",
   "status": "published",
   "featured": 5,
-  "seoTitle": "Concrete Calculator: Yards and Bags of Concrete",
+  "seoTitle": "Concrete Calculator: Cubic Yards and Bags (40, 60, 80 lb)",
   "cover": {
     "src": "/assets/img/posts/cover-concrete-calculator-1200x675.webp",
     "src600": "/assets/img/posts/cover-concrete-calculator-600x338.webp",

@@ -42,7 +42,7 @@
     "tile-calculator",
     "fence-calculator",
     "gravel-calculator",
-    "drywall-calculator",
+    "baseboard-calculator",
     "square-footage-calculator"
   ],
   "toolsPage": {
@@ -55,8 +55,14 @@
     "title": "Run a painting, handyman or remodeling business?",
     "text": "Price jobs with the same numbers you would use on site: estimates, hourly rates, markup and a printable quote. And if your business needs a website that brings in calls, we build those too, from $50.",
     "links": [
-      { "label": "Tools for pros", "href": "/category/for-pros/" },
-      { "label": "Websites from $50", "href": "/websites-for-contractors/" }
+      {
+        "label": "Tools for pros",
+        "href": "/category/for-pros/"
+      },
+      {
+        "label": "Websites from $50",
+        "href": "/websites-for-contractors/"
+      }
     ]
   },
   "categories": [

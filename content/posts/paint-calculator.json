@@ -1,12 +1,12 @@
 {
   "title": "Paint Calculator: How Much Paint Do You Need for a Room?",
   "slug": "paint-calculator",
-  "description": "Enter your room size and get gallons or liters of paint for the walls and ceiling, with doors, windows and coats already taken off.",
+  "description": "A 12 x 12 bedroom with 8 ft walls needs about 2 gallons for two coats. Enter your room to get gallons or liters, with doors, windows and the ceiling.",
   "category": "painting",
   "date": "2026-10-20",
   "status": "published",
   "featured": 1,
-  "seoTitle": "Paint Calculator: How Much Paint for a Room",
+  "seoTitle": "Paint Calculator: How Much Paint Do I Need for a Room?",
   "cover": {
     "src": "/assets/img/posts/cover-paint-calculator-1200x675.webp",
     "src600": "/assets/img/posts/cover-paint-calculator-600x338.webp",
